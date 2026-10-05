@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🇲🇦 MathsMaroc — Plateforme Éducative de Mathématiques (Collège & Lycée)
 
-## Getting Started
+> **Plateforme libre & gratuite dédiée à l'apprentissage des mathématiques pour tous les élèves marocains.**  
+> Conçue pour le **Prof. Omar Alami** afin de structurer son écosystème pédagogique YouTube + Web.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 Vision & Positionnement
+
+MathsMaroc n'est pas un simple portfolio : c'est un véritable **hub d'apprentissage structuré** pensé pour l'élève marocain :
+- **YouTube** est le moteur vidéo d'explication intuitive et de direct (lives de révision).
+- **Le Site Web** est la tour de contrôle pédagogique : hiérarchie officielle par niveau et filière, fiches mémoires de formules en KaTeX, annales d'examens nationaux corrigés pas à pas, et banques d'exercices progressifs avec indices et solutions cachées.
+
+---
+
+## 📐 Architecture du Programme & Filières Marocaines
+
+La plateforme respecte l'arborescence officielle du **Ministère de l'Éducation Nationale du Maroc** (BIOF & Général) :
+
+```
+Niveau (ex: 2ème Bac)
+ └── Filière (ex: Sciences Mathématiques A & B, Sciences Physiques, SVT, Économie)
+      └── Matière (Mathématiques)
+           └── Chapitre (ex: Limites & Continuité, Nombres Complexes, Calcul Intégral)
+                └── Leçon (ex: Continuité & TVI)
+                     ├── Vidéo YouTube intégrée (façade ultra-rapide)
+                     ├── Objectifs pédagogiques & Formules KaTeX
+                     ├── Exemples d'application types rédigés
+                     ├── Pièges classiques d'examen à éviter
+                     ├── Conseil de l'enseignant en Darija (نصيحة الأستاذ)
+                     ├── Fiche synthèse téléchargeable (PDF)
+                     └── Exercices progressifs avec indices et corrigés
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Fonctionnalités Clés
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Sélection Rapide du Niveau (« Quel est ton niveau ? »)** :
+   - Sélection immédiate : Collège (1AC, 2AC, 3AC), Tronc Commun, 1ère Bac, 2ème Bac.
+   - Mémorisation locale automatique sans compte ni mot de passe.
+2. **Espace Révision Baccalauréat (`/bac`)** :
+   - Annales des Examens Nationaux (2022 à 2025) session Normale et Rattrapage.
+   - Sujets et corrections en PDF conformes au barème officiel du Ministère.
+   - Formulaire mathématique interactif (limites fondamentales, dérivées, primitives, complexes).
+3. **Banque d'Exercices Corrigés (`/exercices`)** :
+   - Filtres par niveau, filière, chapitre et difficulté (*Facile*, *Moyen*, *Difficile*, *Type Examen National*).
+   - Dévoilement progressif : `💡 Voir un indice` ➔ `🎯 Voir la correction détaillée`.
+4. **Vidéothèque YouTube (`/videos`)** :
+   - Façade optimisée : aucun lecteur lourd n'est chargé avant le clic (zéro pénalité Core Web Vitals).
+   - Filtrage par type de vidéo (*Cours*, *Exercice*, *Astuce*, *National*).
+   - Intégration respectueuse de la vie privée (`youtube-nocookie.com`).
+5. **Moteur de Recherche Instantané (`/recherche` & modal `⌘K`)** :
+   - Recherche instantanée par mot-clé (*TVI*, *dérivées*, *exponentielle*, *complexes*, *intégrales*...).
+   - Résultats catégorisés (cours, exercices, examens, vidéos).
+6. **Bilingue & Compatible RTL (Français / العربية)** :
+   - Français en langue principale (BIOF).
+   - Arabe en langue secondaire avec inversion RTL naturelle (`dir="rtl"`).
+   - Formules KaTeX protégées en LTR pour garantir la lisibilité et l'exactitude mathématique.
+7. **À Propos & Manifeste 100% Gratuit (`/a-propos`)** :
+   - Biographie académique du professeur.
+   - Manifeste pour l'égalité des chances éducatives au Maroc.
+   - Liens directs vers YouTube, Telegram et le groupe WhatsApp d'entraide.
+8. **SEO & Données Structurées** :
+   - URLs sémantiques et explorables : `/cours/[level]/[branch]/[chapter]/[lesson]`.
+   - Schémas JSON-LD officiels : `WebSite`, `Course`, `LearningResource`, `VideoObject`, `BreadcrumbList`, `Person`.
+   - Génération dynamique de `sitemap.xml` et `robots.txt`.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Stack Technique
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework** : [Next.js 16](https://nextjs.org/) (App Router, Turbopack)
+- **Langage** : TypeScript
+- **Styling** : [Tailwind CSS v4](https://tailwindcss.com/)
+- **Moteur Mathématique** : [KaTeX 0.19](https://katex.org/) (Rendu SSR natif ultra-rapide)
+- **Icônes** : [Lucide React](https://lucide.dev/) + Composants SVG vectoriels sur mesure
+- **Polices** : Plus Jakarta Sans (Latin) + Noto Sans Arabic (Arabe)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📦 Installation & Démarrage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Cloner le dépôt et se placer dans le projet
+cd /home/amsomr/Projects/maths-maroc
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Installer les dépendances
+pnpm install
+
+# Lancer le serveur de développement
+pnpm dev
+
+# Compiler pour la production
+pnpm build
+
+# Démarrer le serveur de production
+pnpm start
+```
+
+---
+
+## 🧪 Tests & Vérification Qualité
+
+Pour exécuter la suite de tests automatisés validant les parcours élèves (Journeys A, B, C, D), le rendu KaTeX et le SEO :
+
+```bash
+node test-platform.mjs
+```
+
+---
+
+## 👨‍🏫 Gestion du Contenu pour le Professeur
+
+Le professeur n'a pas besoin de compétences en développement web pour ajouter ou modifier des cours :
+- **Configuration générale & Liens sociaux** : [`src/data/site-config.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/site-config.ts)
+- **Programme, Chapitres, Formules & Exercices** : [`src/data/curriculum.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/curriculum.ts)
+- **Annales d'examens nationaux** : [`src/data/bac-exams.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/bac-exams.ts)
+- **Vidéos & Playlists YouTube** : [`src/data/videos.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/videos.ts)
+- **Traductions FR/AR** : [`src/data/translations.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/translations.ts)

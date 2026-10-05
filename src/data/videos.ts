@@ -1,0 +1,112 @@
+import { YouTubeVideo } from './types';
+
+export const YOUTUBE_VIDEOS: YouTubeVideo[] = [
+  {
+    id: 'vid-01',
+    title: 'Continuité et Théorème des Valeurs Intermédiaires (TVI) — Cours Complet + Exercices',
+    titleAr: 'الاتصال ومبرهنة القيم الوسيطية — درس كامل مع تمارين تطبيقية',
+    levelId: '2eme-bac',
+    branchId: 'sciences-maths',
+    chapterSlug: 'limites-et-continuite',
+    topic: 'Analyse & Continuité',
+    duration: '48:15',
+    youtubeId: 'mRk4_s9U2pE',
+    playlistId: 'PLmaths_2bac_sm_analyse',
+    type: 'cours',
+    isPopular: true
+  },
+  {
+    id: 'vid-02',
+    title: 'Techniques pour lever les Formes Indéterminées en 2ème Bac (Méthode Ultime)',
+    titleAr: 'طرق رفع الأشكال غير المحددة في الباكالوريا (طرق حصرية وسريعة)',
+    levelId: '2eme-bac',
+    branchId: 'sciences-maths',
+    chapterSlug: 'limites-et-continuite',
+    topic: 'Calcul de Limites',
+    duration: '35:20',
+    youtubeId: 'k7gW3QZp914',
+    playlistId: 'PLmaths_2bac_sm_analyse',
+    type: 'astuce',
+    isPopular: true
+  },
+  {
+    id: 'vid-03',
+    title: 'Nombres Complexes de A à Z : Forme Algébrique, Module et Argument',
+    titleAr: 'الأعداد العقدية من الصفر : الشكل الجبري، المعيار والعمدة',
+    levelId: '2eme-bac',
+    branchId: 'sciences-maths',
+    chapterSlug: 'nombres-complexes',
+    topic: 'Algèbre & Complexes',
+    duration: '54:10',
+    youtubeId: 'V9dE7uM2w8Q',
+    playlistId: 'PLmaths_complexes',
+    type: 'cours',
+    isPopular: true
+  },
+  {
+    id: 'vid-04',
+    title: 'Correction Complète de l\'Examen National 2025 — Sciences Physiques (Sujet Réel)',
+    titleAr: 'تصحيح مفصل للامتحان الوطني 2025 — شعبة العلوم التجريبية والفيزيائية',
+    levelId: '2eme-bac',
+    branchId: 'sciences-physiques',
+    chapterSlug: 'fonction-exponentielle-et-ln',
+    topic: 'Examen National',
+    duration: '1:42:30',
+    youtubeId: 'fJ9rUzIMcZQ',
+    playlistId: 'PLmaths_annales_bac',
+    type: 'national',
+    isPopular: true
+  },
+  {
+    id: 'vid-05',
+    title: 'Intégration par parties (IPP) : Maîtriser la règle ALPES en 20 minutes',
+    titleAr: 'المكاملة بالأجزاء : إتقان قاعدة ALPES في 20 دقيقة',
+    levelId: '2eme-bac',
+    branchId: 'sciences-maths',
+    chapterSlug: 'calcul-integral',
+    topic: 'Calcul Intégral',
+    duration: '22:40',
+    youtubeId: 'U_5e_Ld48Vw',
+    type: 'astuce',
+    isPopular: false
+  },
+  {
+    id: 'vid-06',
+    title: 'Notions de Logique 1ère Bac : Récurrence, Absurde et Contraposée sans fautes',
+    titleAr: 'مبادئ في المنطق للأولى باك : البرهان بالترجع والخلف والاستلزام المضاد',
+    levelId: '1ere-bac',
+    branchId: 'sciences-exp',
+    chapterSlug: 'notions-de-logique',
+    topic: 'Logique & Raisonnement',
+    duration: '42:15',
+    youtubeId: 'k7gW3QZp914',
+    type: 'cours',
+    isPopular: false
+  },
+  {
+    id: 'vid-07',
+    title: 'Arithmétique dans N — Tronc Commun Scientifique (BIOF)',
+    titleAr: 'الحسابيات في المجموعة N — الجذع المشترك العلمي خيار فرنسية',
+    levelId: 'tronc-commun',
+    branchId: 'tc-sciences',
+    chapterSlug: 'arithmetique-dans-n',
+    topic: 'Arithmétique',
+    duration: '38:00',
+    youtubeId: 'mRk4_s9U2pE',
+    type: 'cours',
+    isPopular: false
+  },
+  {
+    id: 'vid-08',
+    title: 'Théorème de Thalès direct et réciproque — 3ème Année Collège (3AC)',
+    titleAr: 'مبرهنة طاليس المباشرة والعكسية — الثالثة إعدادي استعداداً للامتحان الجهوي',
+    levelId: 'college',
+    branchId: '3ac',
+    chapterSlug: 'theoremes-geometriques-3ac',
+    topic: 'Géométrie Collège',
+    duration: '31:50',
+    youtubeId: 'fJ9rUzIMcZQ',
+    type: 'cours',
+    isPopular: false
+  }
+];
