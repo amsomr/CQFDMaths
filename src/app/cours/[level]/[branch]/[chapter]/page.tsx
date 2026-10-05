@@ -56,51 +56,51 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
         />
 
         <div className="mt-4 mb-10">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm font-mono text-[11px] uppercase tracking-wider bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 mb-2">
-            <BookOpen className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200/80 dark:border-blue-800/60 mb-3 shadow-2xs">
+            <BookOpen className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
             <span>Chapitre Officiel</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-normal text-stone-950 dark:text-stone-100 tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-slate-900 dark:text-white tracking-tight">
             {chapter.title}
           </h1>
-          <p className="mt-2 text-sm sm:text-base text-stone-600 dark:text-stone-400 max-w-2xl font-sans">
+          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl font-sans">
             {chapter.description}
           </p>
         </div>
 
         {/* Lessons List in sequential order */}
         <div className="space-y-4 max-w-4xl">
-          <div className="font-mono text-xs uppercase tracking-wider text-stone-400 mb-2">
+          <div className="font-sans text-xs uppercase tracking-wider text-slate-400 font-semibold mb-3">
             Leçons dans l&apos;ordre pédagogique recommandé :
           </div>
 
           {chapter.lessons.map((lesson, idx) => (
             <div
               key={lesson.slug}
-              className="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 p-5 sm:p-6 shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:border-stone-400 dark:hover:border-stone-600 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-2xs hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 hover:-translate-y-0.5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5"
             >
               <div className="flex items-start gap-4">
-                <div className="w-9 h-9 rounded-md bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 flex items-center justify-center font-mono font-semibold text-xs shrink-0 border border-stone-200 dark:border-stone-700">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center font-mono font-bold text-sm shrink-0 border border-blue-200/60 dark:border-blue-800/60 shadow-2xs">
                   0{idx + 1}
                 </div>
                 <div>
-                  <h3 className="font-serif text-base sm:text-lg font-medium text-stone-900 dark:text-stone-100">
+                  <h3 className="font-serif text-lg font-medium text-slate-900 dark:text-white">
                     {lesson.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-stone-500 dark:text-stone-400 mt-1 line-clamp-2 font-sans">
+                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 font-sans">
                     {lesson.summary}
                   </p>
-                  <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-stone-400 mt-2">
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" />
+                  <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-slate-400 mt-3">
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-slate-400" />
                       <span>~{lesson.estimatedMinutes} min</span>
                     </span>
-                    <span className="flex items-center gap-1 text-red-600 dark:text-red-400 font-medium">
+                    <span className="flex items-center gap-1.5 text-red-600 dark:text-red-400 font-medium">
                       <Play className="w-3.5 h-3.5 fill-current" />
                       <span>Vidéo YouTube</span>
                     </span>
                     {lesson.exercises.length > 0 && (
-                      <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
+                      <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         <span>{lesson.exercises.length} exercices corrigés</span>
                       </span>
@@ -111,10 +111,10 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
               <Link
                 href={`/cours/${level.id}/${branch.id}/${chapter.slug}/${lesson.slug}`}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-xs font-medium text-white bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-stone-200 transition-colors shrink-0 shadow-xs"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 transition-all shrink-0 hover:-translate-y-0.5"
               >
                 <span>Accéder à la leçon</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           ))}

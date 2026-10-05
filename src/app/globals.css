@@ -2,23 +2,33 @@
 @import "katex/dist/katex.min.css";
 
 :root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
+  --background: #ffffff;
+  --foreground: #0f172a;
   --surface: #ffffff;
-  --surface-muted: #f5f5f4;
-  --border-subtle: #e7e5e4;
-  --accent-primary: #1e3a8a;
+  --surface-muted: #f8fafc;
+  --surface-elevated: #ffffff;
+  --border-subtle: #e2e8f0;
+  --brand-sapphire: #1d4ed8;
+  --brand-blue: #2563eb;
+  --brand-navy: #1e3a8a;
+  --accent-amber: #d97706;
+  --accent-emerald: #059669;
   --font-arabic: 'Noto Sans Arabic', system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0c0a09;
-    --foreground: #fafaf9;
-    --surface: #171513;
-    --surface-muted: #242220;
-    --border-subtle: #292524;
-    --accent-primary: #3b82f6;
+    --background: #090d16;
+    --foreground: #f8fafc;
+    --surface: #0f172a;
+    --surface-muted: #1e293b;
+    --surface-elevated: #1e293b;
+    --border-subtle: #334155;
+    --brand-sapphire: #3b82f6;
+    --brand-blue: #60a5fa;
+    --brand-navy: #93c5fd;
+    --accent-amber: #f59e0b;
+    --accent-emerald: #10b981;
   }
 }
 
@@ -34,6 +44,12 @@ body {
   color: var(--foreground);
   overflow-x: hidden;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Subtle Mathematical Grid Texture for light visual depth */
+.math-grid-pattern {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* RTL Typography Support */
@@ -71,27 +87,28 @@ body {
 }
 
 .block-math::-webkit-scrollbar-thumb {
-  background: rgba(168, 162, 158, 0.4);
+  background: rgba(148, 163, 184, 0.4);
   border-radius: 9999px;
 }
 
-/* Architectural Lines & Subtle Grids */
-.academic-card {
+/* Premium Card Architecture with Ambient Light Depth */
+.premium-card {
   background-color: var(--surface);
   border: 1px solid var(--border-subtle);
-  border-radius: 0.75rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.03), 0 4px 12px 0 rgba(15, 23, 42, 0.02);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
 }
 
-.academic-card:hover {
-  border-color: #d6d3d1;
-  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.04);
+.premium-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
 }
 
 @media (prefers-color-scheme: dark) {
-  .academic-card:hover {
-    border-color: #44403c;
-    box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.3);
+  .premium-card:hover {
+    border-color: #475569;
+    box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -100,24 +117,15 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 2px solid #1c1917;
+  outline: 2px solid #2563eb;
   outline-offset: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-  a:focus-visible,
-  button:focus-visible,
-  input:focus-visible,
-  select:focus-visible {
-    outline: 2px solid #fafaf9;
-  }
-}
-
-/* Micro-transitions */
+/* Fluid micro-animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(3px);
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
@@ -126,5 +134,5 @@ select:focus-visible {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.2s ease-out forwards;
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

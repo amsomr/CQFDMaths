@@ -39,16 +39,16 @@ export default function VideosPage() {
         <Breadcrumb items={[{ name: 'Vidéothèque YouTube', url: '/videos' }]} />
 
         {/* Page Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200/80 dark:border-slate-800">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm font-mono text-[11px] uppercase tracking-wider bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300 border border-red-200/80 dark:border-red-800/60 shadow-2xs">
               <Youtube className="w-3.5 h-3.5 fill-red-600" />
               <span>{SITE_CONFIG.youtube.channelName}</span>
             </div>
-            <h1 className="font-serif text-3xl sm:text-4xl font-normal text-stone-950 dark:text-stone-100 tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-slate-900 dark:text-white tracking-tight">
               {t.videos.title}
             </h1>
-            <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 max-w-2xl font-sans">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl font-sans">
               {t.videos.subtitle}
             </p>
           </div>
@@ -57,37 +57,37 @@ export default function VideosPage() {
             href={SITE_CONFIG.youtube.channelUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-stone-200 shadow-xs transition-colors shrink-0"
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/25 hover:shadow-lg hover:shadow-red-600/35 transition-all shrink-0 hover:-translate-y-0.5"
           >
-            <Youtube className="w-4 h-4 fill-red-600" />
+            <Youtube className="w-4 h-4 fill-white" />
             <span>S&apos;abonner sur YouTube ({SITE_CONFIG.youtube.subscribersCount})</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
 
         {/* Filters and Search Bar */}
-        <div className="p-4 sm:p-5 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-[0_1px_3px_rgba(0,0,0,0.02)] space-y-4">
+        <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-xs space-y-4">
           
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="relative flex-1">
-              <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Rechercher une vidéo ou une notion..."
-                className="w-full pl-8 pr-3 py-1.5 rounded-md bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs sm:text-sm font-sans focus:outline-none focus:border-stone-400"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-sans focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 text-slate-900 dark:text-slate-100 shadow-2xs placeholder-slate-400"
               />
             </div>
-            <div className="font-mono text-xs text-stone-500">
-              <span className="font-semibold text-stone-900 dark:text-stone-100">{filteredVideos.length}</span> vidéos disponibles
+            <div className="font-mono text-xs text-slate-500 shrink-0">
+              <span className="font-semibold text-slate-900 dark:text-slate-100">{filteredVideos.length}</span> vidéos disponibles
             </div>
           </div>
 
           {/* Video Type Filters */}
-          <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-stone-100 dark:border-stone-800">
-            <span className="font-mono text-[10px] uppercase tracking-wider text-stone-400 mr-2 flex items-center gap-1">
-              <Filter className="w-3 h-3" />
+          <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800">
+            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-slate-400 mr-2 flex items-center gap-1.5">
+              <Filter className="w-3.5 h-3.5 text-red-500" />
               Type :
             </span>
             {[
@@ -99,10 +99,10 @@ export default function VideosPage() {
               <button
                 key={tp.id}
                 onClick={() => setSelectedType(tp.id)}
-                className={`px-2.5 py-1 rounded-md font-mono text-xs transition-colors ${
+                className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
                   selectedType === tp.id
-                    ? 'bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-semibold'
-                    : 'bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300 hover:bg-stone-200'
+                    ? 'bg-red-600 text-white font-semibold shadow-xs'
+                    : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 hover:bg-slate-200'
                 }`}
               >
                 {tp.label}
@@ -125,15 +125,15 @@ export default function VideosPage() {
 
         {/* Video Player Modal */}
         {activeModalVideo && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/80 backdrop-blur-sm animate-fadeIn">
-            <div className="relative w-full max-w-4xl bg-stone-900 rounded-xl overflow-hidden shadow-2xl border border-stone-800">
-              <div className="flex items-center justify-between p-4 border-b border-stone-800 text-stone-100">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fadeIn">
+            <div className="relative w-full max-w-4xl bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+              <div className="flex items-center justify-between p-4 border-b border-slate-800 text-slate-100">
                 <span className="font-serif text-sm sm:text-base line-clamp-1">
                   {activeModalVideo.title}
                 </span>
                 <button
                   onClick={() => setActiveModalVideo(null)}
-                  className="p-1 rounded-md text-stone-400 hover:text-white hover:bg-stone-800"
+                  className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -147,16 +147,16 @@ export default function VideosPage() {
                   className="w-full h-full border-0"
                 />
               </div>
-              <div className="p-3.5 bg-stone-950 flex items-center justify-between font-mono text-xs text-stone-400">
-                <span>{activeModalVideo.topic} • {activeModalVideo.duration}</span>
+              <div className="p-4 bg-slate-950 flex items-center justify-between font-sans text-xs text-slate-400">
+                <span className="font-mono">{activeModalVideo.topic} • {activeModalVideo.duration}</span>
                 <a
                   href={`https://youtube.com/watch?v=${activeModalVideo.youtubeId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-stone-300 hover:text-white underline underline-offset-2 flex items-center gap-1 font-medium"
+                  className="text-slate-200 hover:text-white underline underline-offset-2 flex items-center gap-1.5 font-medium"
                 >
                   <span>Regarder directement sur YouTube</span>
-                  <ExternalLink className="w-3 h-3" />
+                  <ExternalLink className="w-3.5 h-3.5 text-red-400" />
                 </a>
               </div>
             </div>

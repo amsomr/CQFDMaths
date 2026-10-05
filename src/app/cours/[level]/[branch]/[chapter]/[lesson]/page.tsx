@@ -23,7 +23,8 @@ import {
   ArrowRight, 
   FileText,
   Lightbulb,
-  ExternalLink
+  ExternalLink,
+  Sparkles
 } from 'lucide-react';
 import { Youtube } from '@/components/icons/YouTubeIcon';
 
@@ -85,7 +86,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
   const nextLesson = lesson.nextLessonSlug ? getLessonBySlug(lesson.nextLessonSlug) : null;
 
   return (
-    <article className="min-h-screen py-6 sm:py-10 transition-colors">
+    <article className="min-h-screen py-6 sm:py-10 bg-white dark:bg-[#090d16] transition-colors">
       <LessonJsonLd lesson={lesson} />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
@@ -102,25 +103,25 @@ export default async function LessonPage({ params }: LessonPageProps) {
         />
 
         {/* 1. LESSON HEADER & METADATA */}
-        <header className="space-y-4 border-b border-stone-200 dark:border-stone-800 pb-6 sm:pb-8">
+        <header className="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6 sm:pb-8">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-mono text-xs uppercase px-2.5 py-0.5 rounded-sm bg-stone-900 text-stone-100 dark:bg-stone-100 dark:text-stone-900">
+            <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
               {branch.shortName}
             </span>
-            <span className="font-mono text-xs px-2.5 py-0.5 rounded-sm bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700">
+            <span className="text-xs font-medium px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
               {chapter.title}
             </span>
-            <span className="flex items-center gap-1 font-mono text-xs text-stone-500 dark:text-stone-400 ml-auto">
-              <Clock className="w-3.5 h-3.5 text-stone-400" />
-              <span>~{lesson.estimatedMinutes} min</span>
+            <span className="flex items-center gap-1 font-mono text-xs text-slate-500 dark:text-slate-400 ml-auto">
+              <Clock className="w-3.5 h-3.5 text-slate-400" />
+              <span>~{lesson.estimatedMinutes} min de lecture & vidéo</span>
             </span>
           </div>
 
-          <h1 className="font-serif text-2xl sm:text-4xl font-normal text-stone-950 dark:text-stone-100 tracking-tight leading-snug">
+          <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug">
             {lesson.title}
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed font-sans">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
             {lesson.summary}
           </p>
 
@@ -130,31 +131,31 @@ export default async function LessonPage({ params }: LessonPageProps) {
               <a
                 href={lesson.downloadableResource.fileUrl}
                 download
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-stone-100 hover:bg-stone-200 text-stone-800 dark:bg-stone-800 dark:hover:bg-stone-700 dark:text-stone-200 border border-stone-200 dark:border-stone-700 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:hover:bg-blue-900/60 dark:text-blue-300 border border-blue-200 dark:border-blue-800 transition-colors"
               >
-                <Download className="w-3.5 h-3.5 text-stone-500" />
+                <Download className="w-4 h-4" />
                 <span>{lesson.downloadableResource.title}</span>
               </a>
             )}
 
-            <div className="flex items-center gap-2 ml-auto font-mono text-xs text-stone-500 dark:text-stone-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              <span>Cadre de référence officiel marocain</span>
+            <div className="flex items-center gap-2 ml-auto text-xs text-slate-500 dark:text-slate-400">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span>Conforme aux normes du Ministère</span>
             </div>
           </div>
         </header>
 
         {/* 2. LEARNING OBJECTIVES */}
         {lesson.objectives.length > 0 && (
-          <section className="p-5 sm:p-6 rounded-xl bg-stone-100/60 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 space-y-3">
-            <h2 className="font-mono text-xs uppercase tracking-wider text-stone-700 dark:text-stone-300 font-semibold flex items-center gap-2">
-              <BookOpen className="w-3.5 h-3.5 text-stone-500" />
+          <section className="p-6 rounded-2xl bg-blue-50/60 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/50 space-y-3">
+            <h2 className="text-sm sm:text-base font-bold text-blue-950 dark:text-blue-200 flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span>Objectifs Pédagogiques Clés</span>
             </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-stone-700 dark:text-stone-300 font-sans">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
               {lesson.objectives.map((obj, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-stone-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                   <span>{obj}</span>
                 </li>
               ))}
@@ -165,19 +166,19 @@ export default async function LessonPage({ params }: LessonPageProps) {
         {/* 3. EMBEDDED YOUTUBE LESSON PLAYER (FACADE) */}
         <section className="space-y-3">
           <div className="flex items-center justify-between">
-            <h2 className="font-serif text-lg sm:text-xl font-medium text-stone-900 dark:text-stone-100 flex items-center gap-2">
-              <Youtube className="w-4 h-4 fill-red-600" />
-              <span>Cours Vidéo Magistral</span>
+            <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <Youtube className="w-5 h-5 fill-red-600" />
+              <span>Cours Vidéo Magistral (YouTube)</span>
             </h2>
             {lesson.youtubePlaylistId && (
               <a
                 href={`https://youtube.com/playlist?list=${lesson.youtubePlaylistId}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-xs text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 underline underline-offset-2 flex items-center gap-1 font-medium"
+                className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 font-semibold"
               >
                 <span>Voir la playlist du chapitre</span>
-                <ExternalLink className="w-3 h-3" />
+                <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}
           </div>
@@ -192,8 +193,8 @@ export default async function LessonPage({ params }: LessonPageProps) {
         {/* 4. ESSENTIAL FORMULAS (KATEX) */}
         {lesson.keyFormulas.length > 0 && (
           <section className="space-y-4">
-            <h2 className="font-serif text-lg sm:text-xl font-medium text-stone-900 dark:text-stone-100 flex items-center gap-2">
-              <span className="font-serif text-stone-500">∑</span>
+            <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-blue-600" />
               <span>Propriétés & Formules Fondamentales</span>
             </h2>
 
@@ -201,16 +202,16 @@ export default async function LessonPage({ params }: LessonPageProps) {
               {lesson.keyFormulas.map((item, idx) => (
                 <div
                   key={idx}
-                  className="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 p-5 shadow-[0_1px_3px_rgba(0,0,0,0.02)] space-y-2"
+                  className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-xs space-y-2"
                 >
-                  <div className="font-mono text-xs uppercase tracking-wider text-stone-700 dark:text-stone-300 font-semibold">
+                  <div className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
                     {item.name}
                   </div>
-                  <div className="bg-stone-50 dark:bg-stone-950 p-3 rounded-lg border border-stone-200/80 dark:border-stone-800 text-center overflow-x-auto">
+                  <div className="bg-slate-50 dark:bg-slate-950 p-3.5 rounded-xl border border-slate-100 dark:border-slate-800 text-center overflow-x-auto">
                     <MathView math={item.latex} inline={false} />
                   </div>
                   {item.description && (
-                    <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed font-sans">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                       {item.description}
                     </p>
                   )}
@@ -223,23 +224,23 @@ export default async function LessonPage({ params }: LessonPageProps) {
         {/* 5. DEFINITIONS AND THEOREMS */}
         {lesson.definitions.length > 0 && (
           <section className="space-y-4">
-            <h2 className="font-serif text-lg sm:text-xl font-medium text-stone-900 dark:text-stone-100">
+            <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
               Définitions et Théorèmes Réglementaires
             </h2>
-            <div className="space-y-3">
+            <div className="space-y-3.5">
               {lesson.definitions.map((def, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded-lg bg-white dark:bg-stone-900 border-l-2 border-stone-900 dark:border-stone-100 border-y border-r border-stone-200 dark:border-stone-800 space-y-2 shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+                  className="p-5 sm:p-6 rounded-2xl bg-blue-50/40 dark:bg-slate-900 border-l-4 border-blue-600 border-y border-r border-blue-100 dark:border-slate-800 space-y-2 shadow-xs"
                 >
-                  <h3 className="font-serif text-base font-medium text-stone-900 dark:text-stone-100">
+                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
                     {def.title}
                   </h3>
-                  <div className="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-sans">
+                  <div className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                     <TextWithMath text={def.content} />
                   </div>
                   {def.latex && (
-                    <div className="mt-2 bg-stone-50 dark:bg-stone-950 p-2.5 rounded-md text-center overflow-x-auto border border-stone-200/60 dark:border-stone-800">
+                    <div className="mt-2 bg-white dark:bg-slate-950 p-3 rounded-xl text-center overflow-x-auto border border-blue-100 dark:border-slate-800">
                       <MathView math={def.latex} inline={false} />
                     </div>
                   )}
@@ -252,8 +253,8 @@ export default async function LessonPage({ params }: LessonPageProps) {
         {/* 6. WORKED EXAMPLES */}
         {lesson.workedExamples.length > 0 && (
           <section className="space-y-4">
-            <h2 className="font-serif text-lg sm:text-xl font-medium text-stone-900 dark:text-stone-100 flex items-center gap-2">
-              <FileText className="w-4 h-4 text-stone-500" />
+            <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <FileText className="w-5 h-5 text-blue-600" />
               <span>Exemples d&apos;Application Rédigés (Modèles de Rédaction)</span>
             </h2>
 
@@ -261,30 +262,30 @@ export default async function LessonPage({ params }: LessonPageProps) {
               {lesson.workedExamples.map((ex, idx) => (
                 <div
                   key={idx}
-                  className="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+                  className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-xs"
                 >
                   {/* Statement */}
-                  <div className="p-4 sm:p-5 bg-stone-50/70 dark:bg-stone-900/50 border-b border-stone-200 dark:border-stone-800">
-                    <h3 className="font-serif text-sm sm:text-base font-medium text-stone-900 dark:text-stone-100 mb-1.5">
+                  <div className="p-5 bg-slate-50/80 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800">
+                    <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white mb-1.5">
                       {ex.title}
                     </h3>
-                    <div className="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-sans">
+                    <div className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                       <TextWithMath text={ex.statement} />
                     </div>
                   </div>
 
                   {/* Solution */}
-                  <div className="p-4 sm:p-5 space-y-3">
-                    <div className="font-mono text-xs uppercase tracking-wider text-stone-600 dark:text-stone-400 flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-stone-500" />
+                  <div className="p-5 sm:p-6 space-y-3">
+                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4" />
                       <span>Rédaction pas à pas conforme au barème :</span>
                     </div>
-                    <div className="text-xs sm:text-sm text-stone-800 dark:text-stone-200 leading-relaxed whitespace-pre-line font-sans">
+                    <div className="text-sm text-slate-800 dark:text-slate-200 leading-relaxed whitespace-pre-line">
                       <TextWithMath text={ex.solution} />
                     </div>
                     {ex.methodologyTip && (
-                      <div className="mt-3 p-3 rounded-lg bg-stone-100/80 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700 text-xs text-stone-700 dark:text-stone-300">
-                        <span className="font-mono font-semibold uppercase tracking-wider text-[11px] block mb-0.5">Conseil de rédaction :</span>
+                      <div className="mt-3 p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-xs text-amber-800 dark:text-amber-200">
+                        <span className="font-bold">Conseil de rédaction : </span>
                         {ex.methodologyTip}
                       </div>
                     )}
@@ -298,8 +299,8 @@ export default async function LessonPage({ params }: LessonPageProps) {
         {/* 7. COMMON MISTAKES TO AVOID (NO EMOJIS) */}
         {lesson.commonMistakes.length > 0 && (
           <section className="space-y-4">
-            <h2 className="font-serif text-lg sm:text-xl font-medium text-stone-900 dark:text-stone-100 flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4 text-stone-500" />
+            <h2 className="text-lg sm:text-xl font-bold text-rose-600 dark:text-rose-400 flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 text-rose-600" />
               <span>Points de Vigilance & Pièges Fréquents le Jour du Bac</span>
             </h2>
 
@@ -307,27 +308,27 @@ export default async function LessonPage({ params }: LessonPageProps) {
               {lesson.commonMistakes.map((m, idx) => (
                 <div
                   key={idx}
-                  className="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 p-5 space-y-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+                  className="rounded-2xl border border-rose-200 dark:border-rose-900/50 bg-rose-50/40 dark:bg-rose-950/20 p-5 space-y-3"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 flex items-center justify-center shrink-0">
-                      <AlertTriangle className="w-3 h-3 text-stone-600 dark:text-stone-400" />
+                    <span className="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-900/60 text-rose-600 dark:text-rose-300 flex items-center justify-center shrink-0">
+                      <AlertTriangle className="w-3.5 h-3.5" />
                     </span>
-                    <h3 className="font-serif text-sm font-medium text-stone-900 dark:text-stone-100">
+                    <h3 className="text-sm font-bold text-rose-900 dark:text-rose-200">
                       {m.title}
                     </h3>
                   </div>
                   
-                  <div className="space-y-1.5 text-xs text-stone-700 dark:text-stone-300 font-sans">
+                  <div className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
                     <div>
-                      <span className="font-semibold text-stone-900 dark:text-stone-200">Erreur classique : </span>
+                      <span className="font-semibold text-rose-700 dark:text-rose-300">Erreur classique : </span>
                       <TextWithMath text={m.mistake} />
                     </div>
                     <div>
-                      <span className="font-semibold text-stone-900 dark:text-stone-200">Rédaction correcte : </span>
+                      <span className="font-semibold text-emerald-700 dark:text-emerald-300">Rédaction correcte : </span>
                       <TextWithMath text={m.correction} />
                     </div>
-                    <div className="text-stone-500 dark:text-stone-400 italic pt-1 border-t border-stone-100 dark:border-stone-800">
+                    <div className="text-slate-500 dark:text-slate-400 italic pt-1 border-t border-rose-200/50 dark:border-rose-900/30">
                       Justification : {m.why}
                     </div>
                   </div>
@@ -339,15 +340,15 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
         {/* 8. PROFESSOR PRO-TIP IN DARIJA / ARABIC */}
         {lesson.proTipDarija && (
-          <section className="p-5 sm:p-6 rounded-xl bg-stone-100/70 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 text-stone-900 dark:text-stone-100 flex items-start gap-4">
-            <div className="w-8 h-8 rounded-md bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300 flex items-center justify-center shrink-0">
-              <Lightbulb className="w-4 h-4" />
+          <section className="p-5 sm:p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-950 dark:text-amber-100 flex items-start gap-4">
+            <div className="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-700 dark:text-amber-300 flex items-center justify-center shrink-0">
+              <Lightbulb className="w-5 h-5" />
             </div>
             <div className="space-y-1">
-              <h3 className="font-serif text-sm font-medium text-stone-900 dark:text-stone-100">
+              <h3 className="text-sm font-bold text-amber-900 dark:text-amber-200">
                 نصيحة الأستاذ عمر العلمي (Conseil d&apos;Examen)
               </h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-stone-700 dark:text-stone-300 font-sans" dir="rtl">
+              <p className="text-xs sm:text-sm leading-relaxed" dir="rtl">
                 {lesson.proTipDarija}
               </p>
             </div>
@@ -356,15 +357,15 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
         {/* 9. PRACTICE EXERCISES WITH INTERACTIVE HINTS & SOLUTIONS */}
         {lesson.exercises.length > 0 && (
-          <section className="space-y-6 pt-4 border-t border-stone-200 dark:border-stone-800">
+          <section className="space-y-6 pt-4 border-t border-slate-200 dark:border-slate-800">
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+              <div className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1">
                 Entraînement Progressif
               </div>
-              <h2 className="font-serif text-xl sm:text-2xl font-medium text-stone-900 dark:text-stone-100">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                 Exercices d&apos;Application et d&apos;Approfondissement
               </h2>
-              <p className="mt-1 text-xs sm:text-sm text-stone-500 dark:text-stone-400 font-sans">
+              <p className="mt-1 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
                 Résous le problème par écrit avant de consulter l&apos;indice ou le corrigé officiel.
               </p>
             </div>
@@ -378,18 +379,18 @@ export default async function LessonPage({ params }: LessonPageProps) {
         )}
 
         {/* 10. PREVIOUS / NEXT LESSON NAVIGATION */}
-        <nav aria-label="Navigation entre leçons" className="pt-8 border-t border-stone-200 dark:border-stone-800 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <nav aria-label="Navigation entre leçons" className="pt-8 border-t border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {prevLesson ? (
             <Link
               href={`/cours/${prevLesson.levelId}/${prevLesson.branchId}/${prevLesson.chapterSlug}/${prevLesson.slug}`}
-              className="p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 hover:border-stone-400 dark:hover:border-stone-600 transition-colors group flex items-center gap-3 text-left"
+              className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-blue-500 dark:hover:border-blue-500 transition-colors group flex items-center gap-3 text-left"
             >
-              <ArrowLeft className="w-4 h-4 text-stone-400 group-hover:-translate-x-1 transition-transform shrink-0" />
+              <ArrowLeft className="w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:-translate-x-1 transition-transform shrink-0" />
               <div>
-                <span className="font-mono text-[10px] uppercase tracking-wider text-stone-400 block">
+                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">
                   Leçon précédente
                 </span>
-                <span className="font-serif text-sm font-medium text-stone-900 dark:text-stone-100 line-clamp-1">
+                <span className="text-sm font-bold text-slate-900 dark:text-white line-clamp-1">
                   {prevLesson.title}
                 </span>
               </div>
@@ -401,17 +402,17 @@ export default async function LessonPage({ params }: LessonPageProps) {
           {nextLesson ? (
             <Link
               href={`/cours/${nextLesson.levelId}/${nextLesson.branchId}/${nextLesson.chapterSlug}/${nextLesson.slug}`}
-              className="p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 hover:border-stone-400 dark:hover:border-stone-600 transition-colors group flex items-center justify-between text-right"
+              className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-blue-500 dark:hover:border-blue-500 transition-colors group flex items-center justify-between text-right"
             >
               <div className="ml-auto">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-stone-400 block">
+                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">
                   Leçon suivante
                 </span>
-                <span className="font-serif text-sm font-medium text-stone-900 dark:text-stone-100 line-clamp-1">
+                <span className="text-sm font-bold text-slate-900 dark:text-white line-clamp-1">
                   {nextLesson.title}
                 </span>
               </div>
-              <ArrowRight className="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform ml-3 shrink-0" />
+              <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-transform ml-3 shrink-0" />
             </Link>
           ) : (
             <div />
@@ -419,12 +420,12 @@ export default async function LessonPage({ params }: LessonPageProps) {
         </nav>
 
         {/* 11. SUBSCRIBE TO YOUTUBE CTA */}
-        <div className="rounded-xl border border-stone-800 bg-[#1c1917] text-stone-100 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+        <div className="rounded-3xl bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-900 text-white p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="space-y-1 text-center sm:text-left">
-            <h3 className="font-serif text-lg sm:text-xl font-normal text-white">
+            <h3 className="text-lg sm:text-xl font-extrabold text-white">
               Tu as apprécié cette leçon ?
             </h3>
-            <p className="text-xs sm:text-sm text-stone-300 max-w-lg font-sans">
+            <p className="text-xs sm:text-sm text-blue-100 max-w-lg">
               Rejoins la communauté YouTube pour ne rater aucun corrigé d&apos;examen ni les séances de révision en direct.
             </p>
           </div>
@@ -432,7 +433,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
             href={SITE_CONFIG.youtube.channelUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium bg-white text-stone-950 hover:bg-stone-100 transition-colors shrink-0"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-950 hover:bg-blue-50 transition-colors shrink-0 shadow-md"
           >
             <Youtube className="w-4 h-4 fill-red-600" />
             <span>S&apos;abonner sur YouTube</span>

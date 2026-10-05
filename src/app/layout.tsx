@@ -107,11 +107,11 @@ export default function RootLayout({
       <head>
         <WebSiteJsonLd />
       </head>
-      <body className="min-h-full flex flex-col font-sans bg-[#fafaf9] dark:bg-[#0c0a09] text-[#1c1917] dark:text-[#fafaf9] selection:bg-stone-200 dark:selection:bg-stone-800">
+      <body className="min-h-full flex flex-col font-sans bg-slate-50/60 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 selection:bg-blue-200 dark:selection:bg-blue-900">
         {/* Skip to Main Content Link for Accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-stone-900 text-white rounded-md shadow-lg text-sm font-medium"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-blue-600 text-white rounded-xl shadow-lg text-sm font-semibold"
         >
           Aller au contenu principal
         </a>
