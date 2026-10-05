@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { GraduationCap, ArrowRight, Check, Sparkles } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 import { LevelId } from '@/data/types';
 
 interface LevelOption {
   id: LevelId;
+  code: string;
   name: string;
   nameAr: string;
   badge: string;
@@ -25,27 +26,30 @@ export function LevelSelector() {
   const levels: LevelOption[] = [
     {
       id: '2eme-bac',
+      code: '2BAC',
       name: '2ème Année Bac',
       nameAr: 'الثانية باكالوريا',
       badge: 'Examen National',
       badgeAr: 'امتحان وطني',
-      desc: 'Sciences Maths, PC, SVT & Éco. Limites, complexes, exponentielle et préparation intensive.',
-      descAr: 'علوم رياضية، فيزيائية، ع.ح.أ واقتصاد. النهايات، العقدية، الأسية واستعداد مكثف للوطني.',
+      desc: 'Sciences Maths (A & B), PC, SVT & Éco. Limites, complexes, exponentielle et annales.',
+      descAr: 'علوم رياضية، فيزيائية، علوم الحياة والأرض واقتصاد. النهايات، العقدية والامتحان الوطني.',
       href: '/cours/2eme-bac',
       popular: true,
     },
     {
       id: '1ere-bac',
+      code: '1BAC',
       name: '1ère Année Bac',
       nameAr: 'الأولى باكالوريا',
       badge: 'Examen Régional',
       badgeAr: 'امتحان جهوي',
-      desc: 'Sciences Expérimentales & Maths. Logique, trigonométrie, barycentre et dérivation.',
+      desc: 'Sciences Expérimentales & Maths. Logique formelle, trigonométrie, dérivation et suites.',
       descAr: 'علوم تجريبية ورياضية. المنطق، الحساب المثلثي، المرجح والاشتقاق.',
       href: '/cours/1ere-bac',
     },
     {
       id: 'tronc-commun',
+      code: 'TC',
       name: 'Tronc Commun',
       nameAr: 'الجذع المشترك',
       badge: 'Entrée Lycée',
@@ -56,12 +60,13 @@ export function LevelSelector() {
     },
     {
       id: 'college',
+      code: 'COL',
       name: 'Cycle Collège',
       nameAr: 'السلك الإعدادي',
-      badge: '1AC, 2AC & 3AC',
+      badge: '1AC • 2AC • 3AC',
       badgeAr: 'الأولى، الثانية والثالثة',
-      desc: 'Thalès, Pythagore, calcul littéral, équations et préparation au Brevet Régional.',
-      descAr: 'مبرهنة طاليس، فيتاغورس، الحساب الحرفي والمعادلات والتحضير للموحد.',
+      desc: 'Théorèmes de Thalès et Pythagore, calcul littéral, équations et préparation au brevet.',
+      descAr: 'مبرهنة طاليس، فيتاغورس، الحساب الحرفي والمعادلات والتحضير للموحد الجهوي.',
       href: '/cours/college',
     },
   ];
@@ -79,87 +84,80 @@ export function LevelSelector() {
   };
 
   return (
-    <section className="relative py-12 sm:py-16 bg-slate-50/70 dark:bg-slate-900/40 border-y border-slate-200/60 dark:border-slate-800/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 border-b border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800/60 mb-3">
-            <GraduationCap className="w-4 h-4" />
-            <span>Orientation Rapide</span>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-stone-200 dark:border-stone-800 gap-4">
+          <div>
+            <span className="text-[11px] font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400 block mb-1">
+              Orientation Académique
+            </span>
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+              {t.levels.question}
+            </h2>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {t.levels.question}
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+          <p className="text-xs sm:text-sm text-stone-500 dark:text-stone-400 max-w-md">
             {t.levels.subtitle}
           </p>
         </div>
 
-        {/* Level Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {/* Level Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {levels.map((level) => {
             const isSelected = selectedLevel === level.id;
             return (
               <div
                 key={level.id}
                 onClick={() => handleSelect(level.id)}
-                className={`group relative rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between cursor-pointer border ${
+                className={`relative rounded-xl p-5 transition-all duration-200 flex flex-col justify-between cursor-pointer border ${
                   isSelected
-                    ? 'bg-white dark:bg-slate-900 border-indigo-600 dark:border-indigo-500 shadow-xl ring-2 ring-indigo-500/20'
-                    : 'bg-white dark:bg-slate-900/90 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-sm hover:shadow-md'
+                    ? 'bg-white dark:bg-stone-900 border-stone-900 dark:border-stone-100 shadow-xs'
+                    : 'bg-white dark:bg-stone-900/80 border-stone-200 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600'
                 }`}
               >
-                {/* Popular or Saved Badge */}
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <span
-                    className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide ${
-                      isSelected
-                        ? 'bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300'
-                        : level.popular
-                        ? 'bg-amber-100 text-amber-900 dark:bg-amber-950/50 dark:text-amber-300'
-                        : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
-                    }`}
-                  >
-                    {level.popular && <Sparkles className="w-3 h-3 text-amber-600 dark:text-amber-400" />}
-                    <span>{isRtl ? level.badgeAr : level.badge}</span>
-                  </span>
-
-                  {isSelected && (
-                    <span className="flex items-center gap-1 text-[11px] font-bold text-indigo-600 dark:text-indigo-400">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                      <span>{isRtl ? 'مستواك المفضل' : 'Ton choix'}</span>
-                    </span>
-                  )}
-                </div>
-
-                {/* Level Title & Description */}
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  {/* Top Bar: Code and Badge */}
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="font-mono text-xs font-bold text-stone-400 dark:text-stone-500">
+                      {level.code}
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono tracking-wide bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">
+                      {isRtl ? level.badgeAr : level.badge}
+                    </span>
+                  </div>
+
+                  {/* Title & Description */}
+                  <h3 className="text-base font-bold text-stone-900 dark:text-stone-100">
                     {isRtl ? level.nameAr : level.name}
                   </h3>
-                  <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="mt-2 text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
                     {isRtl ? level.descAr : level.desc}
                   </p>
                 </div>
 
-                {/* Link to Level Curriculum */}
-                <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                {/* Bottom link */}
+                <div className="mt-5 pt-3 border-t border-stone-100 dark:border-stone-800/80 flex items-center justify-between text-xs font-semibold">
                   <Link
                     href={level.href}
-                    className={`inline-flex items-center justify-between w-full text-xs sm:text-sm font-semibold transition-colors ${
-                      isSelected
-                        ? 'text-indigo-600 dark:text-indigo-400'
-                        : 'text-slate-700 dark:text-slate-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400'
-                    }`}
+                    className="text-stone-900 dark:text-stone-100 hover:underline inline-flex items-center gap-1.5"
                   >
-                    <span>{isRtl ? 'تصفح المقررات والدروس' : 'Accéder aux cours'}</span>
-                    <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+                    <span>{isRtl ? 'استعراض الدروس' : 'Consulter les cours'}</span>
+                    <ArrowRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-180' : ''}`} />
                   </Link>
+
+                  {isSelected && (
+                    <span className="flex items-center gap-1 text-[11px] font-mono text-emerald-600 dark:text-emerald-400">
+                      <Check className="w-3.5 h-3.5" />
+                      <span>Actif</span>
+                    </span>
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

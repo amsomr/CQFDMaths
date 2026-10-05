@@ -35,9 +35,6 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
         if (isOpen) onClose();
-        else {
-          // open handled by parent
-        }
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -59,44 +56,44 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const getTypeIcon = (type: SearchResultItem['type']) => {
     switch (type) {
       case 'lesson':
-        return <BookOpen className="w-4 h-4 text-indigo-500" />;
+        return <BookOpen className="w-4 h-4 text-stone-600 dark:text-stone-300" />;
       case 'exercise':
-        return <CheckCircle className="w-4 h-4 text-emerald-500" />;
+        return <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />;
       case 'bac':
-        return <GraduationCap className="w-4 h-4 text-purple-500" />;
+        return <GraduationCap className="w-4 h-4 text-stone-700 dark:text-stone-200" />;
       case 'video':
-        return <Video className="w-4 h-4 text-red-500" />;
+        return <Video className="w-4 h-4 text-red-600" />;
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-slate-950/60 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-stone-950/70 backdrop-blur-xs animate-fadeIn">
       <div
-        className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col max-h-[80vh]"
+        className="relative w-full max-w-2xl bg-white dark:bg-stone-900 rounded-xl shadow-2xl border border-stone-200 dark:border-stone-800 overflow-hidden flex flex-col max-h-[80vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
-        <div className="flex items-center px-4 sm:px-6 py-4 border-b border-slate-100 dark:border-slate-800 gap-3">
-          <Search className="w-5 h-5 text-slate-400 shrink-0" />
+        <div className="flex items-center px-4 sm:px-6 py-3.5 border-b border-stone-200 dark:border-stone-800 gap-3">
+          <Search className="w-4 h-4 text-stone-400 shrink-0" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => handleQueryChange(e.target.value)}
             placeholder={t.search.placeholder}
-            className="w-full bg-transparent text-slate-900 dark:text-white placeholder-slate-400 text-sm sm:text-base focus:outline-none"
+            className="w-full bg-transparent text-stone-900 dark:text-stone-100 placeholder-stone-400 text-sm sm:text-base font-sans focus:outline-none"
           />
           {query && (
             <button
               onClick={() => handleQueryChange('')}
-              className="p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+              className="p-1 text-stone-400 hover:text-stone-700 dark:hover:text-stone-200"
             >
               <X className="w-4 h-4" />
             </button>
           )}
           <button
             onClick={onClose}
-            className="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 font-mono"
+            className="font-mono text-xs px-2 py-0.5 rounded-sm bg-stone-100 dark:bg-stone-800 text-stone-500 border border-stone-200 dark:border-stone-700"
           >
             Esc
           </button>
@@ -104,17 +101,17 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
         {/* Quick Suggestion Pills when query is empty */}
         {query.trim().length < 2 && (
-          <div className="p-6 text-sm text-slate-500 dark:text-slate-400">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">
+          <div className="p-6 text-sm text-stone-500 dark:text-stone-400">
+            <p className="font-mono text-[10px] uppercase tracking-wider text-stone-400 mb-3">
               Recherches fréquentes
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 font-mono text-xs">
               {['Limites et continuité', 'Théorème TVI', 'Nombres Complexes', 'Fonction Exponentielle', 'Intégration par parties', 'Examen National 2025'].map(
                 (term) => (
                   <button
                     key={term}
                     onClick={() => handleQueryChange(term)}
-                    className="px-3 py-1.5 rounded-lg text-xs bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-indigo-950/60 dark:hover:text-indigo-300 transition-colors"
+                    className="px-2.5 py-1 rounded-md bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:bg-stone-200 transition-colors"
                   >
                     {term}
                   </button>
@@ -126,33 +123,31 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
         {/* Results List */}
         {query.trim().length >= 2 && (
-          <div className="overflow-y-auto p-4 sm:p-6 space-y-2 divide-y divide-slate-100 dark:divide-slate-800">
+          <div className="overflow-y-auto p-4 sm:p-5 space-y-1.5 divide-y divide-stone-100 dark:divide-stone-800/80">
             {results.length > 0 ? (
               results.map((res) => (
                 <Link
                   key={res.id}
                   href={res.url}
                   onClick={onClose}
-                  className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
+                  className="flex items-center justify-between p-3 rounded-lg hover:bg-stone-50 dark:hover:bg-stone-800/60 transition-colors group"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="mt-1 p-2 rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0">
+                    <div className="mt-1 p-2 rounded-md bg-stone-100 dark:bg-stone-800 shrink-0 border border-stone-200 dark:border-stone-700">
                       {getTypeIcon(res.type)}
                     </div>
                     <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                          {res.badge}
-                        </span>
-                      </div>
-                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 mt-1">
+                      <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-sm bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700">
+                        {res.badge}
+                      </span>
+                      <h4 className="font-serif text-sm sm:text-base font-medium text-stone-900 dark:text-stone-100 group-hover:text-stone-700 dark:group-hover:text-stone-300 mt-1">
                         {res.title}
                       </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{res.subtitle}</p>
+                      <p className="text-xs text-stone-500 dark:text-stone-400 mt-0.5 font-sans">{res.subtitle}</p>
                     </div>
                   </div>
                   <ArrowRight
-                    className={`w-4 h-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all ${
+                    className={`w-4 h-4 text-stone-400 group-hover:text-stone-900 dark:group-hover:text-stone-100 group-hover:translate-x-1 transition-all ${
                       isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''
                     }`}
                   />
@@ -160,10 +155,10 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
               ))
             ) : (
               <div className="py-12 text-center">
-                <p className="text-sm font-medium text-slate-800 dark:text-slate-200">
+                <p className="font-serif text-sm font-medium text-stone-800 dark:text-stone-200">
                   {t.search.noResults} « {query} »
                 </p>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{t.search.noResultsSub}</p>
+                <p className="text-xs text-stone-500 dark:text-stone-400 mt-1 font-sans">{t.search.noResultsSub}</p>
               </div>
             )}
           </div>

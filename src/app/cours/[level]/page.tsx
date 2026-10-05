@@ -34,7 +34,7 @@ export default async function LevelPage({ params }: LevelPageProps) {
   if (!level) notFound();
 
   return (
-    <div className="min-h-screen bg-slate-50/50 dark:bg-slate-950 py-8 sm:py-12">
+    <div className="min-h-screen py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumb
@@ -46,14 +46,14 @@ export default async function LevelPage({ params }: LevelPageProps) {
 
         {/* Level Header */}
         <div className="mt-4 mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800/60 mb-2">
-            <GraduationCap className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm font-mono text-[11px] uppercase tracking-wider bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 mb-2">
+            <GraduationCap className="w-3.5 h-3.5" />
             <span>{level.badge}</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-4xl font-normal text-stone-950 dark:text-stone-100 tracking-tight">
             {level.name}
           </h1>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
+          <p className="mt-2 text-sm sm:text-base text-stone-600 dark:text-stone-400 max-w-2xl font-sans">
             {level.description}
           </p>
         </div>
@@ -62,21 +62,21 @@ export default async function LevelPage({ params }: LevelPageProps) {
         <div className="space-y-12">
           {level.branches.map((branch) => (
             <div key={branch.id} className="space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-200 dark:border-stone-800 pb-3">
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                  <h2 className="font-serif text-xl sm:text-2xl font-medium text-stone-900 dark:text-stone-100">
                     {branch.name}
                   </h2>
-                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                  <p className="font-mono text-xs text-stone-500 dark:text-stone-400">
                     {branch.description}
                   </p>
                 </div>
                 <Link
                   href={`/cours/${level.id}/${branch.id}`}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400"
+                  className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm font-medium text-stone-700 dark:text-stone-300 hover:text-stone-950 dark:hover:text-stone-100 underline underline-offset-2"
                 >
                   <span>Voir la filière complète</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 

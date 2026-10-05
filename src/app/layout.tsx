@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans, Noto_Sans_Arabic } from 'next/font/google';
+import { Plus_Jakarta_Sans, Newsreader, Noto_Sans_Arabic } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -7,20 +7,27 @@ import { LanguageProvider } from '@/components/LanguageProvider';
 import { WebSiteJsonLd } from '@/components/JsonLd';
 import { SITE_CONFIG } from '@/data/site-config';
 
-const jakarta = Plus_Jakarta_Sans({
+const sansFont = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const notoArabic = Noto_Sans_Arabic({
+const serifFont = Newsreader({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
+  display: 'swap',
+});
+
+const arabicFont = Noto_Sans_Arabic({
   subsets: ['arabic'],
   variable: '--font-arabic',
   display: 'swap',
 });
 
 export const viewport: Viewport = {
-  themeColor: '#4f46e5',
+  themeColor: '#1c1917',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -65,14 +72,6 @@ export const metadata: Metadata = {
     locale: 'fr_MA',
     alternateLocale: ['ar_MA'],
     type: 'website',
-    images: [
-      {
-        url: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1200&auto=format&fit=crop',
-        width: 1200,
-        height: 630,
-        alt: `${SITE_CONFIG.name} — Plateforme Gratuite de Mathématiques au Maroc`,
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -102,17 +101,17 @@ export default function RootLayout({
     <html
       lang="fr"
       dir="ltr"
-      className={`${jakarta.variable} ${notoArabic.variable} h-full antialiased`}
+      className={`${sansFont.variable} ${serifFont.variable} ${arabicFont.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
         <WebSiteJsonLd />
       </head>
-      <body className="min-h-full flex flex-col font-sans bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 selection:bg-indigo-500/20 selection:text-indigo-900 dark:selection:text-indigo-200">
+      <body className="min-h-full flex flex-col font-sans bg-[#fafaf9] dark:bg-[#0c0a09] text-[#1c1917] dark:text-[#fafaf9] selection:bg-stone-200 dark:selection:bg-stone-800">
         {/* Skip to Main Content Link for Accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-indigo-600 text-white rounded-xl shadow-lg text-sm font-semibold"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-stone-900 text-white rounded-md shadow-lg text-sm font-medium"
         >
           Aller au contenu principal
         </a>

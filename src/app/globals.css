@@ -2,15 +2,23 @@
 @import "katex/dist/katex.min.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --font-arabic: 'Noto Sans Arabic', 'Cairo', system-ui, sans-serif;
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --surface: #ffffff;
+  --surface-muted: #f5f5f4;
+  --border-subtle: #e7e5e4;
+  --accent-primary: #1e3a8a;
+  --font-arabic: 'Noto Sans Arabic', system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #090d16;
-    --foreground: #f8fafc;
+    --background: #0c0a09;
+    --foreground: #fafaf9;
+    --surface: #171513;
+    --surface-muted: #242220;
+    --border-subtle: #292524;
+    --accent-primary: #3b82f6;
   }
 }
 
@@ -18,12 +26,14 @@ html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
 /* RTL Typography Support */
@@ -42,22 +52,47 @@ body {
   text-align: left;
 }
 
-/* KaTeX custom responsive styling */
+/* KaTeX Clean Academic Styling */
+.katex {
+  font-size: 1.05em !important;
+  color: inherit;
+}
+
 .block-math {
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0.5rem 0;
+  padding: 0.75rem 1rem;
   -webkit-overflow-scrolling: touch;
 }
 
 .block-math::-webkit-scrollbar {
-  height: 4px;
+  height: 3px;
 }
 
 .block-math::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.4);
+  background: rgba(168, 162, 158, 0.4);
   border-radius: 9999px;
+}
+
+/* Architectural Lines & Subtle Grids */
+.academic-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.academic-card:hover {
+  border-color: #d6d3d1;
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  .academic-card:hover {
+    border-color: #44403c;
+    box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.3);
+  }
 }
 
 /* Focus styles for WCAG 2.2 AA accessibility */
@@ -65,15 +100,24 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 2px solid #4f46e5;
+  outline: 2px solid #1c1917;
   outline-offset: 2px;
 }
 
-/* Animation utilities */
+@media (prefers-color-scheme: dark) {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #fafaf9;
+  }
+}
+
+/* Micro-transitions */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(3px);
   }
   to {
     opacity: 1;
@@ -82,5 +126,5 @@ select:focus-visible {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.2s ease-out forwards;
 }

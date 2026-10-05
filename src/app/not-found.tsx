@@ -1,52 +1,52 @@
 import React from 'react';
 import Link from 'next/link';
-import { Home, BookOpen, Search, ArrowRight } from 'lucide-react';
+import { Home, BookOpen, Search } from 'lucide-react';
 
 export default function NotFound() {
   return (
-    <div className="min-h-[75vh] flex items-center justify-center px-4 py-16 bg-slate-50/50 dark:bg-slate-950">
+    <div className="min-h-[70vh] flex items-center justify-center px-4 py-16">
       <div className="max-w-md w-full text-center space-y-6">
         
         {/* Math Visual */}
-        <div className="w-20 h-20 rounded-3xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mx-auto text-3xl font-serif font-black shadow-inner border border-indigo-100 dark:border-indigo-900/50">
+        <div className="w-16 h-16 rounded-xl bg-stone-100 dark:bg-stone-900 text-stone-700 dark:text-stone-300 flex items-center justify-center mx-auto text-2xl font-serif border border-stone-200 dark:border-stone-800">
           ∅
         </div>
 
         <div className="space-y-2">
-          <div className="text-xs font-bold uppercase tracking-wider text-rose-500 font-mono">
-            Erreur 404 • Solution Impossible
+          <div className="font-mono text-xs uppercase tracking-wider text-stone-400">
+            Erreur 404 • Ensemble vide
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Cette équation n&apos;a pas de solution ici 😄
+          <h1 className="font-serif text-2xl sm:text-3xl font-normal text-stone-950 dark:text-stone-100 tracking-tight">
+            Page introuvable
           </h1>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
-            La page que tu recherches a peut-être été déplacée ou l&apos;URL contient une variable indéterminée.
+          <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed font-sans">
+            La ressource que vous recherchez a peut-être été renommée ou son adresse est incorrecte.
           </p>
         </div>
 
         {/* Helper Navigation Links */}
-        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
           <Link
             href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-colors shadow-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-xs font-medium text-white bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-stone-200 transition-colors shadow-xs"
           >
-            <Home className="w-4 h-4" />
+            <Home className="w-3.5 h-3.5" />
             <span>Retour à l&apos;accueil</span>
           </Link>
 
           <Link
             href="/cours"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-xs font-medium bg-white dark:bg-stone-900 text-stone-800 dark:text-stone-200 border border-stone-200 dark:border-stone-800 hover:bg-stone-50 transition-colors"
           >
-            <BookOpen className="w-4 h-4 text-indigo-500" />
+            <BookOpen className="w-3.5 h-3.5 text-stone-500" />
             <span>Tous les cours</span>
           </Link>
 
           <Link
             href="/recherche"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-xs font-medium bg-white dark:bg-stone-900 text-stone-800 dark:text-stone-200 border border-stone-200 dark:border-stone-800 hover:bg-stone-50 transition-colors"
           >
-            <Search className="w-4 h-4 text-slate-400" />
+            <Search className="w-3.5 h-3.5 text-stone-400" />
             <span>Rechercher</span>
           </Link>
         </div>

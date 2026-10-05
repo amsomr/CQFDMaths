@@ -33,60 +33,60 @@ function SearchContent() {
   const getTypeIcon = (type: SearchResultItem['type']) => {
     switch (type) {
       case 'lesson':
-        return <BookOpen className="w-5 h-5 text-indigo-500" />;
+        return <BookOpen className="w-4 h-4 text-stone-600 dark:text-stone-300" />;
       case 'exercise':
-        return <CheckCircle className="w-5 h-5 text-emerald-500" />;
+        return <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />;
       case 'bac':
-        return <GraduationCap className="w-5 h-5 text-purple-500" />;
+        return <GraduationCap className="w-4 h-4 text-stone-700 dark:text-stone-200" />;
       case 'video':
-        return <Video className="w-5 h-5 text-red-500" />;
+        return <Video className="w-4 h-4 text-red-600" />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/50 dark:bg-slate-950 py-8 sm:py-12">
+    <div className="min-h-screen py-8 sm:py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         <Breadcrumb items={[{ name: 'Recherche', url: '/recherche' }]} />
 
         {/* Page Title & Search Bar */}
         <div className="space-y-4">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Moteur de Recherche Mathématique
+          <h1 className="font-serif text-3xl sm:text-4xl font-normal text-stone-950 dark:text-stone-100 tracking-tight">
+            Index & Moteur de Recherche
           </h1>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
-            Trouve instantanément un cours, un théorème, un exercice corrigé ou un sujet d&apos;examen national.
+          <p className="text-sm text-stone-600 dark:text-stone-400 font-sans">
+            Accède instantanément à une notion, un théorème, un exercice corrigé ou un sujet d&apos;examen national.
           </p>
 
           <div className="relative">
-            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={query}
               onChange={(e) => handleSearchChange(e.target.value)}
               placeholder={t.search.placeholder}
-              className="w-full pl-12 pr-12 py-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+              className="w-full pl-11 pr-11 py-3 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-sm sm:text-base font-sans shadow-[0_1px_3px_rgba(0,0,0,0.02)] focus:outline-none focus:border-stone-400 dark:focus:border-stone-600"
               autoFocus
             />
             {query && (
               <button
                 onClick={() => handleSearchChange('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-stone-400 hover:text-stone-700 dark:hover:text-stone-200"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             )}
           </div>
         </div>
 
         {/* Popular Search Suggestions */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-semibold text-slate-400">Recherches rapides :</span>
+        <div className="flex flex-wrap items-center gap-1.5 font-mono text-xs">
+          <span className="text-stone-400 mr-1 text-[11px] uppercase tracking-wider">Recherches fréquentes :</span>
           {['TVI', 'Limites', 'Exponentielle', 'Complexes', 'Intégrales', 'Logique', 'National 2025'].map((term) => (
             <button
               key={term}
               onClick={() => handleSearchChange(term)}
-              className="px-3 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-indigo-950/40 dark:hover:text-indigo-300 transition-colors"
+              className="px-2.5 py-1 rounded-md bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:bg-stone-200 transition-colors"
             >
               {term}
             </button>
@@ -98,7 +98,7 @@ function SearchContent() {
           {query.trim().length >= 2 ? (
             results.length > 0 ? (
               <div className="space-y-3">
-                <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                <div className="font-mono text-xs text-stone-500 uppercase tracking-wider">
                   {results.length} résultats correspondants à « {query} »
                 </div>
 
@@ -106,40 +106,40 @@ function SearchContent() {
                   <Link
                     key={res.id}
                     href={res.url}
-                    className="flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs hover:shadow-md hover:border-indigo-600 dark:hover:border-indigo-500 transition-all group"
+                    className="flex items-center justify-between p-4 sm:p-5 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:border-stone-400 dark:hover:border-stone-600 transition-all group"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 shrink-0">
+                      <div className="p-2.5 rounded-lg bg-stone-100 dark:bg-stone-800 shrink-0 border border-stone-200 dark:border-stone-700">
                         {getTypeIcon(res.type)}
                       </div>
                       <div>
-                        <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 mb-1">
+                        <span className="inline-block px-2 py-0.5 rounded-sm font-mono text-[10px] uppercase tracking-wider bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 mb-1 border border-stone-200 dark:border-stone-700">
                           {res.badge}
                         </span>
-                        <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                        <h3 className="font-serif text-base font-medium text-stone-900 dark:text-stone-100 group-hover:text-stone-700 dark:group-hover:text-stone-300 transition-colors">
                           {res.title}
                         </h3>
-                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+                        <p className="text-xs sm:text-sm text-stone-500 dark:text-stone-400 mt-0.5 font-sans">
                           {res.subtitle}
                         </p>
                       </div>
                     </div>
-                    <ArrowRight className={`w-5 h-5 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all shrink-0 ml-3 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+                    <ArrowRight className={`w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-all shrink-0 ml-3 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
                   </Link>
                 ))}
               </div>
             ) : (
-              <div className="p-12 text-center rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                <p className="font-bold text-slate-900 dark:text-white">
+              <div className="p-12 text-center rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
+                <p className="font-serif text-stone-900 dark:text-stone-100 text-base">
                   {t.search.noResults} « {query} »
                 </p>
-                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                <p className="text-xs text-stone-500 dark:text-stone-400 mt-1 font-sans">
                   {t.search.noResultsSub}
                 </p>
               </div>
             )
           ) : (
-            <div className="p-10 text-center text-xs sm:text-sm text-slate-400">
+            <div className="p-10 text-center font-mono text-xs text-stone-400">
               Saisis au moins 2 lettres pour lancer la recherche en temps réel.
             </div>
           )}
@@ -152,7 +152,7 @@ function SearchContent() {
 
 export default function SearchPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen py-16 text-center text-slate-500">Chargement de la recherche...</div>}>
+    <Suspense fallback={<div className="min-h-screen py-16 text-center font-mono text-xs text-stone-500">Chargement de la recherche...</div>}>
       <SearchContent />
     </Suspense>
   );
