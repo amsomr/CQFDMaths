@@ -2,13 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, GraduationCap, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, GraduationCap, CheckCircle2, BookOpen, Clock, Sparkles } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 import { LevelId } from '@/data/types';
 import { CURRICULUM_LEVELS } from '@/data/curriculum';
+import { MathGraphic } from './MathGraphic';
 
 export function LevelSelector() {
   const [selectedLevelId, setSelectedLevelId] = useState<LevelId>('2eme-bac');
+  const [selectedBranchId, setSelectedBranchId] = useState<string>('sciences-maths');
   const { isRtl } = useLanguage();
 
   useEffect(() => {
@@ -21,155 +23,194 @@ export function LevelSelector() {
   const handleSelectLevel = (id: LevelId) => {
     setSelectedLevelId(id);
     localStorage.setItem('maths_maroc_user_level', id);
+    const lvl = CURRICULUM_LEVELS.find((l) => l.id === id);
+    if (lvl && lvl.branches.length > 0) {
+      setSelectedBranchId(lvl.branches[0].id);
+    }
   };
 
   const levelTabs = [
-    {
-      id: '2eme-bac' as LevelId,
-      label: '2ème Bac',
-      sublabel: 'Examen National',
-      tag: 'Terminale',
-    },
-    {
-      id: '1ere-bac' as LevelId,
-      label: '1ère Bac',
-      sublabel: 'Examen Régional',
-      tag: '1ère Lycée',
-    },
-    {
-      id: 'tronc-commun' as LevelId,
-      label: 'Tronc Commun',
-      sublabel: 'Sciences BIOF',
-      tag: 'Entrée Lycée',
-    },
-    {
-      id: 'college' as LevelId,
-      label: 'Collège',
-      sublabel: '3AC • 2AC • 1AC',
-      tag: 'Cycle Collégial',
-    },
+    { id: '2eme-bac' as LevelId, label: '2ème Bac', subtitle: 'Examen National' },
+    { id: '1ere-bac' as LevelId, label: '1ère Bac', subtitle: 'Examen Régional' },
+    { id: 'tronc-commun' as LevelId, label: 'Tronc Commun', subtitle: 'Sciences BIOF' },
+    { id: 'college' as LevelId, label: 'Collège', subtitle: '3AC • 2AC • 1AC' },
   ];
 
   const currentLevelData = CURRICULUM_LEVELS.find((l) => l.id === selectedLevelId) || CURRICULUM_LEVELS[0];
+  const currentBranch = currentLevelData.branches.find((b) => b.id === selectedBranchId) || currentLevelData.branches[0];
+
+  // Specific preview topic for the graphic
+  const previewTopic = selectedLevelId === '2eme-bac'
+    ? 'limites-et-continuite'
+    : selectedLevelId === '1ere-bac'
+    ? 'complexe'
+    : selectedLevelId === 'tronc-commun'
+    ? 'fonction'
+    : 'geometrie';
 
   return (
-    <section className="py-16 sm:py-24 border-y border-[rgba(15,23,42,0.08)] bg-[#FFFFFF]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-24 bg-[#FAF9F5] text-[#0F172A] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Editorial Section Header */}
-        <div className="max-w-2xl mb-10">
-          <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#1D4ED8] mb-2 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
-            <span>Orientation & Cursus Officiel</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            Choisis ton niveau.
-          </h2>
-          <p className="mt-3 text-base text-slate-600 leading-relaxed">
-            Accède instantanément aux cours structurés, vidéos et exercices corrigés correspondant exactement au programme du Ministère de l&apos;Éducation Nationale du Maroc.
-          </p>
-        </div>
-
-        {/* 4 Large Segmented Interactive Selectors */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 select-none">
-          {levelTabs.map((tab) => {
-            const isSelected = selectedLevelId === tab.id;
-
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => handleSelectLevel(tab.id)}
-                className={`text-left p-4 sm:p-5 rounded-xl transition-all duration-200 border cursor-pointer ${
-                  isSelected
-                    ? 'bg-[#1D4ED8] text-white border-[#1D4ED8] shadow-md shadow-blue-900/10 -translate-y-0.5'
-                    : 'bg-[#FAF9F5] text-slate-900 border-[rgba(15,23,42,0.08)] hover:border-[#1D4ED8] hover:bg-[#FFFFFF]'
-                }`}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <span
-                    className={`text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
-                      isSelected
-                        ? 'bg-white/20 text-white'
-                        : 'bg-slate-200/70 text-slate-700'
-                    }`}
-                  >
-                    {tab.tag}
-                  </span>
-                  {isSelected && <span className="w-2 h-2 rounded-full bg-white animate-pulse" />}
-                </div>
-
-                <div className={`text-lg sm:text-xl font-bold tracking-tight ${isSelected ? 'text-white' : 'text-slate-900'}`}>
-                  {tab.label}
-                </div>
-                <div className={`text-xs mt-1 ${isSelected ? 'text-blue-100' : 'text-slate-500'}`}>
-                  {tab.sublabel}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Dynamic Interactive Tray revealing branches and curriculum for selected level */}
-        <div className="mt-6 p-6 sm:p-8 rounded-xl bg-[#FAF9F5] border border-[rgba(15,23,42,0.08)]">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[rgba(15,23,42,0.08)]">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <GraduationCap className="w-5 h-5 text-[#1D4ED8]" />
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                  {currentLevelData.name}
-                </h3>
-              </div>
-              <p className="text-sm text-slate-600 max-w-2xl leading-relaxed">
-                {currentLevelData.description}
-              </p>
+        {/* Integrated Moroccan Level Selector Box */}
+        <div className="rounded-[22px] bg-white border border-[#0F172A]/10 shadow-sm overflow-hidden">
+          
+          {/* 1. Header: Typography-driven Tab Navigation */}
+          <div className="px-6 sm:px-10 pt-8 pb-5 border-b border-[#0F172A]/08 bg-[#FAF9F5]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#1D4ED8] flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
+                <span>Choisis ton niveau • Cursus Officiel Marocain</span>
+              </span>
+              <span className="text-xs font-semibold text-[#64748B]">
+                Option Français (BIOF) & Arabe
+              </span>
             </div>
 
-            <Link
-              href={`/cours/${currentLevelData.id}`}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-[#1D4ED8] hover:bg-[#1E40AF] text-white font-semibold text-sm transition-all shadow-xs shrink-0"
-            >
-              <span>Accéder à tous les cours de {currentLevelData.name.split(' ')[0]}</span>
-              <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
-            </Link>
+            {/* The Integrated Tabs Line */}
+            <div className="flex items-center gap-2 sm:gap-8 overflow-x-auto scrollbar-none pb-1">
+              {levelTabs.map((tab) => {
+                const isSelected = selectedLevelId === tab.id;
+
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => handleSelectLevel(tab.id)}
+                    className={`relative pb-3 text-left transition-all cursor-pointer whitespace-nowrap group ${
+                      isSelected ? 'text-[#0F172A]' : 'text-[#64748B] hover:text-[#0F172A]'
+                    }`}
+                  >
+                    <div className="text-lg sm:text-2xl font-black tracking-tight">
+                      {tab.label}
+                    </div>
+                    <div className={`text-xs font-semibold ${isSelected ? 'text-[#1D4ED8]' : 'text-[#94A3B8]'}`}>
+                      {tab.subtitle}
+                    </div>
+
+                    {/* Active Underline Indicator */}
+                    {isSelected && (
+                      <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1D4ED8] rounded-full" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Branches & Syllabus Highlights */}
-          <div className="pt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {currentLevelData.branches.map((branch) => (
-              <div
-                key={branch.id}
-                className="bg-[#FFFFFF] p-5 rounded-lg border border-[rgba(15,23,42,0.06)] hover:border-[#1D4ED8] transition-colors flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-mono font-bold text-[#1D4ED8]">
-                      {branch.shortName}
-                    </span>
-                    <span className="text-[11px] text-slate-400">
-                      {branch.chapters.length} chapitres
-                    </span>
-                  </div>
-                  <h4 className="font-bold text-slate-900 text-base mb-1.5">
-                    {branch.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                    {branch.description}
-                  </p>
+          {/* 2. Composed Body: Asymmetric Content + Math Visual Preview */}
+          <div className="p-7 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Content Column (7 cols) */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#1D4ED8]/10 text-[#1D4ED8] text-xs font-bold uppercase tracking-wider">
+                  <GraduationCap className="w-4 h-4" />
+                  <span>{currentLevelData.name}</span>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="text-slate-400">Programme complet</span>
-                  <Link
-                    href={`/cours/${currentLevelData.id}/${branch.id}`}
-                    className="font-semibold text-[#1D4ED8] hover:underline flex items-center gap-1"
-                  >
-                    <span>Explorer la filière</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
+                <h3 className="text-2xl sm:text-4xl font-black text-[#0F172A] tracking-tight leading-tight">
+                  {currentLevelData.name === '2ème Année Baccalauréat'
+                    ? "Prépare l'examen national avec rigueur et clarté."
+                    : currentLevelData.name === '1ère Année Baccalauréat'
+                    ? "Maîtrise les fondements de la 1ère Bac et réussis le Régional."
+                    : currentLevelData.name === 'Tronc Commun'
+                    ? "Réussis ta transition vers le Lycée scientifique."
+                    : "Construis des bases mathématiques solides dès le collège."}
+                </h3>
+
+                <p className="text-base sm:text-lg text-[#475569] leading-relaxed max-w-xl">
+                  {currentLevelData.description}
+                </p>
+              </div>
+
+              {/* Branch Selector Chips */}
+              <div className="space-y-2.5">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#64748B]">
+                  Filières disponibles pour ce niveau :
+                </div>
+                <div className="flex flex-wrap gap-2.5">
+                  {currentLevelData.branches.map((branch) => {
+                    const isBranchActive = branch.id === currentBranch?.id;
+                    return (
+                      <button
+                        key={branch.id}
+                        type="button"
+                        onClick={() => setSelectedBranchId(branch.id)}
+                        className={`px-4 py-2.5 rounded-[10px] text-xs sm:text-sm font-bold transition-all border cursor-pointer ${
+                          isBranchActive
+                            ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-xs'
+                            : 'bg-[#FAF9F5] text-[#334155] border-[#0F172A]/10 hover:border-[#1D4ED8] hover:bg-white'
+                        }`}
+                      >
+                        <span>{branch.name}</span>
+                        <span className={`ml-2 text-xs font-mono ${isBranchActive ? 'text-blue-300' : 'text-[#64748B]'}`}>
+                          ({branch.chapters.length} chapitres)
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
-            ))}
+
+              {/* Direct Link CTA */}
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                <Link
+                  href={`/cours/${currentLevelData.id}/${currentBranch?.id || ''}`}
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-[10px] bg-[#1D4ED8] hover:bg-[#1E40AF] text-white font-bold text-sm sm:text-base transition-all shadow-sm hover:shadow-md"
+                >
+                  <span>Explorer les cours de {currentBranch?.shortName || currentLevelData.name.split(' ')[0]}</span>
+                  <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
+                </Link>
+
+                <Link
+                  href={`/cours/${currentLevelData.id}`}
+                  className="text-xs sm:text-sm font-bold text-[#475569] hover:text-[#1D4ED8] transition-colors py-2"
+                >
+                  Voir toute la promo ({currentLevelData.branches.length} filières) →
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Visual Column (5 cols) - Meaningful Preview Graphic */}
+            <div className="lg:col-span-5 relative">
+              <div className="rounded-[16px] overflow-hidden border border-[#0F172A]/10 bg-[#FAF9F5] shadow-xs">
+                
+                {/* Mathematical Graphic of key chapter */}
+                <div className="relative border-b border-[#0F172A]/08">
+                  <MathGraphic topic={previewTopic} variant="card" />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-[6px] bg-white/95 text-xs font-bold text-[#0F172A] border border-[#0F172A]/10 shadow-2xs">
+                    {currentBranch?.shortName} • Chapitre Clé
+                  </div>
+                </div>
+
+                {/* Chapter breakdown list */}
+                <div className="p-5 space-y-3">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#64748B]">
+                    Au programme de cette filière :
+                  </div>
+                  <div className="space-y-2">
+                    {currentBranch?.chapters.slice(0, 3).map((ch, idx) => (
+                      <Link
+                        key={ch.slug}
+                        href={`/cours/${currentLevelData.id}/${currentBranch.id}/${ch.slug}`}
+                        className="flex items-center justify-between p-2.5 rounded-[8px] hover:bg-white text-xs font-semibold text-[#0F172A] border border-transparent hover:border-[#0F172A]/08 transition-all group"
+                      >
+                        <span className="flex items-center gap-2">
+                          <span className="w-5 h-5 rounded-[4px] bg-[#1D4ED8]/10 text-[#1D4ED8] flex items-center justify-center font-mono text-[10px]">
+                            0{idx + 1}
+                          </span>
+                          <span className="line-clamp-1">{ch.title}</span>
+                        </span>
+                        <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#1D4ED8] transition-colors shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
 
         </div>

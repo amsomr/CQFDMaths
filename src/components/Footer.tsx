@@ -21,25 +21,25 @@ export function Footer() {
           
           {/* Column 1: Brand & Academic Mission */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-2.5 group">
-              <span className="w-8 h-8 rounded-[6px] bg-[#1D4ED8] text-white flex items-center justify-center font-serif text-lg font-bold shadow-xs">
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <span className="w-10 h-10 rounded-[10px] bg-[#1D4ED8] text-white flex items-center justify-center font-serif text-2xl font-bold shadow-xs">
                 √
               </span>
               <div className="flex flex-col">
-                <span className="font-extrabold text-xl tracking-tight text-[#0F172A] font-sans">
+                <span className="font-black text-2xl tracking-tight text-[#0F172A] font-sans">
                   Maths<span className="text-[#1D4ED8]">Maroc</span>
                 </span>
-                <span className="text-[10px] font-semibold text-[#64748B] tracking-wider uppercase">
+                <span className="text-xs font-bold text-[#64748B] tracking-wider uppercase">
                   Prof. Omar Alami
                 </span>
               </div>
             </Link>
             
-            <p className="text-sm text-[#475569] leading-relaxed max-w-sm">
-              {isRtl ? SITE_CONFIG.professor.bioAr : SITE_CONFIG.professor.bio}
+            <p className="text-base text-[#475569] leading-relaxed max-w-sm font-medium">
+              Des maths claires, gratuites et accessibles à tous les élèves du Maroc.
             </p>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[6px] bg-[#1D4ED8]/5 border border-[#1D4ED8]/15 text-xs font-semibold text-[#1D4ED8]">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[8px] bg-[#1D4ED8]/5 border border-[#1D4ED8]/15 text-xs font-bold text-[#1D4ED8]">
               <ShieldCheck className="w-4 h-4 text-[#1D4ED8]" />
               <span>Conforme aux Cadres de Référence Ministériels</span>
             </div>
