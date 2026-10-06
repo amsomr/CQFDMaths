@@ -143,9 +143,9 @@ export default async function LessonPage({ params }: LessonPageProps) {
               </a>
             )}
 
-            <div className="flex items-center gap-2 ml-auto text-xs font-semibold text-[#16A34A] bg-[#16A34A]/10 px-3 py-1.5 rounded-[6px] border border-[#16A34A]/20">
-              <ShieldCheck className="w-4 h-4 text-[#16A34A]" />
-              <span>Conforme au Cadre de Référence Officiel</span>
+            <div className="flex items-center gap-2 ml-auto text-xs font-semibold text-[#1D4ED8] bg-[#1D4ED8]/10 px-3 py-1.5 rounded-[6px] border border-[#1D4ED8]/20">
+              <BookOpen className="w-4 h-4 text-[#1D4ED8]" />
+              <span>Programme Marocain</span>
             </div>
           </div>
         </header>

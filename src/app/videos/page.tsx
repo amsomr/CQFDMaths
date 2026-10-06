@@ -61,7 +61,7 @@ export default function VideosPage() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-[8px] text-xs sm:text-sm font-bold text-white bg-[#CC0000] hover:bg-[#b00000] transition-colors shrink-0 shadow-xs"
           >
             <Youtube className="w-4 h-4 fill-white" />
-            <span>S&apos;abonner sur YouTube ({SITE_CONFIG.youtube.subscribersCount})</span>
+            <span>S&apos;abonner sur YouTube</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>

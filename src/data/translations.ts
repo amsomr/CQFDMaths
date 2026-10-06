@@ -271,9 +271,9 @@ export const TRANSLATIONS: Record<Language, Translations> = {
       missionText: 'Le système éducatif marocain exige une grande rigueur dans le raisonnement mathématique. Nombreux sont les élèves qui se sentent bloqués par manque d\'explications claires ou de moyens financiers pour des cours particuliers. Cette plateforme et la chaîne YouTube sont créées pour combler ce fossé : offrir gratuitement le plus haut niveau d\'enseignement à tous.',
       methodologyTitle: 'La Méthode en 3 Étapes',
       freeManifestoTitle: 'Pourquoi 100% Gratuit ?',
-      freeManifestoText: 'La connaissance est un bien commun. Aucun abonnement payant, aucun mur de connexion, aucune publicité agressive. Tout le contenu restera toujours libre d\'accès pour tous les élèves du Maroc.',
-      experienceBadge: '12+ ans d\'enseignement',
-      studentsBadge: '65 000+ élèves accompagnés',
+      freeManifestoText: 'La connaissance est un bien commun. Tout le contenu restera toujours libre d\'accès pour tous les élèves du Maroc.',
+      experienceBadge: 'Cours & Démonstrations',
+      studentsBadge: 'Plateforme Libre & Gratuite',
     },
     common: {
       freeBadge: '100% Gratuit & Libre d\'accès',
@@ -414,8 +414,8 @@ export const TRANSLATIONS: Record<Language, Translations> = {
       methodologyTitle: 'المنهجية في 3 خطوات',
       freeManifestoTitle: 'لماذا المنصة مجانية 100% ؟',
       freeManifestoText: 'العلم حق للجميع. لا اشتراكات مدفوعة، لا حواجز تسجيل معقدة، ولا إعلانات مزعجة. سيبقى كل المحتوى متاحاً بالمجان لخدمة تفوق أبناء وبنات وطننا.',
-      experienceBadge: '12+ سنة من التدريس',
-      studentsBadge: '65 000+ تلميذ مستفيد',
+      experienceBadge: 'دروس وبراهين مفصلة',
+      studentsBadge: 'منصة حرة ومجانية',
     },
     common: {
       freeBadge: '100% مجاني ومتاح للجميع',

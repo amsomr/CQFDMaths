@@ -36,10 +36,10 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const navLinks = [
+  const navLinks: { href: string; label: string; badge?: string }[] = [
     { href: '/cours', label: 'Cours' },
     { href: '/exercices', label: 'Exercices' },
-    { href: '/bac', label: 'Bac 2026', badge: 'Annales' },
+    { href: '/bac', label: 'Espace Bac' },
     { href: '/videos', label: 'Vidéos' },
     { href: '/a-propos', label: "L'Enseignant" },
   ];

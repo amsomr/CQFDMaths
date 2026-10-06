@@ -99,7 +99,7 @@ export function CourseCard({
 
           <div className="pt-4 border-t border-[#0F172A]/08 flex items-center justify-between">
             <span className="text-xs font-bold text-[#64748B]">
-              Conforme au Cadre de Référence Officiel
+              Programme marocain
             </span>
             <span className="inline-flex items-center gap-2 font-bold text-sm text-[#1D4ED8] group-hover:translate-x-1 transition-transform">
               <span>Étudier ce module</span>
