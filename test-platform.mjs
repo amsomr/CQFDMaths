@@ -1,6 +1,7 @@
 import assert from 'node:assert';
 
-const BASE_URL = 'http://localhost:3333';
+const PORT = process.env.PORT || 3000;
+const BASE_URL = process.env.TEST_URL || `http://localhost:${PORT}`;
 
 async function testFetch(path, expectedStatus = 200) {
   const url = `${BASE_URL}${path}`;
