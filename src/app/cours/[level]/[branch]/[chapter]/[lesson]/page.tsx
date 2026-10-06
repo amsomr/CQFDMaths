@@ -55,11 +55,11 @@ export async function generateMetadata({ params }: LessonPageProps) {
   if (!lesson) return { title: 'Leçon Introuvable' };
 
   return {
-    title: `${lesson.title} — Cours Officiel & Exercices Corrigés | Maths Maroc`,
+    title: `${lesson.title} — Cours Officiel & Exercices Corrigés | ${SITE_CONFIG.name}`,
     description: `${lesson.summary.slice(0, 160)}... Cours 100% gratuit de mathématiques conforme au cadre de référence officiel avec vidéo YouTube et fiches d'exercices.`,
     keywords: lesson.seoKeywords.join(', '),
     openGraph: {
-      title: `${lesson.title} — Maths Maroc`,
+      title: `${lesson.title} — ${SITE_CONFIG.name}`,
       description: lesson.summary,
       type: 'article',
       images: [

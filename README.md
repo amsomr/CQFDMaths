@@ -1,4 +1,4 @@
-# 🇲🇦 MathsMaroc — Plateforme Éducative de Mathématiques (Collège & Lycée)
+# 🇲🇦 CQFDMaths — Plateforme Éducative de Mathématiques (Collège & Lycée)
 
 > **Plateforme libre & gratuite dédiée à l'apprentissage des mathématiques pour tous les élèves marocains.**  
 > Conçue pour le **Prof. Omar Alami** afin de structurer son écosystème pédagogique YouTube + Web.
@@ -7,7 +7,7 @@
 
 ## 🌟 Vision & Positionnement
 
-MathsMaroc n'est pas un simple portfolio : c'est un véritable **hub d'apprentissage structuré** pensé pour l'élève marocain :
+CQFDMaths n'est pas un simple portfolio : c'est un véritable **hub d'apprentissage structuré** pensé pour l'élève marocain :
 - **YouTube** est le moteur vidéo d'explication intuitive et de direct (lives de révision).
 - **Le Site Web** est la tour de contrôle pédagogique : hiérarchie officielle par niveau et filière, fiches mémoires de formules en KaTeX, annales d'examens nationaux corrigés pas à pas, et banques d'exercices progressifs avec indices et solutions cachées.
 
@@ -83,7 +83,8 @@ Niveau (ex: 2ème Bac)
 
 ```bash
 # Cloner le dépôt et se placer dans le projet
-cd /home/amsomr/Projects/maths-maroc
+git clone https://github.com/amsomr/CQFDMaths.git
+cd CQFDMaths
 
 # Installer les dépendances
 pnpm install
@@ -113,8 +114,8 @@ node test-platform.mjs
 ## 👨‍🏫 Gestion du Contenu pour le Professeur
 
 Le professeur n'a pas besoin de compétences en développement web pour ajouter ou modifier des cours :
-- **Configuration générale & Liens sociaux** : [`src/data/site-config.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/site-config.ts)
-- **Programme, Chapitres, Formules & Exercices** : [`src/data/curriculum.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/curriculum.ts)
-- **Annales d'examens nationaux** : [`src/data/bac-exams.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/bac-exams.ts)
-- **Vidéos & Playlists YouTube** : [`src/data/videos.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/videos.ts)
-- **Traductions FR/AR** : [`src/data/translations.ts`](file:///home/amsomr/Projects/maths-maroc/src/data/translations.ts)
+- **Configuration générale & Liens sociaux** : [`src/data/site-config.ts`](src/data/site-config.ts)
+- **Programme, Chapitres, Formules & Exercices** : [`src/data/curriculum.ts`](src/data/curriculum.ts)
+- **Annales d'examens nationaux** : [`src/data/bac-exams.ts`](src/data/bac-exams.ts)
+- **Vidéos & Playlists YouTube** : [`src/data/videos.ts`](src/data/videos.ts)
+- **Traductions FR/AR** : [`src/data/translations.ts`](src/data/translations.ts)

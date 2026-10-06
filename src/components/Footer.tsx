@@ -19,7 +19,7 @@ export function Footer() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           
-          {/* Group 1: MathsMaroc Identity & Socials */}
+          {/* Group 1: CQFDMaths Identity & Socials */}
           <div className="space-y-4">
             <Link href="/" className="inline-flex items-center gap-3 group">
               <span className="w-9 h-9 rounded-[8px] bg-[#1D4ED8] text-white flex items-center justify-center font-serif text-xl font-bold shadow-xs">
@@ -27,7 +27,7 @@ export function Footer() {
               </span>
               <div className="flex flex-col">
                 <span className="font-black text-xl tracking-tight text-[#0F172A] font-sans">
-                  Maths<span className="text-[#1D4ED8]">Maroc</span>
+                  CQFD<span className="text-[#1D4ED8]">Maths</span>
                 </span>
                 <span className="text-[11px] font-bold text-[#64748B] tracking-wider uppercase">
                   {SITE_CONFIG.professor.name}
@@ -188,7 +188,7 @@ export function Footer() {
       <div className="relative border-t border-[#0F172A]/10 bg-white py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#64748B]">
           <p className="font-medium text-[#475569]">
-            © {SITE_CONFIG.currentExamYear} MathsMaroc • {SITE_CONFIG.professor.name} — Enseignement libre et gratuit des mathématiques au Maroc.
+            © {SITE_CONFIG.currentExamYear} {SITE_CONFIG.name} • {SITE_CONFIG.professor.name} — Enseignement libre et gratuit des mathématiques au Maroc.
           </p>
 
           <div className="flex items-center gap-6 shrink-0 font-medium">

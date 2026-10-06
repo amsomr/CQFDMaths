@@ -14,11 +14,11 @@ export interface ProfessorConfig {
 }
 
 export const SITE_CONFIG = {
-  name: 'MathsMaroc',
-  nameAr: 'رياضيات المغرب',
-  fullName: 'MathsMaroc — Prof. Omar Alami',
-  fullNameAr: 'رياضيات المغرب — الأستاذ عمر العلمي',
-  domain: 'https://mathsmaroc.ma',
+  name: 'CQFDMaths',
+  nameAr: 'CQFD رياضيات',
+  fullName: 'CQFDMaths — Prof. Omar Alami',
+  fullNameAr: 'CQFDMaths — الأستاذ عمر العلمي',
+  domain: 'https://cqfdmaths.ma',
   currentExamYear: 2026,
   professor: {
     name: 'Prof. Omar Alami',
@@ -33,20 +33,20 @@ export const SITE_CONFIG = {
     photoUrl: undefined as string | undefined,
   },
   youtube: {
-    channelName: 'MathsMaroc',
-    channelUrl: 'https://youtube.com/@MathsMaroc',
-    channelHandle: '@MathsMaroc',
+    channelName: 'CQFDMaths',
+    channelUrl: 'https://youtube.com/@CQFDMaths',
+    channelHandle: '@CQFDMaths',
     defaultVideoId: 'V6yixyiJcos',
   },
   socials: {
-    youtube: 'https://youtube.com/@MathsMaroc',
-    whatsappCommunity: 'https://chat.whatsapp.com/invite/MathsMarocFree',
-    telegram: 'https://t.me/MathsMarocOfficiel',
-    email: 'contact@mathsmaroc.ma',
+    youtube: 'https://youtube.com/@CQFDMaths',
+    whatsappCommunity: 'https://chat.whatsapp.com/invite/CQFDMathsFree',
+    telegram: 'https://t.me/CQFDMathsOfficiel',
+    email: 'contact@cqfdmaths.ma',
   },
   meta: {
-    defaultTitle: 'MathsMaroc — Cours et Exercices de Mathématiques (Collège & Lycée)',
-    defaultTitleAr: 'رياضيات المغرب — دروس وتمارين وحلول واستعداد للباكالوريا',
+    defaultTitle: 'CQFDMaths — Cours et Exercices de Mathématiques (Collège & Lycée)',
+    defaultTitleAr: 'CQFDMaths — دروس وتمارين وحلول واستعداد للباكالوريا',
     defaultDescription: 'Plateforme gratuite de mathématiques pour les élèves marocains du Collège et Lycée (Tronc Commun, 1ère Bac, 2ème Bac). Cours structurés, démonstrations vidéo, exercices et annales.',
     defaultDescriptionAr: 'منصة تعليمية مجانية في الرياضيات لتلاميذ الإعدادي والثانوي التأهيلي بالمغرب. دروس، فيديوهات، تمارين ونماذج امتحانات.',
   }

@@ -120,7 +120,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
             <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
               <span>Astuce : utilise les flèches du clavier ou clique directement</span>
-              <span className="font-mono">MathsMaroc • 2026</span>
+              <span className="font-mono">CQFDMaths • 2026</span>
             </div>
           </div>
         )}

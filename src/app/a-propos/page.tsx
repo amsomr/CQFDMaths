@@ -16,7 +16,7 @@ import {
 import { Youtube } from '@/components/icons/YouTubeIcon';
 
 export const metadata = {
-  title: `À Propos de ${SITE_CONFIG.professor.name} — Profil Enseignant & Pédagogie | Maths Maroc`,
+  title: `À Propos de ${SITE_CONFIG.professor.name} — Profil Enseignant & Pédagogie | ${SITE_CONFIG.name}`,
   description: `${SITE_CONFIG.professor.bio} Découvrez l'enseignant et pourquoi tous les cours restent 100% gratuits pour les élèves marocains.`,
 };
 

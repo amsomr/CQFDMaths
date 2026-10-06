@@ -2,6 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { CURRICULUM_LEVELS, getLevelById } from '@/data/curriculum';
+import { SITE_CONFIG } from '@/data/site-config';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { BookOpen, Clock, ArrowRight, Play, CheckCircle2 } from 'lucide-react';
 
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: ChapterPageProps) {
   if (!chapter) return { title: 'Chapitre Introuvable' };
 
   return {
-    title: `${chapter.title} — Cours, Vidéos et Exercices Corrigés (${branch?.shortName}) | Maths Maroc`,
+    title: `${chapter.title} — Cours, Vidéos et Exercices Corrigés (${branch?.shortName}) | ${SITE_CONFIG.name}`,
     description: `Chapitre complet de mathématiques : ${chapter.title} pour ${branch?.name}. Résumés, théorèmes et exercices corrigés.`,
   };
 }

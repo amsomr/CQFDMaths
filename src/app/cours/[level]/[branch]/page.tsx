@@ -1,6 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import { CURRICULUM_LEVELS, getLevelById } from '@/data/curriculum';
+import { SITE_CONFIG } from '@/data/site-config';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { CourseCard } from '@/components/CourseCard';
 import { BookOpen } from 'lucide-react';
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: BranchPageProps) {
   if (!level || !branch) return { title: 'Filière Introuvable' };
 
   return {
-    title: `${branch.name} (${level.name}) — Programme Complet de Maths | Maths Maroc`,
+    title: `${branch.name} (${level.name}) — Programme Complet de Maths | ${SITE_CONFIG.name}`,
     description: `Tous les cours et chapitres de mathématiques pour ${branch.name} au Maroc. Vidéos et fiches téléchargeables.`,
   };
 }

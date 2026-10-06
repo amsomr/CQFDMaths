@@ -144,7 +144,7 @@ export default function HomePage() {
                         <div className="relative z-10 flex items-center justify-between text-xs font-mono text-blue-300">
                           <span className="flex items-center gap-1.5">
                             <span className="w-2 h-2 rounded-full bg-blue-400" />
-                            MATHSMAROC
+                            CQFDMATHS
                           </span>
                           <span>(O, i, j)</span>
                         </div>

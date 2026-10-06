@@ -15,12 +15,12 @@ async function testFetch(path, expectedStatus = 200) {
 }
 
 async function runAllTests() {
-  console.log('🚀 Running MathsMaroc Platform Verification Tests...\n');
+  console.log('🚀 Running CQFDMaths Platform Verification Tests...\n');
 
   // Test 1: Homepage and Core Sections
   console.log('1. Checking Homepage (Hero, Level Selector, Popular Chapters, FAQs)...');
   const home = await testFetch('/');
-  assert.ok(home.text.includes('MathsMaroc'), 'Homepage should contain site name');
+  assert.ok(home.text.includes('CQFDMaths'), 'Homepage should contain site name');
   assert.ok(home.text.includes('Prof. Omar Alami'), 'Homepage should contain professor name');
   assert.ok(home.text.includes('Choisis ton niveau') || home.text.includes('Quel est votre niveau') || home.text.includes('Quel est ton niveau'), 'Homepage should contain quick level selector');
   assert.ok(home.text.includes('100%') || home.text.includes('Gratuit'), 'Homepage should highlight 100% free value');
@@ -92,11 +92,11 @@ async function runAllTests() {
   // Test 8: SEO, Sitemap, and Robots
   console.log('8. Checking SEO assets (sitemap.xml, robots.txt, 404)...');
   const sitemap = await testFetch('/sitemap.xml');
-  assert.ok(sitemap.text.includes('<loc>https://mathsmaroc.ma/cours'), 'Sitemap should contain course URLs');
-  assert.ok(sitemap.text.includes('<loc>https://mathsmaroc.ma/bac'), 'Sitemap should contain Bac hub');
+  assert.ok(sitemap.text.includes('<loc>https://cqfdmaths.ma/cours'), 'Sitemap should contain course URLs');
+  assert.ok(sitemap.text.includes('<loc>https://cqfdmaths.ma/bac'), 'Sitemap should contain Bac hub');
 
   const robots = await testFetch('/robots.txt');
-  assert.ok(robots.text.includes('Sitemap: https://mathsmaroc.ma/sitemap.xml'), 'Robots should point to sitemap');
+  assert.ok(robots.text.includes('Sitemap: https://cqfdmaths.ma/sitemap.xml'), 'Robots should point to sitemap');
 
   const notFound = await testFetch('/this-page-does-not-exist', 404);
   assert.ok(notFound.text.includes('Page introuvable') || notFound.text.includes('404'), '404 page check');

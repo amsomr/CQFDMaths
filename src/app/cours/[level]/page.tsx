@@ -1,6 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import { CURRICULUM_LEVELS, getLevelById } from '@/data/curriculum';
+import { SITE_CONFIG } from '@/data/site-config';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { CourseCard } from '@/components/CourseCard';
 import { GraduationCap, ArrowRight } from 'lucide-react';
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: LevelPageProps) {
   if (!level) return { title: 'Niveau Introuvable' };
 
   return {
-    title: `${level.name} — Programme Officiel & Cours de Maths | Maths Maroc`,
+    title: `${level.name} — Programme Officiel & Cours de Maths | ${SITE_CONFIG.name}`,
     description: `Programme complet de mathématiques pour ${level.name} au Maroc. Cours officiels, vidéos d'explications et exercices corrigés.`,
   };
 }
