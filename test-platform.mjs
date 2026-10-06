@@ -22,7 +22,7 @@ async function runAllTests() {
   const home = await testFetch('/');
   assert.ok(home.text.includes('MathsMaroc'), 'Homepage should contain site name');
   assert.ok(home.text.includes('Prof. Omar Alami'), 'Homepage should contain professor name');
-  assert.ok(home.text.includes('Quel est votre niveau') || home.text.includes('Quel est ton niveau'), 'Homepage should contain quick level selector');
+  assert.ok(home.text.includes('Choisis ton niveau') || home.text.includes('Quel est votre niveau') || home.text.includes('Quel est ton niveau'), 'Homepage should contain quick level selector');
   assert.ok(home.text.includes('100%') || home.text.includes('Gratuit'), 'Homepage should highlight 100% free value');
   assert.ok(home.text.includes('youtube.com'), 'Homepage should link to YouTube channel');
   console.log('   ✅ Homepage passed');

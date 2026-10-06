@@ -1,4 +1,4 @@
-import { Level, Lesson, Exercise } from './types';
+import { Level, Chapter, Lesson, Exercise } from './types';
 
 export const CURRICULUM_LEVELS: Level[] = [
   {
@@ -658,6 +658,16 @@ export const CURRICULUM_LEVELS: Level[] = [
 ];
 
 // Helper functions for easy querying
+export function getAllChapters(): Chapter[] {
+  const chapters: Chapter[] = [];
+  for (const level of CURRICULUM_LEVELS) {
+    for (const branch of level.branches) {
+      chapters.push(...branch.chapters);
+    }
+  }
+  return chapters;
+}
+
 export function getAllLessons(): Lesson[] {
   const lessons: Lesson[] = [];
   for (const level of CURRICULUM_LEVELS) {

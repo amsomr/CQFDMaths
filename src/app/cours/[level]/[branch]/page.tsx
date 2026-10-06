@@ -39,26 +39,28 @@ export default async function BranchPage({ params }: BranchPageProps) {
   if (!level || !branch) notFound();
 
   return (
-    <div className="min-h-screen py-8 sm:py-12 bg-white dark:bg-slate-950 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-10 sm:py-14 bg-[#FAF9F5] text-[#0F172A] relative">
+      <div className="absolute inset-0 math-grid-bg opacity-30 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         <Breadcrumb
           items={[
-            { name: 'Cours', url: '/cours' },
+            { name: 'Tous les Cours', url: '/cours' },
             { name: level.name, url: `/cours/${level.id}` },
             { name: branch.shortName, url: `/cours/${level.id}/${branch.id}` },
           ]}
         />
 
-        <div className="mt-4 mb-10 pb-6 border-b border-slate-200 dark:border-slate-800">
-          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-[#0056d2] dark:text-blue-300 border border-blue-200 dark:border-blue-800 mb-3">
-            <BookOpen className="w-3.5 h-3.5 text-[#0056d2]" />
+        <div className="space-y-4 max-w-3xl pb-6 border-b border-[#0F172A]/10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#1D4ED8]/10 text-[#1D4ED8] text-xs font-bold uppercase tracking-wider">
+            <BookOpen className="w-3.5 h-3.5 text-[#1D4ED8]" />
             <span>Filière Officielle BIOF</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-[#0F172A] tracking-tight font-sans leading-tight">
             {branch.name}
           </h1>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-[#475569] leading-relaxed">
             {branch.description} Retrouvez l&apos;ensemble des chapitres du programme avec les démonstrations théoriques et les exercices corrigés pas à pas.
           </p>
         </div>

@@ -34,27 +34,29 @@ export default async function LevelPage({ params }: LevelPageProps) {
   if (!level) notFound();
 
   return (
-    <div className="min-h-screen py-8 sm:py-12 bg-white dark:bg-slate-950 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-10 sm:py-14 bg-[#FAF9F5] text-[#0F172A] relative">
+      <div className="absolute inset-0 math-grid-bg opacity-30 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         <Breadcrumb
           items={[
-            { name: 'Cours', url: '/cours' },
+            { name: 'Tous les Cours', url: '/cours' },
             { name: level.name, url: `/cours/${level.id}` },
           ]}
         />
 
-        {/* Level Header (Coursera Program Header) */}
-        <div className="mt-4 mb-10 pb-6 border-b border-slate-200 dark:border-slate-800">
-          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-[#0056d2] dark:text-blue-300 border border-blue-200 dark:border-blue-800 mb-3">
-            <GraduationCap className="w-3.5 h-3.5 text-[#0056d2]" />
+        {/* Level Header - Editorial Layout */}
+        <div className="space-y-4 max-w-3xl pb-6 border-b border-[#0F172A]/10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#1D4ED8]/10 text-[#1D4ED8] text-xs font-bold uppercase tracking-wider">
+            <GraduationCap className="w-3.5 h-3.5 text-[#1D4ED8]" />
             <span>Programme Officiel BIOF</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-[#0F172A] tracking-tight font-sans leading-tight">
             {level.name}
           </h1>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
-            {level.description} Tous les cours sont conformes aux directives ministérielles et organisés par chapitres avec vidéos et exercices résolus.
+          <p className="text-base sm:text-lg text-[#475569] leading-relaxed">
+            {level.description} Tous les cours sont conformes aux directives ministérielles et organisés par chapitres avec vidéos explicatives et exercices résolus pas à pas.
           </p>
         </div>
 
@@ -62,21 +64,21 @@ export default async function LevelPage({ params }: LevelPageProps) {
         <div className="space-y-12">
           {level.branches.map((branch) => (
             <div key={branch.id} className="space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#0F172A]/10 pb-4">
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-[#0F172A] tracking-tight">
                     {branch.name}
                   </h2>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  <p className="text-xs sm:text-sm text-[#64748B] mt-0.5">
                     {branch.description}
                   </p>
                 </div>
                 <Link
                   href={`/cours/${level.id}/${branch.id}`}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0056d2] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#1D4ED8] hover:underline"
                 >
-                  <span>Voir la filière complète</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <span>Explorer toute la filière</span>
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 

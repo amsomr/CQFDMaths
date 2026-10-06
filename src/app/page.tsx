@@ -5,468 +5,243 @@ import Link from 'next/link';
 import { 
   ArrowRight, 
   Play, 
-  BookOpen, 
+  Clock, 
   CheckCircle2, 
+  BookOpen, 
   FileText, 
-  Plus, 
-  Minus,
-  GraduationCap,
-  Award,
-  Video,
-  Clock,
-  ShieldCheck,
-  Star,
-  Users,
-  Compass,
-  Calculator,
-  ChevronRight,
-  TrendingUp
+  ChevronDown, 
+  ChevronUp, 
+  ExternalLink,
+  Award
 } from 'lucide-react';
 import { Youtube } from '@/components/icons/YouTubeIcon';
-import { SITE_CONFIG } from '@/data/site-config';
-import { useLanguage } from '@/components/LanguageProvider';
 import { LevelSelector } from '@/components/LevelSelector';
 import { CourseCard } from '@/components/CourseCard';
-import { VideoCard } from '@/components/VideoCard';
-import { ExerciseCard } from '@/components/ExerciseCard';
-import { MathView } from '@/components/MathView';
-import { CURRICULUM_LEVELS, getAllLessons } from '@/data/curriculum';
+import { getAllChapters } from '@/data/curriculum';
 import { YOUTUBE_VIDEOS } from '@/data/videos';
+import { SITE_CONFIG } from '@/data/site-config';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export default function HomePage() {
-  const { t, isRtl } = useLanguage();
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [activeCourseTab, setActiveCourseTab] = useState<'all' | 'sm' | 'pc' | '1bac' | 'tc'>('all');
+  const [courseFilter, setCourseFilter] = useState('all');
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [activeVideoModal, setActiveVideoModal] = useState<string | null>(null);
+  const { isRtl } = useLanguage();
 
-  // Curriculum chapters
-  const smLevel = CURRICULUM_LEVELS.find((l) => l.id === '2eme-bac');
-  const smBranch = smLevel?.branches.find((b) => b.id === 'sciences-maths');
-  const pcBranch = smLevel?.branches.find((b) => b.id === 'sciences-physiques');
-  const exp1Bac = CURRICULUM_LEVELS.find((l) => l.id === '1ere-bac')?.branches[0];
-  const tcBranch = CURRICULUM_LEVELS.find((l) => l.id === 'tronc-commun')?.branches[0];
+  const allChapters = getAllChapters();
 
-  const allShowcaseChapters = [
-    ...(smBranch?.chapters.slice(0, 3) || []),
-    ...(pcBranch?.chapters.slice(0, 2) || []),
-    ...(exp1Bac?.chapters.slice(0, 1) || []),
-  ];
-
-  const filteredChapters = allShowcaseChapters.filter((ch) => {
-    if (activeCourseTab === 'all') return true;
-    if (activeCourseTab === 'sm') return ch.branchId === 'sciences-maths';
-    if (activeCourseTab === 'pc') return ch.branchId === 'sciences-physiques';
-    if (activeCourseTab === '1bac') return ch.levelId === '1ere-bac';
-    if (activeCourseTab === 'tc') return ch.levelId === 'tronc-commun';
+  // Filtered chapters for featured shelf
+  const filteredChapters = allChapters.filter((ch) => {
+    if (courseFilter === 'all') return true;
+    if (courseFilter === 'sciences-maths') return ch.branchId === 'sciences-maths';
+    if (courseFilter === 'sciences-physiques') return ch.branchId === 'sciences-physiques';
+    if (courseFilter === '1ere-bac') return ch.levelId === '1ere-bac';
+    if (courseFilter === 'tronc-commun') return ch.levelId === 'tronc-commun';
     return true;
-  });
+  }).slice(0, 6);
 
-  // Pick featured exercise
-  const allLessons = getAllLessons();
-  const sampleLesson = allLessons.find((l) => l.slug === 'continuite-et-tvi');
-  const sampleExercise = sampleLesson?.exercises[0];
+  const featuredVideo = YOUTUBE_VIDEOS[0];
+  const sideVideos = YOUTUBE_VIDEOS.slice(1, 4);
 
   const faqs = [
     {
-      q: 'L\'accès aux cours, vidéos et exercices est-il véritablement 100% gratuit ?',
-      qAr: 'هل الولوج إلى الدروس والفيديوهات والتمارين مجاني 100% حقاً ؟',
-      a: 'Oui, l\'intégralité des ressources éducatives de MathsMaroc est 100% gratuite et restera libre d\'accès. Il n\'y a aucun abonnement payant, aucun cours privé caché, et aucune inscription obligatoire.',
-      aAr: 'نعم، جميع الموارد التعليمية في MathsMaroc مجانية 100% ومتاحة دائماً. لا يوجد أي اشتراك مؤدى عنه، ولا دروس خصوصية مدفوعة، ولا تسجيل إجباري.'
+      q: 'La plateforme est-elle réellement 100% gratuite ?',
+      a: 'Oui, l\'accès à l\'ensemble des cours, vidéos YouTube, fiches d\'exercices et corrigés d\'examens nationaux est totalement gratuit pour tous les élèves marocains. Aucun abonnement ni moyen de paiement n\'est requis.',
     },
     {
-      q: 'Le contenu est-il conforme au programme officiel du Ministère de l\'Éducation Nationale ?',
-      qAr: 'هل يطابق المحتوى المنهاج الرسمي لوزارة التربية الوطنية المغربية ؟',
-      a: 'Absolument. Tous les cours, exercices et résumés respectent scrupuleusement le Cadre de Référence officiel du Ministère pour le collège et le lycée (Options Français BIOF et Arabe).',
-      aAr: 'نعم بكل تأكيد. تم إعداد جميع الدروس والتمارين وفق الأطر المرجعية والتوجيهات التربوية الرسمية لوزارة التربية الوطنية للتعليمين الإعدادي والتأهيلي.'
+      q: 'Les cours sont-ils conformes au programme officiel marocain (BIOF) ?',
+      a: 'Absolument. Tous les contenus suivent rigoureusement le Cadre de Référence Officiel publié par le Ministère de l\'Éducation Nationale du Maroc, avec le découpage officiel des chapitres et les barèmes des examens nationaux.',
     },
     {
-      q: 'Comment utiliser la plateforme conjointement avec la chaîne YouTube ?',
-      qAr: 'كيف أستفيد من المنصة بالتوازي مع قناة اليوتيوب ؟',
-      a: 'La méthode recommandée : 1. Visionnez la vidéo du cours pour acquérir l\'intuition géométrique et conceptuelle. 2. Téléchargez ou lisez la fiche de synthèse écrite pour fixer les théorèmes. 3. Résolvez les exercices d\'entraînement avec les indices progressifs avant de consulter la solution complète.',
-      aAr: 'المنهجية الموصى بها : 1. شاهد فيديو الدرس لاكتساب الفهم البديهي. 2. راجع ملخص الدرس لضبط المبرهنات والقواعد. 3. أنجز التمارين بالاعتماد على التوجيهات التدريجية قبل الاطلاع على الحل المفصل.'
+      q: 'Quels niveaux sont couverts sur MathsMaroc ?',
+      a: 'La plateforme couvre le Lycée (Tronc Commun Scientifique, 1ère Bac Sciences Expérimentales et Mathématiques, 2ème Bac Sciences Maths A & B, Sciences Physiques et SVT) ainsi que le cycle Collège (3AC, 2AC, 1AC).',
     },
     {
-      q: 'Comment sont organisées les annales des Examens Nationaux du Baccalauréat ?',
-      qAr: 'كيف تم تنظيم مواضيع الامتحانات الوطنية للبكالوريا ؟',
-      a: 'L\'Espace Bac rassemble les sujets officiels des sessions normales et de rattrapage de 2020 à 2025 pour les filières Sciences Maths, PC et SVT. Chaque sujet comporte son texte original PDF, sa correction détaillée par question et le barème ministériel officiel.',
-      aAr: 'يضم فضاء الباك مواضيع الدورتين العادية والاستدراكية من 2020 إلى 2025 لمسالك العلوم الرياضية، الفيزيائية وعلوم الحياة والأرض، مرفقة بنص الموضوع PDF، والتصحيح المفصل وسلم التنقيط.'
-    }
+      q: 'Comment utiliser la plateforme pour préparer le Baccalauréat ?',
+      a: 'Nous recommandons de suivre chaque chapitre dans l\'ordre : lire le résumé de cours, visionner l\'explication vidéo au tableau, résoudre les exercices progressifs, puis traiter les sujets réels d\'annales du Baccalauréat disponibles dans l\'Espace Bac.',
+    },
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-[#0f141c]">
+    <div className="min-h-screen bg-[#FAF9F5] text-slate-900 font-sans selection:bg-[#DBEAFE] selection:text-[#1D4ED8]">
       
-      {/* 1. COURSERA TOP ANNOUNCEMENT BANNER */}
-      <div className="bg-[#ebf3ff] dark:bg-[#1e293b] border-b border-[#0056d2]/20 dark:border-blue-900/50 py-2 px-4 text-xs font-semibold text-[#0056d2] dark:text-blue-300 text-center flex items-center justify-center gap-2">
-        <span className="bg-[#0056d2] text-white text-[10px] uppercase font-bold px-1.5 py-0.5 rounded">Rentrée 2026</span>
-        <span>Le programme complet de révision du Baccalauréat National est disponible gratuitement.</span>
-        <Link href="/bac" className="underline font-bold hover:text-[#00419e] inline-flex items-center gap-0.5">
-          <span>Accéder aux annales</span>
-          <ChevronRight className="w-3.5 h-3.5" />
-        </Link>
-      </div>
-
-      {/* 2. HERO SECTION : COURSERA STYLE ("Learn without limits") */}
-      <section className="py-14 sm:py-20 bg-white dark:bg-[#0f141c] border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* ─────────────────────────────────────────────────────────────────────────
+          1. HERO SECTION (EDITORIAL ASYMMETRIC COMPOSITION)
+          ───────────────────────────────────────────────────────────────────────── */}
+      <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 overflow-hidden border-b border-[rgba(15,23,42,0.06)] math-grid-bg">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Left Content */}
+            {/* Left Column (~58%): Bold Typography & Context */}
             <div className="lg:col-span-7 space-y-6">
               
-              {/* Institutional Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-bold text-gray-700 dark:text-gray-300">
-                <ShieldCheck className="w-4 h-4 text-[#0056d2] dark:text-blue-400" />
-                <span>Plateforme Éducative Gratuite • Conforme au Programme Marocain</span>
+              {/* Eyebrow contextual line */}
+              <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-widest text-[#1D4ED8]">
+                <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
+                <span>Mathématiques • Collège & Lycée • Maroc</span>
               </div>
 
-              {/* Main Heading */}
-              <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-bold text-[#1f1f1f] dark:text-white tracking-tight leading-[1.15] font-sans">
-                Maîtrisez les mathématiques <span className="text-[#0056d2] dark:text-blue-400">sans limites.</span>
-                <span className="block mt-2 text-2xl sm:text-4xl font-bold text-gray-800 dark:text-gray-200">
-                  Du collège au Baccalauréat National.
+              {/* Expressive Editorial Headline */}
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.07]">
+                Les maths,<br />
+                <span className="text-[#1D4ED8] underline decoration-[rgba(29,78,216,0.3)] decoration-4 underline-offset-8">
+                  enfin plus claires.
                 </span>
               </h1>
 
-              {/* Subtitle */}
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
-                Rejoignez la communauté d&apos;apprentissage de référence pour les élèves marocains. Cours structurés, démonstrations rigoureuses en vidéo, résumés de cours, exercices progressifs et annales corrigées du Baccalauréat avec barème officiel.
+              {/* Supporting Copy */}
+              <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+                Cours structurés, démonstrations en vidéo et préparation méthodique au Baccalauréat — entièrement gratuit, avec le <strong className="font-semibold text-slate-900">Prof. Omar Alami</strong>.
               </p>
 
-              {/* Coursera-style CTA Buttons */}
-              <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              {/* Dominant Primary CTA & Secondary Action */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
                 <Link
-                  href="/cours"
-                  className="btn-coursera-primary px-6 py-3.5 text-sm inline-flex items-center gap-2 shadow-xs"
+                  href="/cours/2eme-bac"
+                  className="btn-editorial-primary text-center"
                 >
-                  <BookOpen className="w-4 h-4" />
-                  <span>Explorer tous les cours gratuits</span>
+                  <span>Commencer à apprendre</span>
                   <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
                 </Link>
 
                 <Link
-                  href="/bac"
-                  className="btn-coursera-secondary px-5 py-3.5 text-sm inline-flex items-center gap-2"
+                  href="/cours"
+                  className="btn-editorial-secondary text-center"
                 >
-                  <Award className="w-4 h-4" />
-                  <span>Préparer le Baccalauréat 2026</span>
+                  <span>Voir tous les cours</span>
                 </Link>
               </div>
 
-              {/* Social Proof / Metrics strip */}
-              <div className="pt-6 border-t border-gray-200 dark:border-gray-800 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold text-[#1f1f1f] dark:text-white font-sans">
-                    {SITE_CONFIG.youtube.subscribersCount}
-                  </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                    Abonnés YouTube
-                  </div>
-                </div>
-
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold text-[#0056d2] dark:text-blue-400 font-sans">
-                    {SITE_CONFIG.professor.studentsHelped}
-                  </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                    Élèves accompagnés
-                  </div>
-                </div>
-
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold text-[#1f1f1f] dark:text-white font-sans">
-                    {SITE_CONFIG.youtube.totalVideosCount}
-                  </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                    Vidéos magistrales
-                  </div>
-                </div>
-
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold text-[#0a8543] dark:text-emerald-400 font-sans">
-                    100%
-                  </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                    Gratuit à vie
-                  </div>
-                </div>
+              {/* Cycle Badges (Moroccan Education System) */}
+              <div className="pt-4 flex flex-wrap items-center gap-2 text-xs text-slate-500 font-medium">
+                <span className="text-slate-400 font-mono text-[11px] uppercase tracking-wider">Cycles :</span>
+                <Link href="/cours/2eme-bac" className="px-2.5 py-1 rounded bg-[#FFFFFF] border border-[rgba(15,23,42,0.08)] hover:border-[#1D4ED8] text-slate-700 hover:text-[#1D4ED8] transition-colors">
+                  2ème Bac SM & PC
+                </Link>
+                <Link href="/cours/1ere-bac" className="px-2.5 py-1 rounded bg-[#FFFFFF] border border-[rgba(15,23,42,0.08)] hover:border-[#1D4ED8] text-slate-700 hover:text-[#1D4ED8] transition-colors">
+                  1ère Bac
+                </Link>
+                <Link href="/cours/tronc-commun" className="px-2.5 py-1 rounded bg-[#FFFFFF] border border-[rgba(15,23,42,0.08)] hover:border-[#1D4ED8] text-slate-700 hover:text-[#1D4ED8] transition-colors">
+                  Tronc Commun BIOF
+                </Link>
+                <Link href="/cours/college" className="px-2.5 py-1 rounded bg-[#FFFFFF] border border-[rgba(15,23,42,0.08)] hover:border-[#1D4ED8] text-slate-700 hover:text-[#1D4ED8] transition-colors">
+                  Collège (3AC)
+                </Link>
               </div>
 
             </div>
 
-            {/* Right Card : Coursera Specialization Showcase Card */}
-            <div className="lg:col-span-5">
-              <div className="bg-white dark:bg-[#1a2332] rounded-lg border border-gray-200 dark:border-gray-700 shadow-lg overflow-hidden">
+            {/* Right Column (~42%): Composed Professor Scene with Math Annotations */}
+            <div className="lg:col-span-5 relative">
+              
+              {/* Professor Portrait Frame with Authentic Editorial Paper matting */}
+              <div className="relative mx-auto max-w-sm lg:max-w-none">
                 
-                {/* Course Header Banner */}
-                <div className="relative aspect-video bg-slate-900 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`https://img.youtube.com/vi/${SITE_CONFIG.youtube.defaultVideoId}/maxresdefault.jpg`}
-                    alt="Cours de Mathématiques"
-                    className="w-full h-full object-cover opacity-85"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
-                  
-                  {/* Play Trigger */}
-                  <div
-                    onClick={() => window.open(`https://youtube.com/watch?v=${SITE_CONFIG.youtube.defaultVideoId}`, '_blank')}
-                    className="absolute inset-0 flex items-center justify-center cursor-pointer group"
-                  >
-                    <div className="w-14 h-14 rounded-full bg-red-600 text-white flex items-center justify-center shadow-xl group-hover:scale-105 transition-transform">
-                      <Play className="w-6 h-6 fill-white translate-x-0.5" />
+                {/* Background decorative coordinate lines */}
+                <div className="absolute -top-6 -right-6 w-36 h-36 border border-dashed border-[#1D4ED8]/25 rounded-full pointer-events-none" />
+                <div className="absolute -bottom-6 -left-6 w-44 h-44 border border-dashed border-slate-300 rounded-full pointer-events-none" />
+
+                {/* Main Portrait Sheet */}
+                <div className="relative rounded-2xl overflow-hidden bg-[#FFFFFF] p-2.5 shadow-xl border border-[rgba(15,23,42,0.08)]">
+                  <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-900">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={SITE_CONFIG.professor.portraitUrl}
+                      alt={SITE_CONFIG.professor.name}
+                      className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                    
+                    {/* Professor name plate */}
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <div className="text-xs font-mono font-medium text-blue-200">Enseignant & Auteur</div>
+                      <div className="text-lg font-bold">{SITE_CONFIG.professor.name}</div>
+                      <div className="text-xs text-slate-300">Professeur agrégé de Mathématiques • Casablanca</div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
-                    <span className="font-semibold bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
-                      Vidéo Démonstration • 48 min
+                {/* Floating Authentic Educational Sticky Note */}
+                <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-[#FFFFFF] p-4 rounded-xl shadow-lg border border-[rgba(15,23,42,0.1)] max-w-[240px] select-none">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
+                      2ème Bac BIOF
                     </span>
-                    <span className="bg-[#0056d2] px-2 py-0.5 rounded font-bold">BIOF 2026</span>
+                  </div>
+                  <div className="text-xs font-bold text-slate-900 leading-snug">
+                    Théorème des Valeurs Intermédiaires (TVI)
+                  </div>
+                  <div className="mt-1 font-serif italic text-[11px] text-slate-500">
+                    f(a) · f(b) &lt; 0 ⟹ ∃ c ∈ ]a, b[, f(c) = 0
                   </div>
                 </div>
 
-                {/* Course Details (Coursera Style) */}
-                <div className="p-5 space-y-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#0056d2] dark:text-blue-400">
-                      Parcours Recommandé
-                    </span>
-                    <span className="text-gray-300">•</span>
-                    <span className="text-xs text-gray-500 font-medium">2ème Année Baccalauréat</span>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-snug">
-                    Mathématiques Spécialité : Analyse, Limites & Théorème des Valeurs Intermédiaires
-                  </h3>
-
-                  <div className="flex items-center gap-2 text-xs">
-                    <div className="flex items-center gap-1 text-amber-500 font-bold">
-                      <span>4.9</span>
-                      <Star className="w-3.5 h-3.5 fill-current" />
-                    </div>
-                    <span className="text-gray-500">(2 450 élèves certifiés)</span>
-                    <span className="text-gray-300">•</span>
-                    <span className="text-[#0a8543] font-bold">100% Gratuit</span>
-                  </div>
-
-                  <div className="pt-3 border-t border-gray-100 dark:border-gray-800 space-y-2 text-xs text-gray-600 dark:text-gray-300">
-                    <div className="font-semibold text-gray-900 dark:text-white">Compétences visées :</div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#0056d2] shrink-0" />
-                      <span>Démontrer l&apos;existence d&apos;une racine unique via la bijection</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#0056d2] shrink-0" />
-                      <span>Rédiger rigoureusement selon les exigences du barème ministériel</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#0056d2] shrink-0" />
-                      <span>Résoudre les annales officielles du Bac (2020-2025)</span>
-                    </div>
-                  </div>
-
-                  <Link
-                    href="/cours/2eme-bac/sciences-maths/limites-et-continuite/continuite-et-tvi"
-                    className="block text-center w-full py-2.5 px-4 rounded text-xs font-bold text-white bg-[#0056d2] hover:bg-[#00419e] transition-colors"
-                  >
-                    Commencer ce cours gratuitement →
-                  </Link>
+                {/* Mathematical Formula Fragment in Top-Right */}
+                <div className="absolute -top-4 -right-2 sm:-right-4 bg-[#FFFFFF] px-3.5 py-2 rounded-lg shadow-md border border-[rgba(15,23,42,0.08)] text-[12px] font-mono font-bold text-slate-800 select-none">
+                  lim (sin x / x) = 1
                 </div>
 
               </div>
+
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* 3. COURSERA INSTITUTIONAL TRUST STRIP */}
-      <section className="py-6 bg-[#f5f7fa] dark:bg-[#111827] border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 shrink-0">
-              Conforme au cadre officiel marocain :
-            </div>
-            <div className="flex flex-wrap items-center justify-center md:justify-end gap-3 sm:gap-6 text-xs font-semibold text-gray-700 dark:text-gray-300">
-              <span className="px-2.5 py-1 rounded bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-2xs">
-                Sciences Mathématiques A & B
-              </span>
-              <span className="px-2.5 py-1 rounded bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-2xs">
-                Sciences Expérimentales (PC & SVT)
-              </span>
-              <span className="px-2.5 py-1 rounded bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-2xs">
-                Tronc Commun BIOF
-              </span>
-              <span className="px-2.5 py-1 rounded bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-2xs">
-                Cycle Collégial
-              </span>
-              <span className="px-2.5 py-1 rounded bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-2xs text-[#0056d2] dark:text-blue-400">
-                Prépa Concours CPGE • ENSA • ENSAM
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. "WHAT BRINGS YOU TO COURSERA TODAY?" (GOAL DISCOVERY) */}
-      <section className="py-14 sm:py-18 bg-white dark:bg-[#0f141c] border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0056d2] dark:text-blue-400 block mb-1">
-              Objectifs d&apos;Apprentissage
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
-              Que souhaitez-vous accomplir aujourd&apos;hui ?
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-              Choisissez votre parcours selon votre calendrier scolaire et vos priorités d&apos;entraînement.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            
-            {/* Goal 1: Baccalauréat */}
-            <Link
-              href="/bac"
-              className="p-5 rounded-lg border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#1a2332] hover:border-[#0056d2] dark:hover:border-blue-500 hover:shadow-md transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-10 h-10 rounded bg-blue-50 dark:bg-blue-950/60 text-[#0056d2] dark:text-blue-400 flex items-center justify-center mb-4 group-hover:bg-[#0056d2] group-hover:text-white transition-colors">
-                  <Award className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-[#0056d2] transition-colors mb-2">
-                  Réussir l&apos;Examen National
-                </h3>
-                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Annales officielles de 2020 à 2025 avec barème ministériel, astuces de rédaction et gestion du temps le jour J.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between text-xs font-semibold text-[#0056d2]">
-                <span>Consulter les annales</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Link>
-
-            {/* Goal 2: Comprendre un chapitre */}
-            <Link
-              href="/cours"
-              className="p-5 rounded-lg border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#1a2332] hover:border-[#0056d2] dark:hover:border-blue-500 hover:shadow-md transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-10 h-10 rounded bg-emerald-50 dark:bg-emerald-950/60 text-[#0a8543] dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:bg-[#0a8543] group-hover:text-white transition-colors">
-                  <BookOpen className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-[#0056d2] transition-colors mb-2">
-                  Assimiler un Cours Théorique
-                </h3>
-                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Démonstrations complètes des théorèmes, fiches de synthèse à imprimer et définitions formelles rigoureuses.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between text-xs font-semibold text-[#0056d2]">
-                <span>Explorer les cours</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Link>
-
-            {/* Goal 3: S'entraîner sur des exercices */}
-            <Link
-              href="/exercices"
-              className="p-5 rounded-lg border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#1a2332] hover:border-[#0056d2] dark:hover:border-blue-500 hover:shadow-md transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-10 h-10 rounded bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                  <Calculator className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-[#0056d2] transition-colors mb-2">
-                  Résoudre des Exercices Types
-                </h3>
-                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Progression méthodique avec indices de réflexion pour chercher par soi-même avant d&apos;afficher la correction.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between text-xs font-semibold text-[#0056d2]">
-                <span>Banque d&apos;exercices</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Link>
-
-            {/* Goal 4: Vidéos YouTube */}
-            <Link
-              href="/videos"
-              className="p-5 rounded-lg border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#1a2332] hover:border-[#0056d2] dark:hover:border-blue-500 hover:shadow-md transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-10 h-10 rounded bg-red-50 dark:bg-red-950/60 text-red-600 dark:text-red-400 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
-                  <Video className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-[#0056d2] transition-colors mb-2">
-                  Réviser en Vidéo YouTube
-                </h3>
-                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Vidéothèque complète de 340+ leçons et corrections d&apos;annales, consultable librement depuis smartphone et PC.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between text-xs font-semibold text-[#0056d2]">
-                <span>Voir les vidéos</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Link>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 5. LEVEL & PROGRAM SELECTOR */}
+      {/* ─────────────────────────────────────────────────────────────────────────
+          2. LEVEL SELECTOR (DYNAMIC INTERACTIVE CURRICULUM DISCOVERY)
+          ───────────────────────────────────────────────────────────────────────── */}
       <LevelSelector />
 
-      {/* 6. COURSERA FEATURED COURSES CATALOG */}
-      <section className="py-14 sm:py-20 bg-white dark:bg-[#0f141c] border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─────────────────────────────────────────────────────────────────────────
+          3. FEATURED COURSES SHELF (CARDS AS EDUCATIONAL CONTENT WITH SVG MATH)
+          ───────────────────────────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-gray-200 dark:border-gray-800 gap-4">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0056d2] dark:text-blue-400 block mb-1">
-                Catalogue Académique
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Les cours les plus consultés
+          {/* Header & Tabs */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-[rgba(15,23,42,0.08)]">
+            <div className="max-w-xl">
+              <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#1D4ED8] mb-2 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
+                <span>Cursus Structuré BIOF</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+                Les chapitres fondamentaux.
               </h2>
+              <p className="mt-2 text-base text-slate-600 leading-relaxed">
+                Chaque chapitre comprend le cours théorique rédigé, la démonstration en vidéo et les exercices d&apos;application corrigés pas à pas.
+              </p>
             </div>
 
-            <Link
-              href="/cours"
-              className="text-xs sm:text-sm font-bold text-[#0056d2] dark:text-blue-400 hover:underline inline-flex items-center gap-1.5"
-            >
-              <span>Voir l&apos;intégralité des chapitres ({allLessons.length} leçons)</span>
-              <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
-            </Link>
+            {/* Filter Tabs */}
+            <div className="flex flex-wrap items-center gap-1.5 self-start md:self-end">
+              {[
+                { id: 'all', label: 'Tous' },
+                { id: 'sciences-maths', label: 'Sciences Maths (2 Bac)' },
+                { id: 'sciences-physiques', label: 'Sciences Physiques' },
+                { id: '1ere-bac', label: '1ère Bac' },
+                { id: 'tronc-commun', label: 'Tronc Commun' },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setCourseFilter(tab.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
+                    courseFilter === tab.id
+                      ? 'bg-[#1D4ED8] text-white'
+                      : 'bg-[#FFFFFF] text-slate-700 border border-[rgba(15,23,42,0.08)] hover:bg-[#F4F3ED]'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Filter Tabs Coursera Style */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none">
-            {[
-              { id: 'all', label: 'Tous les cours' },
-              { id: 'sm', label: '2ème Bac Sciences Maths' },
-              { id: 'pc', label: '2ème Bac Sciences Physiques & SVT' },
-              { id: '1bac', label: '1ère Année Bac' },
-              { id: 'tc', label: 'Tronc Commun' },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveCourseTab(tab.id as typeof activeCourseTab)}
-                className={`px-4 py-2 rounded text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors border ${
-                  activeCourseTab === tab.id
-                    ? 'bg-[#0056d2] text-white border-[#0056d2]'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Course Grid */}
+          {/* Grid of Course Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredChapters.map((chapter) => (
               <CourseCard
@@ -474,355 +249,464 @@ export default function HomePage() {
                 chapter={chapter}
                 levelId={chapter.levelId}
                 branchId={chapter.branchId}
-                branchName={chapter.branchId === 'sciences-maths' ? '2 Bac Sciences Maths' : '2 Bac PC & SVT'}
+                branchName={chapter.branchId === 'sciences-maths' ? '2 Bac SM' : chapter.branchId === 'sciences-physiques' ? '2 Bac PC' : chapter.levelId}
               />
             ))}
           </div>
 
-        </div>
-      </section>
-
-      {/* 7. FLAGSHIP BACCALAURÉAT MASTERTRACK BANNER (Coursera Degree / Certificate style) */}
-      <section className="py-14 sm:py-20 bg-[#002661] text-white border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
-            <div className="lg:col-span-7 space-y-6">
-              <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-amber-400 text-gray-950 text-xs font-bold uppercase tracking-wider">
-                <Award className="w-3.5 h-3.5" />
-                <span>Spécial Baccalauréat 2026</span>
-              </span>
-
-              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-                Programme Intensif d&apos;Excellence pour l&apos;Examen National
-              </h2>
-
-              <p className="text-blue-100 text-sm sm:text-base leading-relaxed max-w-xl">
-                Accédez à la collection la plus complète d&apos;annales officielles corrigées selon le barème officiel du Ministère de l&apos;Éducation Nationale.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 rounded bg-white/10 border border-white/15">
-                  <div className="font-bold text-sm mb-1 flex items-center gap-2 text-white">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Annales Nationales 2020-2025</span>
-                  </div>
-                  <p className="text-xs text-blue-200 leading-relaxed">
-                    Sujets complets en PDF avec barème de notation officiel et rédaction modèle.
-                  </p>
-                </div>
-
-                <div className="p-4 rounded bg-white/10 border border-white/15">
-                  <div className="font-bold text-sm mb-1 flex items-center gap-2 text-white">
-                    <FileText className="w-4 h-4 text-amber-300 shrink-0" />
-                    <span>Formulaires & Fiches Réflexes</span>
-                  </div>
-                  <p className="text-xs text-blue-200 leading-relaxed">
-                    Toutes les formules indispensables pour les limites, primitives et probabilités.
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-4 flex flex-wrap gap-3">
-                <Link
-                  href="/bac"
-                  className="px-6 py-3 rounded text-sm font-bold bg-white text-[#002661] hover:bg-gray-100 transition-colors shadow-sm"
-                >
-                  Accéder à l&apos;Espace Révision Bac →
-                </Link>
-                <Link
-                  href="/bac#annales"
-                  className="px-5 py-3 rounded text-sm font-semibold bg-white/15 hover:bg-white/20 text-white border border-white/25 transition-colors"
-                >
-                  Télécharger les sujets 2025
-                </Link>
-              </div>
-            </div>
-
-            {/* Right formula review box */}
-            <div className="lg:col-span-5">
-              <div className="rounded-lg bg-white/10 border border-white/20 p-6 space-y-4">
-                <div className="text-xs font-bold text-blue-200 uppercase tracking-wider border-b border-white/15 pb-2 flex items-center justify-between">
-                  <span>Mémo Formules • Examen National</span>
-                  <span className="text-amber-300 font-mono">100% Retenir</span>
-                </div>
-
-                <div className="p-3.5 rounded bg-black/25 border border-white/10">
-                  <span className="text-blue-200 text-xs font-semibold block mb-1">Croissances Comparées Fondamentales :</span>
-                  <div className="text-center text-white py-1">
-                    <MathView math="\lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty \quad \text{et} \quad \lim_{x \to 0^+} x \ln(x) = 0" inline={true} />
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded bg-black/25 border border-white/10">
-                  <span className="text-blue-200 text-xs font-semibold block mb-1">Intégration par Parties :</span>
-                  <div className="text-center text-white py-1">
-                    <MathView math="\int_a^b u(x) v'(x) \, dx = [u(x) v(x)]_a^b - \int_a^b u'(x) v(x) \, dx" inline={true} />
-                  </div>
-                </div>
-
-                <div className="p-3 rounded bg-blue-900/60 text-xs text-blue-200 flex items-center justify-between">
-                  <span>Fiche complète en PDF (12 pages)</span>
-                  <Link href="/bac" className="text-white font-bold underline">
-                    Ouvrir
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 8. LATEST YOUTUBE VIDEO LIBRARY */}
-      <section className="py-14 sm:py-20 bg-[#f5f7fa] dark:bg-[#111827] border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-gray-200 dark:border-gray-700 gap-4">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <Youtube className="w-4 h-4 fill-red-600" />
-                <span className="text-xs font-bold uppercase tracking-wider text-red-600">
-                  Vidéothèque Officielle YouTube
-                </span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Dernières leçons magistrales en vidéo
-              </h2>
-            </div>
-
+          <div className="pt-4 text-center">
             <Link
-              href="/videos"
-              className="text-xs sm:text-sm font-bold text-[#0056d2] dark:text-blue-400 hover:underline inline-flex items-center gap-1.5"
+              href="/cours"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[#1D4ED8] hover:underline"
             >
-              <span>Accéder à toutes les vidéos ({SITE_CONFIG.youtube.totalVideosCount})</span>
-              <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
+              <span>Consulter l&apos;intégralité du catalogue des cours ({allChapters.length} chapitres)</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {YOUTUBE_VIDEOS.slice(0, 4).map((video) => (
-              <VideoCard key={video.id} video={video} />
-            ))}
-          </div>
-
         </div>
       </section>
 
-      {/* 9. SAMPLE INTERACTIVE EXERCISE (HANDS-ON LEARNING) */}
-      {sampleExercise && (
-        <section className="py-14 sm:py-20 bg-white dark:bg-[#0f141c] border-b border-gray-200 dark:border-gray-800">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
-            <div className="border-b border-gray-200 dark:border-gray-800 pb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0a8543] block mb-1">
-                Pédagogie Active • Entraînement Autonome
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Exemple d&apos;exercice type examen avec résolution guidée
-              </h2>
-              <p className="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                Testez vos réflexes sur cet exercice classique du Baccalauréat. Dévoilez l&apos;indice si vous hésitez avant d&apos;afficher le corrigé pas à pas.
-              </p>
+      {/* ─────────────────────────────────────────────────────────────────────────
+          4. FEATURED VIDEO SECTION (REAL YOUTUBE LEARNING ENGINE)
+          ───────────────────────────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-24 bg-[#FFFFFF] border-y border-[rgba(15,23,42,0.08)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          
+          <div className="max-w-2xl">
+            <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#CC0000] mb-2 flex items-center gap-2">
+              <Youtube className="w-4 h-4 fill-[#CC0000]" />
+              <span>Le Cours en Vidéo • Tableau Noir Virtuel</span>
             </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+              La clarté du tableau, chez toi.
+            </h2>
+            <p className="mt-2 text-base text-slate-600 leading-relaxed">
+              Toutes les démonstrations théoriques et méthodes de résolution sont expliquées pas à pas au tableau virtuel par le Prof. Omar Alami.
+            </p>
+          </div>
 
-            <ExerciseCard exercise={sampleExercise} />
-
-            <div className="text-center pt-2">
-              <Link
-                href="/exercices"
-                className="text-xs sm:text-sm font-bold text-[#0056d2] dark:text-blue-400 hover:underline inline-flex items-center gap-1.5"
+          {/* Asymmetric Media Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            {/* Left (~62%): Large Featured Video Card */}
+            <div className="lg:col-span-7 bg-[#FAF9F5] rounded-xl overflow-hidden border border-[rgba(15,23,42,0.08)] flex flex-col justify-between">
+              <div
+                onClick={() => setActiveVideoModal(featuredVideo.youtubeId)}
+                className="relative aspect-video w-full bg-slate-950 cursor-pointer group overflow-hidden"
               >
-                <span>Accéder à l&apos;ensemble de la banque d&apos;exercices classés par chapitre</span>
-                <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://img.youtube.com/vi/${featuredVideo.youtubeId}/maxresdefault.jpg`}
+                  alt={featuredVideo.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102 opacity-90 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-slate-950/25 group-hover:bg-slate-950/35 transition-colors" />
 
-      {/* 10. "WHY LEARNERS SUCCEED WITH MATHSMAROC" (OUTCOMES) */}
-      <section className="py-14 sm:py-20 bg-[#f5f7fa] dark:bg-[#111827] border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0056d2] dark:text-blue-400 block mb-1">
-              Rigueur & Efficacité
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Pourquoi les élèves marocains progressent sur MathsMaroc
-            </h2>
-          </div>
+                {/* Recognizable Red Play Button */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#CC0000] text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                    <Play className="w-6 h-6 fill-white translate-x-0.5" />
+                  </div>
+                </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-[#1a2332] p-6 rounded-lg border border-gray-200 dark:border-gray-700/80 space-y-3">
-              <div className="w-10 h-10 rounded bg-blue-50 dark:bg-blue-950/60 text-[#0056d2] dark:text-blue-400 flex items-center justify-center font-bold font-mono">
-                01
+                <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-slate-900/85 text-xs font-mono font-medium text-white flex items-center gap-1">
+                  <Clock className="w-3.5 h-3.5 text-slate-300" />
+                  <span>{featuredVideo.duration}</span>
+                </div>
               </div>
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">
-                Rigueur de Rédaction & Barème Officiel
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Au Bac marocain, chaque demi-point compte sur la justification des hypothèses (continuité sur l&apos;intervalle, stricte monotonie, etc.). Nos démonstrations suivent fidèlement la grille de correction ministérielle.
-              </p>
-            </div>
 
-            <div className="bg-white dark:bg-[#1a2332] p-6 rounded-lg border border-gray-200 dark:border-gray-700/80 space-y-3">
-              <div className="w-10 h-10 rounded bg-blue-50 dark:bg-blue-950/60 text-[#0056d2] dark:text-blue-400 flex items-center justify-center font-bold font-mono">
-                02
-              </div>
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">
-                Pédagogie Active & Dévoilement Progressif
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Lire une correction sans chercher ne permet pas d&apos;apprendre. Nous fournissons des indices ciblés en français et darija pour débloquer votre raisonnement et développer une vraie autonomie intellectuelle.
-              </p>
-            </div>
+              <div className="p-6 space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-red-100 text-[#CC0000]">
+                    Cours Magistral
+                  </span>
+                  <span className="text-xs text-slate-500 font-medium">
+                    2ème Bac • Sciences Mathématiques
+                  </span>
+                </div>
 
-            <div className="bg-white dark:bg-[#1a2332] p-6 rounded-lg border border-gray-200 dark:border-gray-700/80 space-y-3">
-              <div className="w-10 h-10 rounded bg-blue-50 dark:bg-blue-950/60 text-[#0056d2] dark:text-blue-400 flex items-center justify-center font-bold font-mono">
-                03
-              </div>
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">
-                Égalité des Chances & 100% Gratuité Réelle
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Que vous soyez dans un grand lycée urbain ou dans une petite commune rurale, vous avez accès exactement au même enseignement d&apos;excellence, sans barrière financière ni cours payants cachés.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+                <h3 className="text-xl font-bold text-slate-900 leading-snug">
+                  {featuredVideo.title}
+                </h3>
 
-      {/* 11. REAL STUDENT SUCCESS STORIES (Coursera Learner Stories) */}
-      <section className="py-14 sm:py-20 bg-white dark:bg-[#0f141c] border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0056d2] dark:text-blue-400 block mb-1">
-              Témoignages de Lauréats
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Ils ont réussi leur Bac avec MathsMaroc
-            </h2>
-          </div>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Explication rigoureuse de la continuité ponctuelle, sur intervalle, et application approfondie du Théorème des Valeurs Intermédiaires (TVI).
+                </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-lg border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#1a2332] space-y-4">
-              <div className="flex text-amber-500">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-              </div>
-              <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 italic leading-relaxed">
-                « Les explications du Prof. Alami m&apos;ont permis de comprendre la rigueur de rédaction exigée au National. J&apos;ai obtenu 19.5/20 en maths et j&apos;ai intégré les classes prépa MPSI de Rabat. »
-              </p>
-              <div className="pt-2 border-t border-gray-100 dark:border-gray-800 text-xs">
-                <div className="font-bold text-gray-900 dark:text-white">Youssef M.</div>
-                <div className="text-gray-500">Mention Très Bien • 2ème Bac Sciences Maths (Casablanca)</div>
-              </div>
-            </div>
-
-            <div className="p-6 rounded-lg border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#1a2332] space-y-4">
-              <div className="flex text-amber-500">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-              </div>
-              <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 italic leading-relaxed">
-                « J&apos;avais d&apos;énormes difficultés sur les limites et les suites en 1ère Bac. Grâce aux astuces et aux corrigés progressifs, j&apos;ai eu 18/20 au Bac PC et j&apos;ai réussi le concours de l&apos;ENSA. »
-              </p>
-              <div className="pt-2 border-t border-gray-100 dark:border-gray-800 text-xs">
-                <div className="font-bold text-gray-900 dark:text-white">Salma B.</div>
-                <div className="text-gray-500">Admise ENSA • 2ème Bac Sciences Physiques (Tanger)</div>
-              </div>
-            </div>
-
-            <div className="p-6 rounded-lg border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#1a2332] space-y-4">
-              <div className="flex text-amber-500">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-              </div>
-              <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 italic leading-relaxed">
-                « Le meilleur contenu éducatif au Maroc. Les résumés de cours PDF et les corrections des annales 2024 m&apos;ont fait gagner des heures précieuses dans mes révisions de dernière minute. »
-              </p>
-              <div className="pt-2 border-t border-gray-100 dark:border-gray-800 text-xs">
-                <div className="font-bold text-gray-900 dark:text-white">Amine T.</div>
-                <div className="text-gray-500">Mention Très Bien • 2ème Bac SVT (Fès)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 12. FAQ ACCORDION (COURSERA STYLE) */}
-      <section className="py-14 sm:py-20 bg-[#f5f7fa] dark:bg-[#111827] border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="mb-10 text-center">
-            <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-1">
-              Foire Aux Questions
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Questions Fréquemment Posées
-            </h2>
-          </div>
-
-          <div className="space-y-3">
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaq === idx;
-              return (
-                <div
-                  key={idx}
-                  className="rounded-lg bg-white dark:bg-[#1a2332] border border-gray-200 dark:border-gray-700/80 overflow-hidden"
-                >
+                <div className="pt-2 flex items-center justify-between">
                   <button
-                    onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between p-5 text-left font-bold text-sm sm:text-base text-gray-900 dark:text-white hover:text-[#0056d2] transition-colors"
+                    type="button"
+                    onClick={() => setActiveVideoModal(featuredVideo.youtubeId)}
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1D4ED8] hover:underline cursor-pointer"
                   >
-                    <span>{isRtl ? faq.qAr : faq.q}</span>
-                    <span className="p-1 rounded text-gray-400 ml-4 shrink-0">
-                      {isOpen ? <Minus className="w-4 h-4 text-[#0056d2]" /> : <Plus className="w-4 h-4" />}
-                    </span>
+                    <span>Lancer la leçon vidéo</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+
+                  <a
+                    href={`https://youtube.com/watch?v=${featuredVideo.youtubeId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-slate-400 hover:text-slate-600 flex items-center gap-1"
+                  >
+                    <span>Sur YouTube</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right (~38%): Vertical Editorial List of Recent Lessons */}
+            <div className="lg:col-span-5 space-y-4">
+              <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
+                Autres leçons et corrigés récents :
+              </div>
+
+              <div className="space-y-3">
+                {sideVideos.map((vid) => (
+                  <div
+                    key={vid.id}
+                    onClick={() => setActiveVideoModal(vid.youtubeId)}
+                    className="p-3.5 rounded-lg bg-[#FAF9F5] border border-[rgba(15,23,42,0.06)] hover:border-[#1D4ED8] transition-all flex items-start gap-3.5 cursor-pointer group"
+                  >
+                    {/* Thumbnail snippet */}
+                    <div className="relative w-24 aspect-video rounded overflow-hidden bg-slate-900 shrink-0">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`https://img.youtube.com/vi/${vid.youtubeId}/hqdefault.jpg`}
+                        alt={vid.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-slate-950/20">
+                        <Play className="w-4 h-4 fill-white text-white" />
+                      </div>
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 text-[10px] text-slate-400 font-mono mb-0.5">
+                        <span className="text-[#1D4ED8] font-bold">{vid.topic}</span>
+                        <span>•</span>
+                        <span>{vid.duration}</span>
+                      </div>
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors line-clamp-2 leading-snug">
+                        {vid.title}
+                      </h4>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* YouTube Channel Banner */}
+              <div className="p-5 rounded-lg bg-red-50 border border-red-200/80 space-y-2">
+                <div className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Youtube className="w-5 h-5 fill-[#CC0000]" />
+                  <span>Chaîne YouTube Officielle</span>
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Plus de 300 vidéos gratuites, corrigés d&apos;examens nationaux et résolutions en direct.
+                </p>
+                <a
+                  href={SITE_CONFIG.youtube.channelUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#CC0000] hover:underline pt-1"
+                >
+                  <span>Rejoindre la communauté sur YouTube ({SITE_CONFIG.youtube.subscribersCount})</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────────────
+          5. BAC REVISION SECTION (MAJOR EDITORIAL CAMPAIGN)
+          ───────────────────────────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-24 bg-[#0F172A] text-white relative overflow-hidden">
+        {/* Subtle coordinate grid on dark */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none math-grid-bg" />
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            {/* Left Column (~55%): Campaign Manifesto */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-mono font-bold uppercase tracking-wider">
+                <Award className="w-3.5 h-3.5 text-amber-400" />
+                <span>Baccalauréat National 2026</span>
+              </div>
+
+              <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Prépare ton Bac<br />
+                avec une méthode claire.
+              </h2>
+
+              <p className="text-base text-slate-300 leading-relaxed max-w-xl">
+                La réussite au Baccalauréat ne dépend pas du bachotage aléatoire, mais de la maîtrise rigoureuse des types d&apos;exercices imposés par le cadre de référence ministériel marocain.
+              </p>
+
+              {/* 4 Pillars of Bac Preparation */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-200">
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Annales nationales (2020 à 2025)</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Corrigés rédigés selon le barème officiel</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Formulaire mathématique de synthèse (PDF)</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Pièges fréquents et points de vigilance</span>
+                </div>
+              </div>
+
+              <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <Link
+                  href="/bac"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-all shadow-md shadow-amber-500/20"
+                >
+                  <span>Accéder à l&apos;Espace Bac 2026</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
+                <Link
+                  href="/bac#formulaire"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-medium text-sm transition-colors"
+                >
+                  <FileText className="w-4 h-4" />
+                  <span>Télécharger le Formulaire (PDF)</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column (~45%): Composed Moroccan National Exam Paper Artwork */}
+            <div className="lg:col-span-5 relative">
+              <div className="bg-[#FFFFFF] text-slate-900 rounded-xl p-6 sm:p-7 shadow-2xl border border-slate-200/50 space-y-4 select-none">
+                
+                {/* Official Exam Header */}
+                <div className="border-b-2 border-slate-900 pb-3 text-center space-y-1">
+                  <div className="text-[10px] font-mono tracking-widest uppercase font-bold text-slate-600">
+                    Royaume du Maroc • Ministère de l&apos;Éducation Nationale
+                  </div>
+                  <div className="text-sm font-extrabold uppercase tracking-tight text-slate-950">
+                    Examen National du Baccalauréat
+                  </div>
+                  <div className="text-xs font-semibold text-[#1D4ED8]">
+                    Session Normale • Série Sciences Mathématiques (A & B)
+                  </div>
+                </div>
+
+                {/* Question Sample 1 */}
+                <div className="space-y-1.5 text-xs text-slate-800">
+                  <div className="flex items-center justify-between font-bold text-slate-900">
+                    <span>Exercice 1 : Étude de fonction & TVI</span>
+                    <span className="font-mono text-[#B45309]">[3.5 pts]</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600 leading-relaxed font-serif italic">
+                    Soit la fonction f définie sur [1, 2] par f(x) = x⁴ - 2x² - 2.
+                  </p>
+                  <div className="pl-3 border-l-2 border-slate-200 space-y-1 text-[11px]">
+                    <div>1. Démontrer que f(x) = 0 admet une unique solution α sur ]1, 2[.</div>
+                    <div>2. Donner un encadrement de α d&apos;amplitude 0.25 par dichotomie.</div>
+                  </div>
+                </div>
+
+                {/* Question Sample 2 */}
+                <div className="space-y-1.5 text-xs text-slate-800 pt-2 border-t border-slate-100">
+                  <div className="flex items-center justify-between font-bold text-slate-900">
+                    <span>Exercice 2 : Nombres Complexes</span>
+                    <span className="font-mono text-[#B45309]">[3.0 pts]</span>
+                  </div>
+                  <div className="pl-3 border-l-2 border-slate-200 space-y-1 text-[11px]">
+                    <div>Résoudre dans ℂ l&apos;équation : z² - 2(√3 + i)z + 4 = 0.</div>
+                  </div>
+                </div>
+
+                {/* Seal of Authenticity */}
+                <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                  <span className="text-emerald-700 font-bold flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    Barème officiel inclus
+                  </span>
+                  <span>Coeff. 9 • Durée : 4h</span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────────────
+          6. PROFESSOR STORYTELLING SECTION (HUMAN ESSENCE & TRUST)
+          ───────────────────────────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-24 bg-[#FFFFFF] border-b border-[rgba(15,23,42,0.08)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+            
+            {/* Professor Portrait */}
+            <div className="md:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden bg-[#FAF9F5] p-3 border border-[rgba(15,23,42,0.08)] shadow-md">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-900">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={SITE_CONFIG.professor.portraitUrl}
+                    alt={SITE_CONFIG.professor.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-3 text-center">
+                  <div className="font-bold text-slate-900 text-sm">{SITE_CONFIG.professor.name}</div>
+                  <div className="text-xs text-slate-500">{SITE_CONFIG.professor.title}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Editorial Story */}
+            <div className="md:col-span-7 space-y-5">
+              <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#1D4ED8]">
+                L&apos;Enseignant & La Mission
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-snug">
+                « Je veux que chaque élève marocain puisse comprendre les maths. »
+              </h2>
+
+              <div className="space-y-3 text-base text-slate-600 leading-relaxed">
+                <p>
+                  Au Maroc, les mathématiques représentent le filtre majeur d&apos;orientation scolaire et d&apos;accès aux écoles supérieures d&apos;ingénieurs et de médecine. Pourtant, des milliers d&apos;élèves motivés se heurtent à des barrières économiques ou géographiques.
+                </p>
+                <p>
+                  En tant qu&apos;enseignant agrégé avec plus de 12 ans d&apos;expérience dans les lycées et classes préparatoires, j&apos;ai créé cette plateforme pour offrir la même qualité d&apos;explication rigoureuse à un élève à Oujda, Zagora, Tanger ou Casablanca — sans contrepartie financière.
+                </p>
+              </div>
+
+              <div className="pt-2 flex items-center gap-4">
+                <Link
+                  href="/a-propos"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1D4ED8] hover:underline"
+                >
+                  <span>Découvrir la méthode pédagogique et le manifeste</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────────────
+          7. MINIMAL TYPOGRAPHIC FAQ
+          ───────────────────────────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          
+          <div className="text-center space-y-2">
+            <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#1D4ED8]">
+              Questions Fréquentes
+            </div>
+            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
+              Tout ce que tu dois savoir.
+            </h2>
+          </div>
+
+          <div className="divide-y divide-[rgba(15,23,42,0.08)] border-y border-[rgba(15,23,42,0.08)]">
+            {faqs.map((faq, idx) => {
+              const isOpen = activeFaq === idx;
+              return (
+                <div key={idx} className="py-4">
+                  <button
+                    type="button"
+                    onClick={() => setActiveFaq(isOpen ? null : idx)}
+                    className="w-full flex items-center justify-between text-left py-2 text-base font-bold text-slate-900 hover:text-[#1D4ED8] transition-colors cursor-pointer"
+                  >
+                    <span>{faq.q}</span>
+                    {isOpen ? (
+                      <ChevronUp className="w-4 h-4 text-[#1D4ED8] shrink-0 ml-4" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4 text-slate-400 shrink-0 ml-4" />
+                    )}
                   </button>
                   {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-3">
-                      {isRtl ? faq.aAr : faq.a}
+                    <div className="mt-2 text-sm text-slate-600 leading-relaxed pr-8 animate-fadeIn">
+                      {faq.a}
                     </div>
                   )}
                 </div>
               );
             })}
           </div>
+
         </div>
       </section>
 
-      {/* 13. FINAL ENROLLMENT CTA (COURSERA STYLE) */}
-      <section className="py-14 sm:py-18 bg-white dark:bg-[#0f141c]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-            Prêt à maîtriser les mathématiques ?
+      {/* ─────────────────────────────────────────────────────────────────────────
+          8. FINAL SIMPLE STATEMENT CTA
+          ───────────────────────────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-20 bg-[#FAF9F5] border-t border-[rgba(15,23,42,0.08)] text-center">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 space-y-5">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+            Prêt à progresser en maths ?
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
-            Accédez dès maintenant à tous les cours, leçons vidéo et annales corrigées. 100% gratuit, sans inscription, disponible 24h/24.
+          <p className="text-base text-slate-600 leading-relaxed">
+            Choisis ton niveau et commence dès aujourd&apos;hui. C&apos;est 100% gratuit, sans inscription requise.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
-              href="/cours"
-              className="btn-coursera-primary px-8 py-3.5 text-sm inline-flex items-center gap-2"
+              href="/cours/2eme-bac"
+              className="btn-editorial-primary w-full sm:w-auto"
             >
-              <span>Commencer à apprendre gratuitement</span>
+              <span>Accéder aux cours de 2ème Bac</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
-              href={SITE_CONFIG.youtube.channelUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded text-sm font-bold text-white bg-red-600 hover:bg-red-700 transition-colors inline-flex items-center gap-2"
+            <Link
+              href="/cours"
+              className="btn-editorial-secondary w-full sm:w-auto"
             >
-              <Youtube className="w-4 h-4 fill-white" />
-              <span>S&apos;abonner sur YouTube ({SITE_CONFIG.youtube.subscribersCount})</span>
-            </a>
+              <span>Explorer tous les niveaux</span>
+            </Link>
           </div>
         </div>
       </section>
+
+      {/* Video Modal Player (Privacy Enhanced) */}
+      {activeVideoModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-xs select-none">
+          <div className="relative w-full max-w-4xl bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-800">
+            <div className="flex items-center justify-between p-4 border-b border-slate-800 text-slate-100">
+              <span className="font-bold text-sm">Cours Vidéo — Prof. Omar Alami</span>
+              <button
+                type="button"
+                onClick={() => setActiveVideoModal(null)}
+                className="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="aspect-video w-full bg-black">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${activeVideoModal}?autoplay=1&rel=0`}
+                title="Cours Vidéo YouTube"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full border-0"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
