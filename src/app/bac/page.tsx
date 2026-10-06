@@ -5,14 +5,14 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { BacExamCard } from '@/components/BacExamCard';
 import { MathView } from '@/components/MathView';
 import { BAC_EXAMS, BAC_ESSENTIAL_FORMULAS } from '@/data/bac-exams';
-import { GraduationCap, FileText, Download, Calendar, CheckCircle2, Sparkles, Award } from 'lucide-react';
+import { GraduationCap, FileText, Download, Calendar, CheckCircle2, Award } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageProvider';
 
 export default function BacRevisionPage() {
   const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
   const [selectedSession, setSelectedSession] = useState<'all' | 'Normale' | 'Rattrapage'>('all');
   const [selectedBranch, setSelectedBranch] = useState<string>('all');
-  const { t, isRtl } = useLanguage();
+  const { t } = useLanguage();
 
   const years = [2025, 2024, 2023];
 
@@ -24,36 +24,35 @@ export default function BacRevisionPage() {
   });
 
   return (
-    <div className="min-h-screen py-8 sm:py-12 bg-white dark:bg-[#090d16]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div className="min-h-screen py-8 sm:py-12 bg-white dark:bg-[#0f141c]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         <Breadcrumb items={[{ name: 'Espace Révision Bac', url: '/bac' }]} />
 
-        {/* Hero Section: Luminous & Royal Sapphire Banner */}
-        <div className="rounded-3xl bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white p-8 sm:p-12 shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-72 h-72 rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
-          <div className="relative z-10 max-w-2xl space-y-4">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30">
-              <Sparkles className="w-3.5 h-3.5" />
+        {/* Hero Section: Coursera Specialization Banner */}
+        <div className="rounded-lg bg-[#002661] text-white p-8 sm:p-12 border border-gray-200 dark:border-gray-800 shadow-md">
+          <div className="max-w-3xl space-y-4">
+            <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-amber-400 text-gray-950 text-xs font-bold uppercase tracking-wider">
+              <Award className="w-3.5 h-3.5" />
               <span>{t.bac.badge}</span>
             </span>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight font-sans">
               {t.bac.title}
             </h1>
-            <p className="text-sm sm:text-base text-blue-100 leading-relaxed">
+            <p className="text-sm sm:text-base text-blue-100 leading-relaxed max-w-2xl">
               {t.bac.subtitle}
             </p>
-            <div className="pt-2 flex flex-wrap gap-3">
+            <div className="pt-3 flex flex-wrap gap-3">
               <a
                 href="#examens"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-900 hover:bg-blue-50 transition-colors shadow-md"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded text-sm font-bold bg-white text-[#002661] hover:bg-gray-100 transition-colors shadow-xs"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Consulter les Annales Nationales</span>
               </a>
               <a
                 href="#formulaire"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded text-sm font-semibold bg-white/15 hover:bg-white/20 text-white border border-white/25 transition-colors"
               >
                 <FileText className="w-4 h-4" />
                 <span>Formulaire Officiel Résumé</span>
@@ -64,29 +63,29 @@ export default function BacRevisionPage() {
 
         {/* 1. EXAM FILTER & REPOSITORY */}
         <section id="examens" className="space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-4">
             <div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-1">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#0056d2] dark:text-blue-400 mb-1">
                 Annales Officielles du Ministère de l&apos;Éducation Nationale
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Examens Nationaux Corrigés (2ème Bac)
               </h2>
             </div>
-            <div className="text-xs text-slate-500 font-medium">
-              Sujets conformes aux cadres de référence officiels
+            <div className="text-xs text-gray-500 font-medium">
+              Sujets conformes aux cadres de référence officiels (BIOF & Général)
             </div>
           </div>
 
           {/* Filter Bar */}
-          <div className="p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs flex flex-wrap items-center gap-4">
+          <div className="p-4 rounded-lg bg-[#f5f7fa] dark:bg-[#1a2332] border border-gray-200 dark:border-gray-700/80 flex flex-wrap items-center gap-4">
             
             {/* Year Selector */}
             <div className="flex items-center gap-1.5 text-xs">
-              <span className="font-semibold text-slate-500 mr-1">Année :</span>
+              <span className="font-bold text-gray-600 dark:text-gray-300 mr-1">Année :</span>
               <button
                 onClick={() => setSelectedYear('all')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${selectedYear === 'all' ? 'bg-blue-600 text-white shadow-xs' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100'}`}
+                className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors border ${selectedYear === 'all' ? 'bg-[#0056d2] text-white border-[#0056d2]' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-50'}`}
               >
                 Toutes
               </button>
@@ -94,7 +93,7 @@ export default function BacRevisionPage() {
                 <button
                   key={y}
                   onClick={() => setSelectedYear(y)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${selectedYear === y ? 'bg-blue-600 text-white shadow-xs' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100'}`}
+                  className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors border ${selectedYear === y ? 'bg-[#0056d2] text-white border-[#0056d2]' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-50'}`}
                 >
                   {y}
                 </button>
@@ -103,29 +102,38 @@ export default function BacRevisionPage() {
 
             {/* Session Selector */}
             <div className="flex items-center gap-1.5 text-xs">
-              <span className="font-semibold text-slate-500 mr-1">Session :</span>
-              {['all', 'Normale', 'Rattrapage'].map((s) => (
-                <button
-                  key={s}
-                  onClick={() => setSelectedSession(s as any)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${selectedSession === s ? 'bg-blue-600 text-white shadow-xs' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100'}`}
-                >
-                  {s === 'all' ? 'Toutes' : s}
-                </button>
-              ))}
+              <span className="font-bold text-gray-600 dark:text-gray-300 mr-1">Session :</span>
+              <button
+                onClick={() => setSelectedSession('all')}
+                className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors border ${selectedSession === 'all' ? 'bg-[#0056d2] text-white border-[#0056d2]' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-50'}`}
+              >
+                Toutes
+              </button>
+              <button
+                onClick={() => setSelectedSession('Normale')}
+                className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors border ${selectedSession === 'Normale' ? 'bg-[#0056d2] text-white border-[#0056d2]' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-50'}`}
+              >
+                Normale
+              </button>
+              <button
+                onClick={() => setSelectedSession('Rattrapage')}
+                className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors border ${selectedSession === 'Rattrapage' ? 'bg-[#0056d2] text-white border-[#0056d2]' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-50'}`}
+              >
+                Rattrapage
+              </button>
             </div>
 
             {/* Branch Selector */}
-            <div className="flex items-center gap-1.5 text-xs">
-              <span className="font-semibold text-slate-500 mr-1">Filière :</span>
+            <div className="flex items-center gap-2 text-xs">
+              <span className="font-bold text-gray-600 dark:text-gray-300">Filière :</span>
               <select
                 value={selectedBranch}
                 onChange={(e) => setSelectedBranch(e.target.value)}
-                className="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold border border-slate-200 dark:border-slate-700 focus:outline-none text-xs"
+                className="px-2.5 py-1.5 rounded bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-xs font-medium text-gray-800 dark:text-gray-200 focus:outline-none focus:border-[#0056d2]"
               >
                 <option value="all">Toutes les filières</option>
-                <option value="sciences-maths">Sciences Maths (A & B)</option>
-                <option value="sciences-physiques">Sciences Physiques (PC & SVT)</option>
+                <option value="sciences-maths">Sciences Mathématiques (SM)</option>
+                <option value="sciences-physiques">Sciences Expérimentales (PC & SVT)</option>
               </select>
             </div>
 
@@ -137,52 +145,52 @@ export default function BacRevisionPage() {
               <BacExamCard key={exam.id} exam={exam} />
             ))}
           </div>
+
         </section>
 
-        {/* 2. ESSENTIAL FORMULAS CHEAT SHEET */}
-        <section id="formulaire" className="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        {/* 2. OFFICIAL SUMMARY FORMULAS SECTION */}
+        <section id="formulaire" className="space-y-6 pt-6">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-4">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">
-                <FileText className="w-4 h-4" />
-                <span>Fiche Mémoire & Synthèse Officielle</span>
+              <div className="text-xs font-bold uppercase tracking-wider text-[#0056d2] dark:text-blue-400 mb-1">
+                Formulaire Officiel Résumé
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-                {t.bac.essentialFormulas}
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Les Formules Essentielles à Retenir
               </h2>
             </div>
             <a
-              href="/docs/formulaire-bac-maroc-officiel.pdf"
+              href="/documents/bac-formulaire-officiel.pdf"
               download
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded text-xs font-bold text-white bg-[#0056d2] hover:bg-[#00419e] transition-colors"
             >
-              <Download className="w-4 h-4" />
-              <span>{t.bac.downloadFormulaSheet}</span>
+              <Download className="w-3.5 h-3.5" />
+              <span>Télécharger le Formulaire Complet (PDF)</span>
             </a>
           </div>
 
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {BAC_ESSENTIAL_FORMULAS.map((group, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4"
+                className="coursera-card bg-white dark:bg-[#1a2332] p-5 rounded-lg border border-gray-200 dark:border-gray-700/80 space-y-4"
               >
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center justify-between">
-                  <span>{isRtl ? group.categoryAr : group.category}</span>
-                  <span className="text-xs font-mono text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 px-2 py-0.5 rounded-full">
-                    {group.formulas.length} formules
+                <div className="flex items-center justify-between border-b border-gray-100 dark:border-gray-800 pb-2">
+                  <h3 className="font-bold text-sm text-gray-900 dark:text-white">
+                    {group.category}
+                  </h3>
+                  <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded">
+                    2ème Bac
                   </span>
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                </div>
+
+                <div className="space-y-3">
                   {group.formulas.map((item, fIdx) => (
-                    <div
-                      key={fIdx}
-                      className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 flex flex-col justify-between"
-                    >
-                      <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 block mb-1">
-                        {item.name}
+                    <div key={fIdx} className="p-3 rounded bg-[#f5f7fa] dark:bg-gray-800/80 border border-gray-200/80 dark:border-gray-700">
+                      <span className="text-[11px] font-bold text-[#0056d2] dark:text-blue-400 block mb-1">
+                        {item.name} :
                       </span>
-                      <div className="overflow-x-auto text-center py-1">
+                      <div className="overflow-x-auto text-xs py-1">
                         <MathView math={item.latex} inline={true} />
                       </div>
                     </div>
@@ -191,19 +199,6 @@ export default function BacRevisionPage() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* 3. 30-DAY INTENSIVE REVISION STRATEGY */}
-        <section className="p-6 sm:p-8 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/60 space-y-3">
-          <h2 className="text-xl sm:text-2xl font-bold text-blue-950 dark:text-blue-200 flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-blue-600" />
-            <span>{t.bac.studyPlan30Days}</span>
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed max-w-3xl">
-            Pour réussir l&apos;épreuve de mathématiques avec mention Très Bien, consacre 2 heures par jour selon cette planification :
-            <br />
-            <strong className="text-slate-900 dark:text-white">Semaine 1 :</strong> Étude de fonctions numériques & TVI • <strong className="text-slate-900 dark:text-white">Semaine 2 :</strong> Suites numériques & Nombres Complexes • <strong className="text-slate-900 dark:text-white">Semaine 3 :</strong> Calcul intégral & Probabilités • <strong className="text-slate-900 dark:text-white">Semaine 4 :</strong> Sujets complets d&apos;examens nationaux en conditions réelles (3h ou 4h sans interruption).
-          </p>
         </section>
 
       </div>

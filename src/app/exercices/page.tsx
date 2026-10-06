@@ -33,27 +33,27 @@ export default function ExercisesPage() {
   }, [allExercises, selectedLevel, selectedDifficulty, searchQuery]);
 
   return (
-    <div className="min-h-screen py-8 sm:py-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div className="min-h-screen py-8 sm:py-12 bg-white dark:bg-slate-950 font-sans">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         <Breadcrumb items={[{ name: 'Exercices Corrigés', url: '/exercices' }]} />
 
-        {/* Page Header */}
-        <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800/60 shadow-2xs">
-            <Calculator className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-            <span>Banque de Problèmes & Annales</span>
+        {/* Page Header (Coursera Catalog Style) */}
+        <div className="space-y-3 pb-6 border-b border-slate-200 dark:border-slate-800">
+          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-[#0056d2] dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+            <Calculator className="w-3.5 h-3.5 text-[#0056d2]" />
+            <span>Banque de Problèmes & Annales BIOF</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
             {t.exercises.title}
           </h1>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-sans max-w-2xl">
-            {t.exercises.subtitle}
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+            {t.exercises.subtitle} Entraînez-vous avec des indications méthodologiques progressives et des corrigés types rédigés selon les exigences ministérielles.
           </p>
         </div>
 
-        {/* Multi-Filters: Level, Difficulty, Search */}
-        <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-xs space-y-4">
+        {/* Multi-Filters: Level, Difficulty, Search (Coursera Filter Bar) */}
+        <div className="p-6 rounded-md bg-[#f8fafc] dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
           
           {/* Top row: search & stats */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -64,26 +64,26 @@ export default function ExercisesPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Rechercher par notion (ex: TVI, logarithme, complexe)..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-sans focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-slate-900 dark:text-slate-100 shadow-2xs placeholder-slate-400"
+                className="w-full pl-10 pr-4 py-2.5 rounded-md bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-xs sm:text-sm focus:outline-none focus:border-[#0056d2] focus:ring-1 focus:ring-[#0056d2] text-slate-900 dark:text-slate-100 placeholder-slate-400"
               />
             </div>
-            <div className="font-mono text-xs text-slate-500 shrink-0">
-              <span className="font-semibold text-slate-900 dark:text-slate-100">{filteredExercises.length}</span> exercices trouvés
+            <div className="text-xs text-slate-600 dark:text-slate-400 shrink-0 font-medium">
+              <span className="font-bold text-slate-900 dark:text-slate-100">{filteredExercises.length}</span> exercices trouvés
             </div>
           </div>
 
-          {/* Level Filter Pills */}
-          <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800">
-            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-slate-400 mr-2 flex items-center gap-1.5">
-              <Filter className="w-3.5 h-3.5 text-blue-500" />
+          {/* Level Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-slate-200 dark:border-slate-800">
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 mr-2 flex items-center gap-1.5">
+              <Filter className="w-3.5 h-3.5 text-[#0056d2]" />
               Niveau :
             </span>
             <button
               onClick={() => setSelectedLevel('all')}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
+              className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
                 selectedLevel === 'all'
-                  ? 'bg-blue-600 text-white font-semibold shadow-xs'
-                  : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 hover:bg-slate-200'
+                  ? 'bg-[#0056d2] text-white shadow-xs'
+                  : 'bg-white text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50'
               }`}
             >
               Tous
@@ -92,10 +92,10 @@ export default function ExercisesPage() {
               <button
                 key={lvl.id}
                 onClick={() => setSelectedLevel(lvl.id)}
-                className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
                   selectedLevel === lvl.id
-                    ? 'bg-blue-600 text-white font-semibold shadow-xs'
-                    : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 hover:bg-slate-200'
+                    ? 'bg-[#0056d2] text-white shadow-xs'
+                    : 'bg-white text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50'
                 }`}
               >
                 {lvl.name}
@@ -103,10 +103,10 @@ export default function ExercisesPage() {
             ))}
           </div>
 
-          {/* Difficulty Filter Pills */}
-          <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800">
-            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-slate-400 mr-2 flex items-center gap-1.5">
-              <Award className="w-3.5 h-3.5 text-emerald-500" />
+          {/* Difficulty Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-slate-200 dark:border-slate-800">
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 mr-2 flex items-center gap-1.5">
+              <Award className="w-3.5 h-3.5 text-amber-500" />
               Difficulté :
             </span>
             {[
@@ -119,10 +119,10 @@ export default function ExercisesPage() {
               <button
                 key={diff.id}
                 onClick={() => setSelectedDifficulty(diff.id as Difficulty | 'all')}
-                className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
                   selectedDifficulty === diff.id
-                    ? 'bg-emerald-600 text-white font-semibold shadow-xs'
-                    : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 hover:bg-slate-200'
+                    ? 'bg-[#0056d2] text-white shadow-xs'
+                    : 'bg-white text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50'
                 }`}
               >
                 {diff.label}
@@ -139,9 +139,9 @@ export default function ExercisesPage() {
               <ExerciseCard key={exo.id} exercise={exo} showLessonLink={true} />
             ))
           ) : (
-            <div className="text-center py-16 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs">
-              <p className="font-serif text-slate-800 dark:text-slate-200 font-medium">
-                Aucun exercice ne correspond à tes critères de filtrage.
+            <div className="text-center py-16 bg-[#f8fafc] dark:bg-slate-900 rounded-md border border-slate-200 dark:border-slate-800">
+              <p className="text-slate-800 dark:text-slate-200 font-semibold">
+                Aucun exercice ne correspond à vos critères de recherche.
               </p>
               <button
                 onClick={() => {
@@ -149,7 +149,7 @@ export default function ExercisesPage() {
                   setSelectedDifficulty('all');
                   setSearchQuery('');
                 }}
-                className="mt-3 font-sans text-xs font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                className="mt-3 text-xs font-semibold text-[#0056d2] hover:underline"
               >
                 Réinitialiser tous les filtres
               </button>

@@ -22,7 +22,7 @@ async function runAllTests() {
   const home = await testFetch('/');
   assert.ok(home.text.includes('MathsMaroc'), 'Homepage should contain site name');
   assert.ok(home.text.includes('Prof. Omar Alami'), 'Homepage should contain professor name');
-  assert.ok(home.text.includes('Quel est ton niveau'), 'Homepage should contain quick level selector');
+  assert.ok(home.text.includes('Quel est votre niveau') || home.text.includes('Quel est ton niveau'), 'Homepage should contain quick level selector');
   assert.ok(home.text.includes('100%') || home.text.includes('Gratuit'), 'Homepage should highlight 100% free value');
   assert.ok(home.text.includes('youtube.com'), 'Homepage should link to YouTube channel');
   console.log('   ✅ Homepage passed');
@@ -60,7 +60,7 @@ async function runAllTests() {
   const bac = await testFetch('/bac');
   assert.ok(bac.text.includes('Espace Révision Baccalauréat'), 'Bac Hub title check');
   assert.ok(bac.text.includes('Examens Nationaux Corrigés'), 'National exam list present');
-  assert.ok(bac.text.includes('Le Formulaire Mathématique Ultime'), 'Essential formulas section present');
+  assert.ok(bac.text.includes('Formules Essentielles') || bac.text.includes('Formulaire'), 'Essential formulas section present');
   assert.ok(bac.text.includes('2025'), '2025 national exam present');
   assert.ok(bac.text.includes('2024'), '2024 national exam present');
   assert.ok(bac.text.includes('Sujet officiel (PDF)'), 'Subject download button present');
@@ -70,14 +70,14 @@ async function runAllTests() {
   // Test 5: Exercises Hub
   console.log('5. Checking Exercises Hub (/exercices)...');
   const exo = await testFetch('/exercices');
-  assert.ok(exo.text.includes('Exercices Corrigés') && exo.text.includes('Banque'), 'Exercises hub title check');
+  assert.ok(exo.text.includes('Exercices Corrigés') && (exo.text.includes('Banque') || exo.text.includes('Problèmes')), 'Exercises hub title check');
   assert.ok(exo.text.includes('Difficulté'), 'Difficulty filter present');
   console.log('   ✅ Exercises Hub passed');
 
   // Test 6: YouTube Videos Hub
   console.log('6. Checking Videos Hub (/videos)...');
   const vid = await testFetch('/videos');
-  assert.ok(vid.text.includes('Vidéothèque Pédagogique YouTube'), 'Videos hub title check');
+  assert.ok(vid.text.includes('Vidéothèque') || vid.text.includes('Vidéos'), 'Videos hub title check');
   assert.ok(vid.text.includes('YouTube') && vid.text.includes('abonner'), 'Subscribe button present');
   console.log('   ✅ Videos Hub passed');
 

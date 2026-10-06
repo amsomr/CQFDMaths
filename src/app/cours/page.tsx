@@ -19,7 +19,7 @@ export default function CoursesPage() {
   });
 
   return (
-    <div className="min-h-screen py-8 sm:py-12">
+    <div className="min-h-screen py-8 sm:py-12 bg-white dark:bg-[#0f141c]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb */}
@@ -27,29 +27,29 @@ export default function CoursesPage() {
 
         {/* Page Header */}
         <div className="mt-4 mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200/80 dark:border-blue-800/60 mb-3 shadow-2xs">
-            <BookOpen className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-bold text-gray-700 dark:text-gray-300 mb-3">
+            <BookOpen className="w-4 h-4 text-[#0056d2] dark:text-blue-400" />
             <span>{t.courses.curriculumStructure}</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight font-sans">
             {t.courses.title}
           </h1>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl font-sans">
+          <p className="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-3xl">
             {t.courses.subtitle}
           </p>
         </div>
 
         {/* Level Filter Tabs & Search Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200/80 dark:border-slate-800">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-gray-200 dark:border-gray-800">
           
           {/* Level Tabs */}
           <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
             <button
               onClick={() => setSelectedLevelId('all')}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 ${
+              className={`px-3.5 py-2 rounded text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors border ${
                 selectedLevelId === 'all'
-                  ? 'bg-blue-600 text-white font-semibold shadow-md shadow-blue-500/20 ring-2 ring-blue-600/30'
-                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-blue-300 hover:text-blue-600 dark:hover:border-blue-700 shadow-2xs'
+                  ? 'bg-[#0056d2] text-white border-[#0056d2]'
+                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-50'
               }`}
             >
               Tous les Niveaux
@@ -58,10 +58,10 @@ export default function CoursesPage() {
               <button
                 key={lvl.id}
                 onClick={() => setSelectedLevelId(lvl.id)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 ${
+                className={`px-3.5 py-2 rounded text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors border ${
                   selectedLevelId === lvl.id
-                    ? 'bg-blue-600 text-white font-semibold shadow-md shadow-blue-500/20 ring-2 ring-blue-600/30'
-                    : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-blue-300 hover:text-blue-600 dark:hover:border-blue-700 shadow-2xs'
+                    ? 'bg-[#0056d2] text-white border-[#0056d2]'
+                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-50'
                 }`}
               >
                 {isRtl ? lvl.nameAr : lvl.name}
@@ -71,13 +71,13 @@ export default function CoursesPage() {
 
           {/* Quick Filter Search Input */}
           <div className="relative w-full md:w-80">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filtrer par chapitre..."
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-sans focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-slate-900 dark:text-slate-100 shadow-xs placeholder-slate-400"
+              className="w-full pl-9 pr-3.5 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs sm:text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#0056d2]"
             />
           </div>
         </div>
@@ -88,15 +88,15 @@ export default function CoursesPage() {
             <div key={lvl.id} className="space-y-6">
               
               {/* Level Heading */}
-              <div className="flex items-center gap-3.5 border-b border-slate-200/80 dark:border-slate-800 pb-3">
-                <div className="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center shadow-2xs">
+              <div className="flex items-center gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
+                <div className="w-8 h-8 rounded bg-blue-50 dark:bg-blue-950/60 text-[#0056d2] dark:text-blue-400 flex items-center justify-center">
                   <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
-                  <h2 className="font-serif text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                     {isRtl ? lvl.nameAr : lvl.name}
                   </h2>
-                  <span className="font-sans text-xs text-slate-500 dark:text-slate-400">
+                  <span className="text-xs text-gray-500 dark:text-gray-400">
                     {lvl.description}
                   </span>
                 </div>
@@ -114,10 +114,10 @@ export default function CoursesPage() {
                 return (
                   <div key={branch.id} className="space-y-4">
                     <div className="flex items-center gap-2.5">
-                      <h3 className="font-serif text-base sm:text-lg font-medium text-slate-800 dark:text-slate-200">
+                      <h3 className="text-base sm:text-lg font-bold text-gray-800 dark:text-gray-200">
                         {isRtl ? branch.nameAr : branch.name}
                       </h3>
-                      <span className="font-sans text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 shadow-2xs">
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
                         {branch.shortName}
                       </span>
                     </div>

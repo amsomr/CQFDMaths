@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: ChapterPageProps) {
   if (!chapter) return { title: 'Chapitre Introuvable' };
 
   return {
-    title: `${chapter.title} — Cours, Vidéos et Exercices Corrigés (${branch?.shortName})`,
+    title: `${chapter.title} — Cours, Vidéos et Exercices Corrigés (${branch?.shortName}) | Maths Maroc`,
     description: `Chapitre complet de mathématiques : ${chapter.title} pour ${branch?.name}. Résumés, théorèmes et exercices corrigés.`,
   };
 }
@@ -43,7 +43,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
   if (!level || !branch || !chapter) notFound();
 
   return (
-    <div className="min-h-screen py-8 sm:py-12">
+    <div className="min-h-screen py-8 sm:py-12 bg-white dark:bg-slate-950 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumb
@@ -55,39 +55,39 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           ]}
         />
 
-        <div className="mt-4 mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200/80 dark:border-blue-800/60 mb-3 shadow-2xs">
-            <BookOpen className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-            <span>Chapitre Officiel</span>
+        <div className="mt-4 mb-10 pb-6 border-b border-slate-200 dark:border-slate-800">
+          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-[#0056d2] dark:text-blue-300 border border-blue-200 dark:border-blue-800 mb-3">
+            <BookOpen className="w-3.5 h-3.5 text-[#0056d2]" />
+            <span>Chapitre Officiel BIOF</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
             {chapter.title}
           </h1>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl font-sans">
-            {chapter.description}
+          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+            {chapter.description} Retrouvez les leçons séquencées, les définitions clés et les exercices d&apos;entraînement associés.
           </p>
         </div>
 
-        {/* Lessons List in sequential order */}
+        {/* Lessons List in sequential order (Coursera Module Syllabus) */}
         <div className="space-y-4 max-w-4xl">
-          <div className="font-sans text-xs uppercase tracking-wider text-slate-400 font-semibold mb-3">
-            Leçons dans l&apos;ordre pédagogique recommandé :
+          <div className="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">
+            Programme du chapitre dans l&apos;ordre pédagogique :
           </div>
 
           {chapter.lessons.map((lesson, idx) => (
             <div
               key={lesson.slug}
-              className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-2xs hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 hover:-translate-y-0.5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5"
+              className="rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-[#0056d2] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center font-mono font-bold text-sm shrink-0 border border-blue-200/60 dark:border-blue-800/60 shadow-2xs">
+                <div className="w-9 h-9 rounded bg-[#ebf3ff] text-[#0056d2] flex items-center justify-center font-mono font-bold text-xs shrink-0 border border-blue-200">
                   0{idx + 1}
                 </div>
                 <div>
-                  <h3 className="font-serif text-lg font-medium text-slate-900 dark:text-white">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                     {lesson.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 font-sans">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 line-clamp-2">
                     {lesson.summary}
                   </p>
                   <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-slate-400 mt-3">
@@ -95,12 +95,12 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                       <Clock className="w-3.5 h-3.5 text-slate-400" />
                       <span>~{lesson.estimatedMinutes} min</span>
                     </span>
-                    <span className="flex items-center gap-1.5 text-red-600 dark:text-red-400 font-medium">
-                      <Play className="w-3.5 h-3.5 fill-current" />
-                      <span>Vidéo YouTube</span>
+                    <span className="flex items-center gap-1.5 text-[#cc0000] font-medium">
+                      <Play className="w-3.5 h-3.5 fill-[#cc0000]" />
+                      <span>Cours Vidéo</span>
                     </span>
                     {lesson.exercises.length > 0 && (
-                      <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium">
+                      <span className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-medium">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         <span>{lesson.exercises.length} exercices corrigés</span>
                       </span>
@@ -111,7 +111,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
               <Link
                 href={`/cours/${level.id}/${branch.id}/${chapter.slug}/${lesson.slug}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 transition-all shrink-0 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md text-xs sm:text-sm font-semibold text-white bg-[#0056d2] hover:bg-[#00419e] transition-colors shrink-0 shadow-xs"
               >
                 <span>Accéder à la leçon</span>
                 <ArrowRight className="w-4 h-4" />

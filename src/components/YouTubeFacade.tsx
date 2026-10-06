@@ -29,7 +29,7 @@ export function YouTubeFacade({
     : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl bg-slate-950 shadow-lg border border-slate-800/80 ${className}`}>
+    <div className={`relative overflow-hidden rounded-md bg-slate-950 shadow-md border border-slate-800 ${className} font-sans`}>
       {isPlaying ? (
         <div className="relative w-full aspect-video">
           <iframe
@@ -59,30 +59,30 @@ export function YouTubeFacade({
             src={thumbUrl}
             alt={title}
             onError={() => setImgError(true)}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102 opacity-90 group-hover:opacity-100"
             loading="lazy"
           />
 
-          {/* Dark gradient overlay for contrast */}
+          {/* Dark overlay for contrast */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent transition-opacity" />
 
-          {/* Play Button - Vibrant YouTube Red with pulse ring */}
+          {/* Play Button - YouTube Red */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 text-white shadow-2xl shadow-red-600/50 transition-all duration-300 group-hover:scale-110 group-hover:bg-red-500 ring-4 ring-white/25">
-              <Play className="w-6 h-6 sm:w-8 sm:h-8 fill-current translate-x-0.5" />
+            <div className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#cc0000] text-white shadow-xl transition-all duration-200 group-hover:scale-110 group-hover:bg-[#b00000] ring-4 ring-white/20">
+              <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current translate-x-0.5" />
             </div>
           </div>
 
           {/* Video Title and Metadata at bottom */}
-          <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 text-white">
-            <div className="flex items-center gap-2 mb-2 font-sans text-xs">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-900/90 text-slate-200 border border-slate-700/80 shadow-2xs">
-                <Youtube className="w-3.5 h-3.5 fill-red-500" />
-                Vidéo YouTube
+          <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-white">
+            <div className="flex items-center gap-2 mb-1.5 text-xs">
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-slate-700">
+                <Youtube className="w-3.5 h-3.5 fill-[#cc0000]" />
+                Cours Vidéo
               </span>
               <span className="text-slate-300 font-medium">Prof. Omar Alami</span>
             </div>
-            <h3 className="font-serif text-base sm:text-lg font-medium line-clamp-2 text-white group-hover:text-blue-200 transition-colors">
+            <h3 className="font-bold text-base sm:text-lg line-clamp-2 text-white group-hover:text-blue-200 transition-colors leading-snug">
               {title}
             </h3>
           </div>
@@ -91,9 +91,9 @@ export function YouTubeFacade({
 
       {/* Sub bar with direct YouTube subscription CTA */}
       {showSubscribeBadge && (
-        <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-3 bg-slate-900/95 border-t border-slate-800/80 text-xs text-slate-400">
-          <div className="flex items-center gap-2 font-sans text-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 bg-slate-900 border-t border-slate-800 text-xs text-slate-400">
+          <div className="flex items-center gap-2 text-xs">
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
             <span className="text-slate-300">Explication 100% gratuite & sans publicité intrusive</span>
           </div>
           <a
