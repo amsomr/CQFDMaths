@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Clock, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, CheckCircle2, FileText } from 'lucide-react';
 import { Chapter } from '@/data/types';
 import { MathGraphic } from './MathGraphic';
 import { TextWithMath } from './MathView';
@@ -126,6 +126,13 @@ export function CourseCard({
           {branchName}
         </div>
 
+        {/* Semester pill in top-right */}
+        {chapter.semester && (
+          <div className="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-[6px] bg-[#0A192F]/90 text-white text-[11px] font-mono font-bold shadow-2xs">
+            S{chapter.semester}
+          </div>
+        )}
+
         {/* Duration pill in bottom-right */}
         <div className="absolute bottom-3.5 right-3.5 px-2.5 py-1 rounded-[6px] bg-[#0A192F]/90 text-xs font-mono font-medium text-white flex items-center gap-1.5 shadow-2xs">
           <Clock className="w-3.5 h-3.5 text-slate-300" />
@@ -142,9 +149,16 @@ export function CourseCard({
           </div>
 
           {/* Chapter Title */}
-          <h3 className="text-xl font-bold text-[#0F172A] group-hover:text-[#1D4ED8] transition-colors leading-snug">
-            {isRtl ? chapter.titleAr : chapter.title}
-          </h3>
+          <div>
+            <h3 className="text-xl font-bold text-[#0F172A] group-hover:text-[#1D4ED8] transition-colors leading-snug">
+              {isRtl ? chapter.titleAr : chapter.title}
+            </h3>
+            {chapter.titleAr && !isRtl && (
+              <div className="text-xs font-semibold text-[#64748B] mt-0.5" dir="rtl">
+                {chapter.titleAr}
+              </div>
+            )}
+          </div>
 
           {/* Concise Educational Description */}
           <div className="mt-2 text-sm text-[#475569] line-clamp-2 leading-relaxed">
@@ -154,7 +168,7 @@ export function CourseCard({
 
         {/* 3. Footer: Structured Content Counts & Discrete CTA */}
         <div className="pt-4 border-t border-[#0F172A]/08 flex items-center justify-between text-xs text-[#64748B] font-semibold">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 flex-wrap">
             <span className="flex items-center gap-1.5">
               <BookOpen className="w-4 h-4 text-[#94A3B8]" />
               <span>{lessonCount} {lessonCount > 1 ? 'leçons' : 'leçon'}</span>
@@ -162,7 +176,16 @@ export function CourseCard({
             {exerciseCount > 0 && (
               <>
                 <span className="text-[#CBD5E1]">•</span>
-                <span>{exerciseCount} exercices</span>
+                <span>{exerciseCount} ex</span>
+              </>
+            )}
+            {chapter.resources && chapter.resources.length > 0 && (
+              <>
+                <span className="text-[#CBD5E1]">•</span>
+                <span className="text-[#1D4ED8] font-bold flex items-center gap-1">
+                  <FileText className="w-3.5 h-3.5 text-[#1D4ED8]" />
+                  <span>{chapter.resources.length} PDF</span>
+                </span>
               </>
             )}
           </div>

@@ -4,7 +4,7 @@ import { CURRICULUM_LEVELS, getLevelById } from '@/data/curriculum';
 import { SITE_CONFIG } from '@/data/site-config';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { CourseCard } from '@/components/CourseCard';
-import { BookOpen } from 'lucide-react';
+import { BranchChaptersView } from '@/components/BranchChaptersView';
 
 interface BranchPageProps {
   params: Promise<{ level: string; branch: string }>;
@@ -53,31 +53,8 @@ export default async function BranchPage({ params }: BranchPageProps) {
           ]}
         />
 
-        <div className="space-y-4 max-w-3xl pb-6 border-b border-[#0F172A]/10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#1D4ED8]/10 text-[#1D4ED8] text-xs font-bold uppercase tracking-wider">
-            <BookOpen className="w-3.5 h-3.5 text-[#1D4ED8]" />
-            <span>Filière Officielle BIOF</span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-[#0F172A] tracking-tight font-sans leading-tight">
-            {branch.name}
-          </h1>
-          <p className="text-base sm:text-lg text-[#475569] leading-relaxed">
-            {branch.description} Retrouvez l&apos;ensemble des chapitres du programme avec les démonstrations théoriques et les exercices corrigés pas à pas.
-          </p>
-        </div>
-
-        {/* Chapters Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {branch.chapters.map((chapter) => (
-            <CourseCard
-              key={chapter.slug}
-              chapter={chapter}
-              levelId={level.id}
-              branchId={branch.id}
-              branchName={branch.shortName}
-            />
-          ))}
-        </div>
+        {/* Structured Branch Chapters View with Semesters S1/S2 & Search */}
+        <BranchChaptersView branch={branch} level={level} />
 
       </div>
     </div>

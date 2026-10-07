@@ -1,13 +1,13 @@
-# 🇲🇦 CQFDMaths — Plateforme Éducative de Mathématiques (Collège & Lycée)
+# 🇲🇦 CQFDMaths — Plateforme Éducative de Mathématiques (Lycée BIOF)
 
 > **Plateforme libre & gratuite dédiée à l'apprentissage des mathématiques pour tous les élèves marocains.**  
-> Conçue pour le **Prof. Omar Alami** afin de structurer son écosystème pédagogique YouTube + Web.
+> Conçue pour le **Prof. Jamaa Aknari** afin de structurer son écosystème pédagogique YouTube + Web.
 
 ---
 
 ## 🌟 Vision & Positionnement
 
-CQFDMaths n'est pas un simple portfolio : c'est un véritable **hub d'apprentissage structuré** pensé pour l'élève marocain :
+CQFDMaths n'est pas un simple portfolio : c'est un véritable **hub d'apprentissage structuré** pensé pour l'élève marocain du Lycée :
 - **YouTube** est le moteur vidéo d'explication intuitive et de direct (lives de révision).
 - **Le Site Web** est la tour de contrôle pédagogique : hiérarchie officielle par niveau et filière, fiches mémoires de formules en KaTeX, annales d'examens nationaux corrigés pas à pas, et banques d'exercices progressifs avec indices et solutions cachées.
 
@@ -19,7 +19,7 @@ La plateforme respecte l'arborescence officielle du **Ministère de l'Éducation
 
 ```
 Niveau (ex: 2ème Bac)
- └── Filière (ex: Sciences Mathématiques A & B, Sciences Physiques, SVT, Économie)
+ └── Filière (ex: Sciences Mathématiques A & B, Sciences Physiques, SVT)
       └── Matière (Mathématiques)
            └── Chapitre (ex: Limites & Continuité, Nombres Complexes, Calcul Intégral)
                 └── Leçon (ex: Continuité & TVI)
@@ -37,7 +37,7 @@ Niveau (ex: 2ème Bac)
 ## 🚀 Fonctionnalités Clés
 
 1. **Sélection Rapide du Niveau (« Quel est ton niveau ? »)** :
-   - Sélection immédiate : Collège (1AC, 2AC, 3AC), Tronc Commun, 1ère Bac, 2ème Bac.
+   - Sélection immédiate : Tronc Commun, 1ère Bac, 2ème Bac.
    - Mémorisation locale automatique sans compte ni mot de passe.
 2. **Espace Révision Baccalauréat (`/bac`)** :
    - Annales des Examens Nationaux (2022 à 2025) session Normale et Rattrapage.

@@ -9,6 +9,7 @@ import { SITE_CONFIG } from '@/data/site-config';
 import { Filter, Search, X, ExternalLink, Play } from 'lucide-react';
 import { Youtube } from '@/components/icons/YouTubeIcon';
 import { useLanguage } from '@/components/LanguageProvider';
+import { VideoGalleryJsonLd } from '@/components/JsonLd';
 
 export default function VideosPage() {
   const [selectedType, setSelectedType] = useState<string>('all');
@@ -64,6 +65,22 @@ export default function VideosPage() {
             <span>S&apos;abonner sur YouTube</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
+        </div>
+
+        <VideoGalleryJsonLd videos={YOUTUBE_VIDEOS} />
+
+        {/* AI Citability & Video Pedagogy Target */}
+        <div className="p-6 sm:p-8 rounded-[16px] bg-white border border-[#0F172A]/10 shadow-2xs space-y-3">
+          <div className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-[#CC0000]">
+            <span className="w-2 h-2 rounded-full bg-[#CC0000]" />
+            <span>Vidéothèque Officielle • Prof. Jamaa Aknari</span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight">
+            Quels sont les avantages des cours vidéo au tableau virtuel de Prof. Jamaa Aknari ?
+          </h2>
+          <p className="text-base text-[#334155] leading-relaxed">
+            Les cours vidéo du Professeur Jamaa Aknari sur la chaîne YouTube @JamaaAknari reproduisent l&apos;expérience d&apos;une salle de classe d&apos;excellence grâce à un tableau virtuel haute définition. Chaque notion du programme marocain de mathématiques y est décortiquée avec une double exigence : la rigueur formelle de la démonstration mathématique en français et l&apos;éclairage intuitif des difficultés par des explications orales claires complétées d&apos;astuces en Darija. Les vidéos couvrent les chapitres fondamentaux du Lycée (continuité, dérivation, calcul intégral, nombres complexes, géométrie dans l&apos;espace) ainsi que les corrigés détaillés des annales du Baccalauréat national. Disponibles en accès libre et 100% gratuit, ces supports audiovisuels permettent à chaque élève de revoir les étapes de résolution à son rythme.
+          </p>
         </div>
 
         {/* Filters and Search Bar */}

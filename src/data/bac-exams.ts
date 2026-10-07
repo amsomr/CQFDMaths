@@ -1,103 +1,40 @@
-import { BacExam } from './types';
+import { BacExam, DevoirSurveille, SimiliExam, BranchId, LevelId } from './types';
+import scrapedData from './scraped-exams.json';
 
-export const BAC_EXAMS: BacExam[] = [
-  {
-    id: 'bac-nat-2025-sm-normale',
-    year: 2025,
-    session: 'Normale',
-    branchId: 'sciences-maths',
-    branchName: 'Sciences Mathématiques (A & B)',
-    title: 'Examen National 2025 — Session Normale (Sciences Maths)',
-    durationHours: 4,
-    coefficient: 9,
-    subjectPdfUrl: '/docs/examens/National_2025_SM_Normale_Sujet.pdf',
-    correctionPdfUrl: '/docs/examens/National_2025_SM_Normale_Correction.pdf',
-    youtubeVideoId: 'mRk4_s9U2pE',
-    totalExercises: 5,
-    keyTopics: ['Structures algébriques (Groupes & Corps)', 'Arithmétique dans Z', 'Nombres complexes & Géométrie', 'Analyse & Intégrales', 'Équations différentielles'],
-    difficulty: 'Très difficile'
-  },
-  {
-    id: 'bac-nat-2025-pc-normale',
-    year: 2025,
-    session: 'Normale',
-    branchId: 'sciences-physiques',
-    branchName: 'Sciences Physiques (PC & SVT)',
-    title: 'Examen National 2025 — Session Normale (Sciences Expérimentales PC)',
-    durationHours: 3,
-    coefficient: 7,
-    subjectPdfUrl: '/docs/examens/National_2025_PC_Normale_Sujet.pdf',
-    correctionPdfUrl: '/docs/examens/National_2025_PC_Normale_Correction.pdf',
-    youtubeVideoId: 'fJ9rUzIMcZQ',
-    totalExercises: 4,
-    keyTopics: ['Nombres complexes', 'Suites numériques récurrentes', 'Probabilités & Tirages', 'Problème d\'analyse : Fonction exponentielle et calcul d\'aire'],
-    difficulty: 'Normale'
-  },
-  {
-    id: 'bac-nat-2024-sm-normale',
-    year: 2024,
-    session: 'Normale',
-    branchId: 'sciences-maths',
-    branchName: 'Sciences Mathématiques (A & B)',
-    title: 'Examen National 2024 — Session Normale (Sciences Maths)',
-    durationHours: 4,
-    coefficient: 9,
-    subjectPdfUrl: '/docs/examens/National_2024_SM_Normale_Sujet.pdf',
-    correctionPdfUrl: '/docs/examens/National_2024_SM_Normale_Correction.pdf',
-    youtubeVideoId: 'k7gW3QZp914',
-    totalExercises: 5,
-    keyTopics: ['Lois de composition interne', 'Nombres premiers & Petit Théorème de Fermat', 'Nombres complexes', 'Suites d\'intégrales & Limites'],
-    difficulty: 'Très difficile'
-  },
-  {
-    id: 'bac-nat-2024-pc-normale',
-    year: 2024,
-    session: 'Normale',
-    branchId: 'sciences-physiques',
-    branchName: 'Sciences Physiques (PC)',
-    title: 'Examen National 2024 — Session Normale (Sciences Physiques)',
-    durationHours: 3,
-    coefficient: 7,
-    subjectPdfUrl: '/docs/examens/National_2024_PC_Normale_Sujet.pdf',
-    correctionPdfUrl: '/docs/examens/National_2024_PC_Normale_Correction.pdf',
-    youtubeVideoId: 'V9dE7uM2w8Q',
-    totalExercises: 4,
-    keyTopics: ['Géométrie dans l\'espace (Sphère & Plan)', 'Nombres complexes', 'Probabilités conditionnelles', 'Étude de fonction avec Logarithme Népérien'],
-    difficulty: 'Normale'
-  },
-  {
-    id: 'bac-nat-2024-pc-rattrapage',
-    year: 2024,
-    session: 'Rattrapage',
-    branchId: 'sciences-physiques',
-    branchName: 'Sciences Physiques (PC)',
-    title: 'Examen National 2024 — Session Rattrapage (Sciences Physiques)',
-    durationHours: 3,
-    coefficient: 7,
-    subjectPdfUrl: '/docs/examens/National_2024_PC_Rattrapage_Sujet.pdf',
-    correctionPdfUrl: '/docs/examens/National_2024_PC_Rattrapage_Correction.pdf',
-    youtubeVideoId: 'U_5e_Ld48Vw',
-    totalExercises: 4,
-    keyTopics: ['Produit scalaire & vectoriel', 'Complexes & Équation du 2nd degré', 'Suites arithmético-géométriques', 'Fonction exponentielle et TVI'],
-    difficulty: 'Exigeante'
-  },
-  {
-    id: 'bac-nat-2023-sm-normale',
-    year: 2023,
-    session: 'Normale',
-    branchId: 'sciences-maths',
-    branchName: 'Sciences Mathématiques (A & B)',
-    title: 'Examen National 2023 — Session Normale (Sciences Maths)',
-    durationHours: 4,
-    coefficient: 9,
-    subjectPdfUrl: '/docs/examens/National_2023_SM_Normale_Sujet.pdf',
-    correctionPdfUrl: '/docs/examens/National_2023_SM_Normale_Correction.pdf',
-    youtubeVideoId: 'mRk4_s9U2pE',
-    totalExercises: 5,
-    keyTopics: ['Anneaux et corps', 'Arithmétique modulaire', 'Équations complexes & similitudes', 'Théorème de Rolle & TAF'],
-    difficulty: 'Très difficile'
-  }
-];
+const VIDEO_SOLUTIONS_MAP: Record<string, string> = {
+  'bac-sciences-maths-2025-normale': 'mRk4_s9U2pE',
+  'bac-sciences-physiques-2025-normale': 'fJ9rUzIMcZQ',
+  'bac-sciences-maths-2024-normale': 'k7gW3QZp914',
+  'bac-sciences-physiques-2024-normale': 'V9dE7uM2w8Q',
+  'bac-sciences-physiques-2024-rattrapage': 'U_5e_Ld48Vw',
+  'bac-sciences-maths-2023-normale': 'mRk4_s9U2pE',
+};
+
+export const BAC_EXAMS: BacExam[] = (scrapedData.exams as BacExam[]).map((exam) => ({
+  ...exam,
+  youtubeVideoId: VIDEO_SOLUTIONS_MAP[exam.id] || exam.youtubeVideoId,
+  totalExercises: exam.totalExercises || (exam.branchId === 'sciences-maths' ? 5 : 4),
+}));
+
+export const BAC_SIMILI_EXAMS: SimiliExam[] = scrapedData.examensBlancs as SimiliExam[];
+
+export const DEVOIRS_SURVEILLES: DevoirSurveille[] = scrapedData.devoirs as DevoirSurveille[];
+
+export function getExamsByBranch(branchId: BranchId): BacExam[] {
+  return BAC_EXAMS.filter((exam) => exam.branchId === branchId);
+}
+
+export function getExamsByYear(year: number): BacExam[] {
+  return BAC_EXAMS.filter((exam) => exam.year === year);
+}
+
+export function getDevoirsByLevel(levelId: LevelId): DevoirSurveille[] {
+  return DEVOIRS_SURVEILLES.filter((d) => d.levelId === levelId);
+}
+
+export function getDevoirsByBranch(branchId: BranchId, semester?: 1 | 2): DevoirSurveille[] {
+  return DEVOIRS_SURVEILLES.filter((d) => d.branchId === branchId && (semester ? d.semester === semester : true));
+}
 
 export const BAC_ESSENTIAL_FORMULAS = [
   {

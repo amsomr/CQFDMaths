@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { CURRICULUM_LEVELS, getLevelById } from '@/data/curriculum';
 import { SITE_CONFIG } from '@/data/site-config';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { BreadcrumbJsonLd, ChapterCourseJsonLd } from '@/components/JsonLd';
+import { ChapterContentHub } from '@/components/ChapterContentHub';
 import { BookOpen, Clock, ArrowRight, Play, CheckCircle2 } from 'lucide-react';
 
 interface ChapterPageProps {
@@ -49,6 +51,23 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
+        <BreadcrumbJsonLd
+          items={[
+            { name: 'Tous les Cours', url: '/cours' },
+            { name: level.name, url: `/cours/${level.id}` },
+            { name: branch.shortName, url: `/cours/${level.id}/${branch.id}` },
+            { name: chapter.title, url: `/cours/${level.id}/${branch.id}/${chapter.slug}` },
+          ]}
+        />
+        <ChapterCourseJsonLd
+          title={chapter.title}
+          description={chapter.description}
+          levelName={level.name}
+          branchName={branch.name}
+          url={`/cours/${level.id}/${branch.id}/${chapter.slug}`}
+          lessons={chapter.lessons.map((l) => ({ title: l.title, slug: l.slug }))}
+        />
+
         <Breadcrumb
           items={[
             { name: 'Tous les Cours', url: '/cours' },
@@ -71,57 +90,22 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           </p>
         </div>
 
-        {/* Lessons List in sequential order */}
-        <div className="space-y-4 max-w-4xl">
-          <div className="text-xs uppercase tracking-wider text-[#64748B] font-bold">
-            Syllabus officiel du chapitre :
+        {/* AI Citability & Objective Target Block */}
+        <div className="p-6 sm:p-8 rounded-[16px] bg-white border border-[#0F172A]/10 shadow-2xs space-y-3">
+          <div className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-[#1D4ED8]">
+            <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
+            <span>Objectifs Pédagogiques Officiels • {branch.shortName}</span>
           </div>
-
-          {chapter.lessons.map((lesson, idx) => (
-            <div
-              key={lesson.slug}
-              className="rounded-[12px] border border-[#0F172A]/10 bg-white p-6 shadow-2xs hover:shadow-md hover:border-[#1D4ED8] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5 group"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-[8px] bg-[#1D4ED8]/10 text-[#1D4ED8] flex items-center justify-center font-mono font-bold text-sm shrink-0 border border-[#1D4ED8]/20">
-                  0{idx + 1}
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-[#0F172A] group-hover:text-[#1D4ED8] transition-colors">
-                    {lesson.title}
-                  </h3>
-                  <p className="text-sm text-[#64748B] mt-1 line-clamp-2">
-                    {lesson.summary}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-[#64748B] mt-3">
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#94A3B8]" />
-                      <span>~{lesson.estimatedMinutes} min</span>
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[#CC0000] font-semibold">
-                      <Play className="w-3.5 h-3.5 fill-[#CC0000]" />
-                      <span>Cours Vidéo</span>
-                    </span>
-                    {lesson.exercises.length > 0 && (
-                      <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>{lesson.exercises.length} exercices corrigés</span>
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <Link
-                href={`/cours/${level.id}/${branch.id}/${chapter.slug}/${lesson.slug}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[8px] text-xs sm:text-sm font-bold text-white bg-[#1D4ED8] hover:bg-[#1E40AF] transition-colors shrink-0 shadow-xs"
-              >
-                <span>Accéder à la leçon</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          ))}
+          <h2 className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight">
+            Quels sont les prérequis et compétences exigibles pour le chapitre {chapter.title} ?
+          </h2>
+          <p className="text-base text-[#334155] leading-relaxed">
+            Le chapitre {chapter.title} constitue un axe majeur du programme de mathématiques en {branch.name} ({level.name}). Conçu en stricte conformité avec le cadre ministériel marocain, il regroupe les définitions théoriques rigoureuses, les théorèmes fondamentaux et les méthodes de démonstration requises aux contrôles continus et aux examens du Baccalauréat. L&apos;apprentissage s&apos;articule autour de {chapter.lessons.length} leçons séquencées accompagnées de cours vidéo au tableau virtuel animés par le Professeur Jamaa Aknari, de fiches de synthèse téléchargeables et de séries d&apos;exercices avec solutions détaillées. La maîtrise de ces notions assure aux élèves l&apos;acquisition d&apos;automatismes solides indispensables pour aborder sereinement les épreuves certificatives et les concours d&apos;accès aux études supérieures.
+          </p>
         </div>
+
+        {/* Interactive Structured Tabs Hub (Leçons, Fiches PDF, Séries & Corrigés, Devoirs) */}
+        <ChapterContentHub chapter={chapter} level={level} branch={branch} />
 
       </div>
     </div>

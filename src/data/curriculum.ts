@@ -1,31 +1,83 @@
-import { Level, Chapter, Lesson, Exercise } from './types';
+import { Level, Chapter, Lesson, Exercise, ChapterResource, LevelId, BranchId } from './types';
+import chapterResourcesData from './chapter-resources.json';
 
 export const CURRICULUM_LEVELS: Level[] = [
+  // ==========================================
+  // 1. DEUXIÈME ANNÉE DU BACCALAURÉAT (2 BAC)
+  // ==========================================
   {
     id: '2eme-bac',
     name: '2ème Année Baccalauréat',
     nameAr: 'الثانية باكالوريا',
     badge: 'Année du Bac National',
     cycle: 'Lycée',
-    description: 'Préparation intensive à l\'Examen National. Cours approfondis d\'analyse, d\'algèbre et de géométrie pour toutes les filières.',
+    description: 'Préparation intensive à l\'Examen National. Cours approfondis d\'analyse, d\'algèbre et de géométrie pour toutes les filières scientifiques BIOF.',
     branches: [
+      // 1.1 Sciences Mathématiques A & B
       {
         id: 'sciences-maths',
         name: 'Sciences Mathématiques (A & B)',
         nameAr: 'شعبة العلوم الرياضية (أ و ب)',
         shortName: '2 Bac SM',
-        description: 'Programme approfondi pour les futurs préparationnaires et ingénieurs. Rigueur logique, théorèmes d\'analyse et arithmétique.',
+        description: 'Programme d\'excellence pour les futurs préparationnaires (CPGE) et grandes écoles. Rigueur logique, théorèmes d\'analyse, arithmétique dans Z et structures algébriques.',
         levelId: '2eme-bac',
         chapters: [
+          // Semestre 1
           {
             slug: 'limites-et-continuite',
             title: 'Limites et Continuité',
             titleAr: 'النهايات والاتصال',
-            description: 'Continuité ponctuelle, continuité sur un intervalle, Théorème des Valeurs Intermédiaires (TVI), méthode de dichotomie et limites trigonométriques.',
+            description: 'Continuité en un point et sur un intervalle, TVI, bijection continue, fonction réciproque, racines n-ièmes et limites usuelles.',
             levelId: '2eme-bac',
             branchId: 'sciences-maths',
             order: 1,
-            iconName: 'Activity',
+            iconName: 'TrendingUp',
+            semester: 1,
+            resources: [
+              {
+                id: 'res-lim-cours-01',
+                title: 'Limites et Continuité — Fiche de Cours Officielle',
+                category: 'cours',
+                fileUrl: '/test/cqfdmaths_cours_clean.pdf',
+                pagesCount: 17,
+                source: 'Prof. Jamaa Aknari',
+              },
+              {
+                id: 'res-lim-resume-01',
+                title: 'Formulaire & Résumé Synthèse (TVI & Limites Usuelles)',
+                category: 'resume',
+                fileUrl: '/test/cqfdmaths_cours_clean.pdf',
+                pagesCount: 3,
+                source: 'Fiche Mémoire CQFDMaths',
+              },
+              {
+                id: 'res-lim-serie-01',
+                title: 'Série d\'Exercices N°1 : Continuité, TVI et Branches Infinies',
+                category: 'serie',
+                fileUrl: '/test/cqfdmaths_serie_clean.pdf',
+                solutionUrl: '/test/cqfdmaths_serie_clean.pdf',
+                difficulty: 'moyen',
+                source: 'CQFDMaths — Prof. Jamaa Aknari',
+              },
+              {
+                id: 'res-lim-serie-02',
+                title: 'Série d\'Exercices N°2 : Fonction Réciproque et Racine n-ième',
+                category: 'serie',
+                fileUrl: '/test/cqfdmaths_serie_clean.pdf',
+                solutionUrl: '/test/cqfdmaths_serie_clean.pdf',
+                difficulty: 'difficile',
+                source: 'Annales & Séries Préparatoires',
+              },
+              {
+                id: 'res-lim-devoir-01',
+                title: 'Contrôle Surveillé N°1 (Semestre 1) — Modèle d\'Évaluation Type',
+                category: 'devoir',
+                fileUrl: '/test/cqfdmaths_serie_clean.pdf',
+                solutionUrl: '/test/cqfdmaths_serie_clean.pdf',
+                semester: 1,
+                source: 'Devoir Surveillé Lycée',
+              }
+            ],
             lessons: [
               {
                 slug: 'continuite-et-tvi',
@@ -146,6 +198,7 @@ export const CURRICULUM_LEVELS: Level[] = [
                 },
                 nextLessonSlug: 'formes-indeterminees-et-limites',
                 seoKeywords: ['cours continuite 2 bac', 'theoreme valeurs intermediaires maroc', 'tvi sciences maths', 'exercices tvi corriges 2 bac']
+              
               },
               {
                 slug: 'formes-indeterminees-et-limites',
@@ -202,14 +255,51 @@ export const CURRICULUM_LEVELS: Level[] = [
             ]
           },
           {
-            slug: 'nombres-complexes',
-            title: 'Nombres Complexes',
-            titleAr: 'الأعداد العقدية',
-            description: 'Forme algébrique, trigonométrique, formule de Moivre, d\'Euler, équations dans $\\mathbb{C}$, et interprétations géométriques (rotations, homothéties).',
+            slug: 'derivabilite-et-etude-de-fonctions',
+            title: 'Dérivabilité et Étude des Fonctions',
+            titleAr: 'الاشتقاق ودراسة الدوال ومبرهنة التزايدات المنتهية',
+            description: 'Nombre dérivé, dérivée des fonctions composées et réciproques, théorème de Rolle, TAF, branches infinies, concavité et points d\'inflexion.',
             levelId: '2eme-bac',
             branchId: 'sciences-maths',
             order: 2,
+            iconName: 'Activity',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'suites-numeriques',
+            title: 'Les Suites Numériques',
+            titleAr: 'المتتاليات العددية',
+            description: 'Suites monotones, bornées, récurrentes u_{n+1}=f(u_n), critères de convergence, suites adjacentes et encadrements.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 3,
+            iconName: 'Layers',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'fonctions-logarithmes',
+            title: 'Les Fonctions Logarithmes',
+            titleAr: 'الدوال اللوغاريتمية',
+            description: 'Fonction logarithme népérien ln(x), logarithme de base a, croissances comparées, dérivées logarithmiques et étude de fonctions.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 4,
+            iconName: 'Bookmark',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'nombres-complexes-partie-1',
+            title: 'Nombres Complexes — Partie 1 (Forme Algébrique et Trigonométrique)',
+            titleAr: 'الأعداد العقدية — الجزء الأول',
+            description: 'Forme algébrique, conjugué, module, argument, forme trigonométrique, formule de Moivre et d\'Euler, équations dans C.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 5,
             iconName: 'Compass',
+            semester: 1,
             lessons: [
               {
                 slug: 'forme-algebrique-et-trigonometrique',
@@ -280,15 +370,41 @@ export const CURRICULUM_LEVELS: Level[] = [
               }
             ]
           },
+          // Semestre 2
+          {
+            slug: 'fonctions-exponentielles',
+            title: 'Les Fonctions Exponentielles',
+            titleAr: 'الدوال الأسية',
+            description: 'Fonction exponentielle e^x, exponentielles de base a, croissances comparées, limites remarquables et résolutions d\'équations.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 6,
+            iconName: 'TrendingUp',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'nombres-complexes-partie-2',
+            title: 'Nombres Complexes — Partie 2 (Géométrie et Transformations)',
+            titleAr: 'الأعداد العقدية — الجزء الثاني (الهندسة والتحويلات)',
+            description: 'Écritures complexes des transformations (translations, homothéties, rotations), similitudes directes, racines n-ièmes de l\'unité.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 7,
+            iconName: 'Compass',
+            semester: 2,
+            lessons: []
+          },
           {
             slug: 'calcul-integral',
             title: 'Calcul Intégral et Primitives',
             titleAr: 'الحساب التكاملي والدوال الأصلية',
-            description: 'Intégration par parties, primitives usuelles, calcul d\'aires et de volumes, valeurs moyennes et encadrements d\'intégrales.',
+            description: 'Primitives usuelles, intégration par parties, intégration par changement de variable, calcul d\'aires, volumes et sommes de Riemann.',
             levelId: '2eme-bac',
             branchId: 'sciences-maths',
-            order: 3,
+            order: 8,
             iconName: 'Sigma',
+            semester: 2,
             lessons: [
               {
                 slug: 'integration-par-parties-et-aires',
@@ -340,26 +456,151 @@ export const CURRICULUM_LEVELS: Level[] = [
                 seoKeywords: ['calcul integral 2 bac maroc', 'integration par parties exercices', 'calcul aire courbe']
               }
             ]
+          },
+          {
+            slug: 'equations-differentielles',
+            title: 'Équations Différentielles',
+            titleAr: 'المعادلات التفاضلية',
+            description: "Équations différentielles linéaires du 1er ordre y'+ay=0 et du 2nd ordre y''+ay'+by=0, résolution générale et conditions initiales.",
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 9,
+            iconName: 'GitCommit',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'arithmetique-dans-z',
+            title: 'Arithmétique dans l\'Ensemble Z',
+            titleAr: 'الحسابيات في مجموعة الأعداد الصحيحة النسبية',
+            description: 'Divisibilité dans Z, division euclidienne, congruences modulo n, PGCD, PPCM, théorème de Bézout, théorème de Gauss et petit théorème de Fermat.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 10,
+            iconName: 'Binary',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'structures-algebriques',
+            title: 'Structures Algébriques (Groupes, Anneaux, Corps)',
+            titleAr: 'البنيات الجبرية (الزمر، الحلقات، الأجسام)',
+            description: 'Lois de composition interne, associativité, commutativité, élément neutre, symétrique, groupes, sous-groupes, anneaux et corps.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 11,
+            iconName: 'Shield',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'calcul-des-probabilites',
+            title: 'Calcul des Probabilités',
+            titleAr: 'حساب الاحتمالات',
+            description: 'Probabilité conditionnelle, indépendance, formule des probabilités totales, variables aléatoires, loi binomiale, espérance et variance.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 12,
+            iconName: 'PieChart',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'geometrie-dans-l-espace',
+            title: 'Géométrie dans l\'Espace (Produit Scalaire et Vectoriel)',
+            titleAr: 'الهندسة الفضائية (الجداء السلمي والمتجهي)',
+            description: 'Produit scalaire dans l\'espace, produit vectoriel, équations de plans et sphères, distance d\'un point à un plan, positions relatives.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-maths',
+            order: 13,
+            iconName: 'Box',
+            semester: 2,
+            lessons: []
           }
         ]
       },
+
+      // 1.2 Sciences Physiques (2 Bac PC)
       {
         id: 'sciences-physiques',
-        name: 'Sciences Physiques (PC)',
+        name: 'Sciences Physiques (PC BIOF)',
         nameAr: 'شعبة العلوم الفيزيائية',
         shortName: '2 Bac PC',
-        description: 'Programme axé sur l\'analyse des fonctions (Ln, Exp), les suites et les équations différentielles appliquées aux sciences.',
+        description: 'Programme axé sur l\'analyse des fonctions (Ln, Exp), les suites numériques, les nombres complexes, les intégrales et les équations différentielles appliquées.',
         levelId: '2eme-bac',
         chapters: [
+          // Semestre 1
           {
-            slug: 'fonction-exponentielle-et-ln',
-            title: 'Fonctions Logarithme et Exponentielle',
-            titleAr: 'الدوال اللوغاريتمية والأسية',
-            description: 'Étude complète de $\\ln(x)$ et $e^x$, croissances comparées, dérivées, limites et branches infinies.',
+            slug: 'limites-et-continuite',
+            title: 'Limites et Continuité',
+            titleAr: 'النهايات والاتصال',
+            description: 'Continuité en un point, sur un intervalle, TVI, fonction réciproque et calcul de limites avec formes indéterminées.',
             levelId: '2eme-bac',
             branchId: 'sciences-physiques',
             order: 1,
             iconName: 'TrendingUp',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'derivation-et-etude-de-fonctions',
+            title: 'Dérivation et Étude des Fonctions',
+            titleAr: 'الاشتقاق وتطبيقاته ودراسة الدوال',
+            description: 'Calcul de dérivées, sens de variation, extremums, branches infinies, concavité et tracé de courbes représentatives (Cf).',
+            levelId: '2eme-bac',
+            branchId: 'sciences-physiques',
+            order: 2,
+            iconName: 'Activity',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'suites-numeriques',
+            title: 'Les Suites Numériques',
+            titleAr: 'المتتاليات العددية',
+            description: 'Suites arithmétiques, géométriques, récurrentes u_{n+1}=f(u_n), convergence et théorèmes de comparaison.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-physiques',
+            order: 3,
+            iconName: 'Layers',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'fonctions-logarithmes',
+            title: 'Fonctions Logarithmes (ln)',
+            titleAr: 'الدوال اللوغاريتمية',
+            description: 'Propriétés algébriques de ln, limites fondamentales, dérivée de ln(u(x)) et étude approfondie de fonctions logarithmiques.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-physiques',
+            order: 4,
+            iconName: 'Bookmark',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'nombres-complexes',
+            title: 'Nombres Complexes',
+            titleAr: 'الأعداد العقدية',
+            description: 'Forme algébrique, trigonométrique, exponentielle, équations du 2nd degré dans C, et interprétations géométriques (distances, angles).',
+            levelId: '2eme-bac',
+            branchId: 'sciences-physiques',
+            order: 5,
+            iconName: 'Compass',
+            semester: 1,
+            lessons: []
+          },
+          // Semestre 2
+          {
+            slug: 'fonction-exponentielle-et-ln',
+            title: 'Fonctions Exponentielles',
+            titleAr: 'الدوال الأسية',
+            description: 'Étude complète de la fonction exponentielle e^x, croissances comparées, dérivées, limites et branches infinies.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-physiques',
+            order: 6,
+            iconName: 'TrendingUp',
+            semester: 2,
             lessons: [
               {
                 slug: 'fonction-exponentielle',
@@ -429,27 +670,385 @@ export const CURRICULUM_LEVELS: Level[] = [
                 seoKeywords: ['cours fonction exponentielle 2 bac pc', 'exercice type bac exponentielle', 'asymptote oblique exponentielle']
               }
             ]
+          },
+          {
+            slug: 'calcul-integral',
+            title: 'Calcul Intégral et Primitives',
+            titleAr: 'الحساب التكاملي والدوال الأصلية',
+            description: 'Primitives usuelles, intégration par parties, calcul d\'aires géométriques et valeurs moyennes.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-physiques',
+            order: 7,
+            iconName: 'Sigma',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'equations-differentielles',
+            title: 'Équations Différentielles',
+            titleAr: 'المعادلات التفاضلية',
+            description: "Équations différentielles y'+ay=0 et y''+ay'+by=0, applications aux phénomènes physiques et amortissements.",
+            levelId: '2eme-bac',
+            branchId: 'sciences-physiques',
+            order: 8,
+            iconName: 'GitCommit',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'geometrie-dans-l-espace',
+            title: 'Géométrie dans l\'Espace (Produit Scalaire et Vectoriel)',
+            titleAr: 'الهندسة الفضائية',
+            description: 'Repère orthonormé, produit scalaire, produit vectoriel, équations cartésiennes de plans et de sphères.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-physiques',
+            order: 9,
+            iconName: 'Box',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'calcul-des-probabilites',
+            title: 'Calcul des Probabilités',
+            titleAr: 'حساب الاحتمالات',
+            description: 'Dénombrement, tirages simultanés, successifs, probabilité conditionnelle, variables aléatoires et loi binomiale.',
+            levelId: '2eme-bac',
+            branchId: 'sciences-physiques',
+            order: 10,
+            iconName: 'PieChart',
+            semester: 2,
+            lessons: []
+          }
+        ]
+      },
+
+      // 1.3 Sciences de la Vie et de la Terre (2 Bac SVT)
+      {
+        id: 'svt',
+        name: 'Sciences de la Vie et de la Terre (SVT BIOF)',
+        nameAr: 'شعبة علوم الحياة والأرض',
+        shortName: '2 Bac SVT',
+        description: 'Programme de mathématiques adapté à la filière SVT : fonctions Ln et Exp, suites, intégrales et modèles probabilistes.',
+        levelId: '2eme-bac',
+        chapters: [
+          // Semestre 1
+          {
+            slug: 'limites-et-continuite',
+            title: 'Limites et Continuité',
+            titleAr: 'النهايات والاتصال',
+            description: 'Continuité en un point et sur un intervalle, TVI, calcul de limites et étude des branches infinies.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 1,
+            iconName: 'TrendingUp',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'derivation-et-etude-de-fonctions',
+            title: 'Dérivation et Étude des Fonctions',
+            titleAr: 'الاشتقاق وتطبيقاته ودراسة الدوال',
+            description: 'Calcul des dérivées, variations, extrema locaux et représentations graphiques.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 2,
+            iconName: 'Activity',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'suites-numeriques',
+            title: 'Les Suites Numériques',
+            titleAr: 'المتتاليات العددية',
+            description: 'Suites arithmétiques, géométriques, récurrentes et convergence.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 3,
+            iconName: 'Layers',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'fonctions-logarithmes',
+            title: 'Fonctions Logarithmes (ln)',
+            titleAr: 'الدوال اللوغاريتمية',
+            description: 'Propriétés de ln, dérivées logarithmiques, limites usuelles et études de fonctions.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 4,
+            iconName: 'Bookmark',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'nombres-complexes',
+            title: 'Nombres Complexes',
+            titleAr: 'الأعداد العقدية',
+            description: 'Forme algébrique, trigonométrique, résolution d\'équations et configurations géométriques simples.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 5,
+            iconName: 'Compass',
+            semester: 1,
+            lessons: []
+          },
+          // Semestre 2
+          {
+            slug: 'fonctions-exponentielles',
+            title: 'Fonctions Exponentielles',
+            titleAr: 'الدوال الأسية',
+            description: 'Fonction exponentielle e^x, limites fondamentales, dérivées et problèmes d\'analyse.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 6,
+            iconName: 'TrendingUp',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'calcul-integral',
+            title: 'Calcul Intégral et Primitives',
+            titleAr: 'الحساب التكاملي والدوال الأصلية',
+            description: 'Primitives, intégration par parties et calcul d\'aires de domaines plans.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 7,
+            iconName: 'Sigma',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'equations-differentielles',
+            title: 'Équations Différentielles',
+            titleAr: 'المعادلات التفاضلية',
+            description: 'Résolution des équations différentielles du 1er et 2nd ordre à coefficients constants.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 8,
+            iconName: 'GitCommit',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'geometrie-dans-l-espace',
+            title: 'Géométrie dans l\'Espace',
+            titleAr: 'الهندسة الفضائية',
+            description: 'Produit scalaire et produit vectoriel dans l\'espace, plans et sphères.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 9,
+            iconName: 'Box',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'calcul-des-probabilites',
+            title: 'Calcul des Probabilités',
+            titleAr: 'حساب الاحتمالات',
+            description: 'Dénombrement, modèles de probabilités, variables aléatoires discrètes et loi binomiale.',
+            levelId: '2eme-bac',
+            branchId: 'svt',
+            order: 10,
+            iconName: 'PieChart',
+            semester: 2,
+            lessons: []
           }
         ]
       }
     ]
   },
+
+  // ==========================================
+  // 2. PREMIÈRE ANNÉE DU BACCALAURÉAT (1 BAC)
+  // ==========================================
   {
     id: '1ere-bac',
     name: '1ère Année Baccalauréat',
     nameAr: 'الأولى باكالوريا',
     badge: 'Année du Régional',
     cycle: 'Lycée',
-    description: 'Transition fondamentale vers les mathématiques abstraites. Logique formelle, barycentre, dérivation et trigonométrie analytique.',
+    description: 'Transition fondamentale vers les mathématiques abstraites. Logique formelle, théorie des ensembles, dérivation et géométrie vectorielle.',
     branches: [
+      // 2.1 1ère Bac Sciences Mathématiques
       {
-        id: 'sciences-exp',
-        name: 'Sciences Expérimentales',
-        nameAr: 'شعبة العلوم التجريبية',
-        shortName: '1 Bac Sc.Exp',
-        description: 'Programme riche axé sur le calcul de dérivées, la trigonométrie et l\'analyse fonctionnelle.',
+        id: '1ere-sciences-maths',
+        name: 'Sciences Mathématiques (BIOF)',
+        nameAr: 'شعبة العلوم الرياضية',
+        shortName: '1 Bac SM',
+        description: 'Formation mathématique de haut niveau. Logique formelle, théorie des ensembles, dérivation, barycentre et géométrie analytique de l\'espace.',
         levelId: '1ere-bac',
         chapters: [
+          // Semestre 1
+          {
+            slug: 'notions-de-logique',
+            title: 'Notions de Logique Mathématique',
+            titleAr: 'مبادئ في المنطق الرياضي',
+            description: 'Quantificateurs, propositions, négation, implication, équivalence, raisonnement par récurrence, absurde et contraposée.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 1,
+            iconName: 'HelpCircle',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'ensembles-et-applications',
+            title: 'Théorie des Ensembles et Applications',
+            titleAr: 'المجموعات والتطبيقات',
+            description: 'Ensembles, sous-ensembles, inclusion, union, intersection, produit cartésien, applications injectives, surjectives et bijectives.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 2,
+            iconName: 'Layers',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'generalites-sur-les-fonctions',
+            title: 'Généralités sur les Fonctions Numériques',
+            titleAr: 'عموميات حول الدوال العددية',
+            description: 'Majorant, minorant, extremums, composition de fonctions, restriction, prolongement et monotonie.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 3,
+            iconName: 'TrendingUp',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'barycentre-dans-le-plan',
+            title: 'Le Barycentre dans le Plan',
+            titleAr: 'المرجح في المستوى',
+            description: 'Barycentre de 2, 3 et 4 points pondérés, associativité du barycentre, coordonnées et lignes de niveau.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 4,
+            iconName: 'Crosshair',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'produit-scalaire-dans-le-plan',
+            title: 'Le Produit Scalaire dans le Plan et Applications',
+            titleAr: 'الجداء السلمي في المستوى وتطبيقاته',
+            description: 'Formes bilinéaires, orthogonalité, théorème de la médiane, théorème d\'Al-Kashi, équations de cercles et droites.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 5,
+            iconName: 'Compass',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'calcul-trigonometrique',
+            title: 'Calcul Trigonométrique Approfondi',
+            titleAr: 'الحساب المثلثي',
+            description: 'Formules d\'addition, de duplication, de Carnot, transformation de produits en sommes et sommes en produits, équations trigonométriques.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 6,
+            iconName: 'PieChart',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'rotation-dans-le-plan',
+            title: 'La Rotation dans le Plan',
+            titleAr: 'الدوران في المستوى',
+            description: 'Définition géométrique, propriétés caractéristiques, conservation du produit scalaire, des angles orientés et images de figures.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 7,
+            iconName: 'Shuffle',
+            semester: 1,
+            lessons: []
+          },
+          // Semestre 2
+          {
+            slug: 'denombrement',
+            title: 'Dénombrement et Combinatoire',
+            titleAr: 'التعداد',
+            description: 'Principe fondamental, arrangements avec et sans répétition, permutations, combinaisons, triangle de Pascal et binôme de Newton.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 8,
+            iconName: 'Binary',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'limites-d-une-fonction',
+            title: 'Limites d\'une Fonction Numérique',
+            titleAr: 'نهاية دالة عددية',
+            description: 'Définition avec epsilons, opérations sur les limites, limites de fonctions polynômes, rationnelles, trigonométriques et formes indéterminées.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 9,
+            iconName: 'TrendingUp',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'derivabilite',
+            title: 'Dérivabilité et Étude des Fonctions',
+            titleAr: 'الاشتقاق وتطبيقاته ودراسة الدوال',
+            description: 'Nombre dérivé, fonction dérivée, opérations, dérivabilité à droite et à gauche, interprétation géométrique et tableau de variation.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 10,
+            iconName: 'Activity',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'suites-numeriques',
+            title: 'Les Suites Numériques',
+            titleAr: 'المتتاليات العددية',
+            description: 'Généralités, suites arithmétiques, suites géométriques, monotonie, majoration, minoration et calcul de sommes.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 11,
+            iconName: 'Layers',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'vecteurs-de-l-espace',
+            title: 'Vecteurs de l\'Espace et Produit Scalaire',
+            titleAr: 'المتجهات في الفضاء والجداء السلمي في الفضاء',
+            description: 'Caractérisation vectorielle de droites et plans de l\'espace, colinéarité, coplanarité et produit scalaire dans l\'espace.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 12,
+            iconName: 'Box',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'geometrie-analytique-de-l-espace',
+            title: 'Géométrie Analytique dans l\'Espace',
+            titleAr: 'الهندسة التحليلية في الفضاء',
+            description: 'Repère de l\'espace, coordonnées de vecteurs, équations cartésiennes de plans et représentations paramétriques de droites.',
+            levelId: '1ere-bac',
+            branchId: '1ere-sciences-maths',
+            order: 13,
+            iconName: 'Compass',
+            semester: 2,
+            lessons: []
+          }
+        ]
+      },
+
+      // 2.2 1ère Bac Sciences Expérimentales
+      {
+        id: 'sciences-exp',
+        name: 'Sciences Expérimentales (BIOF)',
+        nameAr: 'شعبة العلوم التجريبية',
+        shortName: '1 Bac Sc.Exp',
+        description: 'Programme riche axé sur le calcul de dérivées, la trigonométrie, le barycentre, les suites numériques et l\'analyse fonctionnelle.',
+        levelId: '1ere-bac',
+        chapters: [
+          // Semestre 1
           {
             slug: 'notions-de-logique',
             title: 'Notions de Logique Mathématique',
@@ -459,6 +1058,7 @@ export const CURRICULUM_LEVELS: Level[] = [
             branchId: 'sciences-exp',
             order: 1,
             iconName: 'HelpCircle',
+            semester: 1,
             lessons: [
               {
                 slug: 'modes-de-raisonnement',
@@ -511,36 +1111,152 @@ export const CURRICULUM_LEVELS: Level[] = [
                 seoKeywords: ['logique mathematique 1 bac maroc', 'raisonnement par recurrence exercices', 'contraposee 1 bac']
               }
             ]
+          },
+          {
+            slug: 'generalites-sur-les-fonctions',
+            title: 'Généralités sur les Fonctions Numériques',
+            titleAr: 'عموميات حول الدوال العددية',
+            description: 'Domaine de définition, parité, périodicité, monotonie, taux de variation, extremums et comparaison de fonctions.',
+            levelId: '1ere-bac',
+            branchId: 'sciences-exp',
+            order: 2,
+            iconName: 'TrendingUp',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'barycentre-dans-le-plan',
+            title: 'Le Barycentre dans le Plan',
+            titleAr: 'المرجح في المستوى',
+            description: 'Barycentre de deux et trois points pondérés, coordonnées et propriétés d\'associativité.',
+            levelId: '1ere-bac',
+            branchId: 'sciences-exp',
+            order: 3,
+            iconName: 'Crosshair',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'produit-scalaire-dans-le-plan',
+            title: 'Le Produit Scalaire dans le Plan',
+            titleAr: 'الجداء السلمي في المستوى',
+            description: 'Définition géométrique et analytique, orthogonalité, théorème d\'Al-Kashi et équation cartésienne de cercles.',
+            levelId: '1ere-bac',
+            branchId: 'sciences-exp',
+            order: 4,
+            iconName: 'Compass',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'calcul-trigonometrique',
+            title: 'Calcul Trigonométrique',
+            titleAr: 'الحساب المثلثي',
+            description: 'Formules d\'addition cos(a+b), sin(a+b), formules de duplication et équations trigonométriques.',
+            levelId: '1ere-bac',
+            branchId: 'sciences-exp',
+            order: 5,
+            iconName: 'PieChart',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'suites-numeriques',
+            title: 'Les Suites Numériques',
+            titleAr: 'المتتاليات العددية',
+            description: 'Généralités, suites arithmétiques et géométriques, terme général et somme de termes consécutifs.',
+            levelId: '1ere-bac',
+            branchId: 'sciences-exp',
+            order: 6,
+            iconName: 'Layers',
+            semester: 1,
+            lessons: []
+          },
+          // Semestre 2
+          {
+            slug: 'rotation-dans-le-plan',
+            title: 'La Rotation dans le Plan',
+            titleAr: 'الدوران في المستوى',
+            description: 'Définition géométrique, centre, angle, propriétés caractéristiques et conservation des longueurs.',
+            levelId: '1ere-bac',
+            branchId: 'sciences-exp',
+            order: 7,
+            iconName: 'Shuffle',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'limites-d-une-fonction',
+            title: 'Limites d\'une Fonction Numérique',
+            titleAr: 'نهايات الدوال العددية',
+            description: 'Limites finies et infinies, opérations, formes indéterminées et limites des fonctions usuelles.',
+            levelId: '1ere-bac',
+            branchId: 'sciences-exp',
+            order: 8,
+            iconName: 'TrendingUp',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'derivation-et-etude-de-fonctions',
+            title: 'Dérivation et Étude des Fonctions',
+            titleAr: 'الاشتقاق وتطبيقاته ودراسة الدوال',
+            description: 'Nombre dérivé, tangentes, fonction dérivée, sens de variation, extremums et tracé de courbes.',
+            levelId: '1ere-bac',
+            branchId: 'sciences-exp',
+            order: 9,
+            iconName: 'Activity',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'geometrie-dans-l-espace',
+            title: 'Géométrie dans l\'Espace',
+            titleAr: 'الهندسة الفضائية',
+            description: 'Positions relatives de droites et plans, orthogonalité dans l\'espace et sections planes.',
+            levelId: '1ere-bac',
+            branchId: 'sciences-exp',
+            order: 10,
+            iconName: 'Box',
+            semester: 2,
+            lessons: []
           }
         ]
       }
     ]
   },
+
+  // ==========================================
+  // 3. TRONC COMMUN (TC)
+  // ==========================================
   {
     id: 'tronc-commun',
     name: 'Tronc Commun',
     nameAr: 'الجذع المشترك',
     badge: 'Début du Lycée',
     cycle: 'Lycée',
-    description: 'Socle fondamental du secondaire. Arithmétique dans N, calcul vectoriel, projection et étude élémentaire des fonctions.',
+    description: 'Socle fondamental du secondaire scientifique. Arithmétique dans N, calcul vectoriel, trigonométrie et étude élémentaire des fonctions.',
     branches: [
+      // 3.1 Tronc Commun Scientifique (TCS BIOF)
       {
         id: 'tc-sciences',
         name: 'Tronc Commun Scientifique (BIOF)',
         nameAr: 'جذع مشترك علمي (خيار فرنسية)',
         shortName: 'TCS BIOF',
-        description: 'Programme fondamental pour s\'orienter vers les filières scientifiques 1ère Bac.',
+        description: 'Programme fondamental pour s\'orienter vers les filières scientifiques 1ère Bac. Arithmétique, calcul vectoriel, ordre dans R, trigonométrie et fonctions.',
         levelId: 'tronc-commun',
         chapters: [
+          // Semestre 1
           {
             slug: 'arithmetique-dans-n',
-            title: 'Arithmétique dans l\'Ensemble $\\mathbb{N}$',
+            title: 'Arithmétique dans l\'Ensemble N',
             titleAr: 'مبادئ الحسابيات في مجموعة الأعداد الصحيحة الطبيعية',
             description: 'Nombres pairs et impairs, divisibilité, nombres premiers, décomposition en facteurs premiers, PGCD et PPCM.',
             levelId: 'tronc-commun',
             branchId: 'tc-sciences',
             order: 1,
             iconName: 'Calculator',
+            semester: 1,
             lessons: [
               {
                 slug: 'divisibilite-et-nombres-premiers',
@@ -581,75 +1297,321 @@ export const CURRICULUM_LEVELS: Level[] = [
                 seoKeywords: ['arithmetique tronc commun maroc', 'pgcd ppcm exercices corriges', 'developpement tronc commun']
               }
             ]
+          },
+          {
+            slug: 'calcul-vectoriel-dans-le-plan',
+            title: 'Le Calcul Vectoriel dans le Plan',
+            titleAr: 'الحساب المتجهي في المستوى',
+            description: 'Vecteurs du plan, égalité de vecteurs, relation de Chasles, colinéarité, milieu d\'un segment et combinaison linéaire.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 2,
+            iconName: 'Compass',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'la-projection-dans-le-plan',
+            title: 'La Projection dans le Plan',
+            titleAr: 'الإسقاط في المستوى',
+            description: 'Projection d\'un point sur une droite parallèlement à une autre, théorème de Thalès direct et réciproque, conservation du milieu.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 3,
+            iconName: 'Maximize2',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'ensembles-des-nombres-et-ordre-dans-r',
+            title: 'L\'Ensemble des Nombres et l\'Ordre dans R',
+            titleAr: 'مجموعات الأعداد والترتيب في مجموعة الأعداد الحقيقية',
+            description: 'Ensembles N, Z, D, Q, R, opérations, encadrements, valeur absolue, intervalles et approximations décimales.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 4,
+            iconName: 'Layers',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'la-droite-dans-le-plan',
+            title: 'La Droite dans le Plan',
+            titleAr: 'المستقيم في المستوى',
+            description: 'Repère cartésien, équation cartésienne, équation réduite, vecteur directeur, pente et positions relatives de deux droites.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 5,
+            iconName: 'GitCommit',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'polynomes',
+            title: 'Les Polynômes',
+            titleAr: 'الحدوديات',
+            description: 'Définition, degré, égalité de polynômes, opérations, division euclidienne et factorisation par (x - a).',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 6,
+            iconName: 'Binary',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'equations-inequations-et-systemes',
+            title: 'Équations, Inéquations et Systèmes',
+            titleAr: 'المعادلات والمتراجحات والنظمات',
+            description: 'Équations et inéquations du 1er et 2nd degré, discriminant delta, signe du trinôme et systèmes de deux équations linéaires.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 7,
+            iconName: 'Sigma',
+            semester: 1,
+            lessons: []
+          },
+          // Semestre 2
+          {
+            slug: 'calcul-trigonometrique',
+            title: 'Trigonométrie — Calcul Trigonométrique',
+            titleAr: 'الحساب المثلثي',
+            description: 'Cercle trigonométrique, abscisse curviligne principale, sinus, cosinus, tangente, relations fondamentales et équations simples.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 8,
+            iconName: 'PieChart',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'generalites-sur-les-fonctions',
+            title: 'Généralités sur les Fonctions Numériques',
+            titleAr: 'عموميات حول الدوال العددية',
+            description: 'Ensemble de définition, parité (paire, impaire), tableau de variations, extremums et fonctions de référence (ax+b, x^2, ax^3, 1/x).',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 9,
+            iconName: 'TrendingUp',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'transformations-du-plan',
+            title: 'Transformations du Plan',
+            titleAr: 'التحويلات الاعتيادية في المستوى',
+            description: 'Symétrie axiale, symétrie centrale, translation, homothétie et conservation des distances, angles et alignements.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 10,
+            iconName: 'Shuffle',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'produit-scalaire-dans-le-plan',
+            title: 'Le Produit Scalaire dans le Plan',
+            titleAr: 'الجداء السلمي في المستوى',
+            description: 'Définition géométrique du produit scalaire, projection orthogonale, propriétés de bilinéarité et relations métriques.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 11,
+            iconName: 'Crosshair',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'geometrie-dans-lespace',
+            title: 'Géométrie dans l\'Espace',
+            titleAr: 'الهندسة الفضائية',
+            description: 'Axiomes d\'incidence, positions relatives de droites et de plans dans l\'espace, parallélisme et orthogonalité.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 12,
+            iconName: 'Box',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'statistiques',
+            title: 'Statistiques',
+            titleAr: 'الإحصاء',
+            description: 'Effectifs, fréquences, moyenne arithmétique, médiane, mode, variance, écart-type et représentations graphiques.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-sciences',
+            order: 13,
+            iconName: 'BarChart3',
+            semester: 2,
+            lessons: []
           }
         ]
-      }
-    ]
-  },
-  {
-    id: 'college',
-    name: 'Cycle Collège (1AC, 2AC, 3AC)',
-    nameAr: 'السلك الثانوي الإعدادي',
-    badge: 'Fondations & Brevet',
-    cycle: 'Collège',
-    description: 'Consolidation des bases mathématiques indispensables : calcul littéral, théorèmes de Thalès et Pythagore, équations et trigonométrie.',
-    branches: [
+      },
+
+      // 3.2 Tronc Commun Technologique (TCT BIOF)
       {
-        id: '3ac',
-        name: '3ème Année Collège (3AC)',
-        nameAr: 'الثالثة إعدادي (الامتحان الجهوي)',
-        shortName: '3AC Brevet',
-        description: 'Préparation à l\'Examen Normalisé Régional de fin de collège (Muwahhad).',
-        levelId: 'college',
+        id: 'tc-technologique',
+        name: 'Tronc Commun Technologique (BIOF)',
+        nameAr: 'جذع مشترك تكنولوجي (خيار فرنسية)',
+        shortName: 'TCT BIOF',
+        description: 'Programme de mathématiques axé sur les applications techniques et l\'ingénierie, conforme au cursus officiel.',
+        levelId: 'tronc-commun',
         chapters: [
+          // Semestre 1
           {
-            slug: 'theoremes-geometriques-3ac',
-            title: 'Théorème de Thalès et Théorème de Pythagore',
-            titleAr: 'مبرهنة طاليس ومبرهنة فيتاغورس',
-            description: 'Théorèmes directs et réciproques, calcul de longueurs, preuve d\'orthogonalité et de parallélisme.',
-            levelId: 'college',
-            branchId: '3ac',
+            slug: 'arithmetique-dans-n',
+            title: 'Arithmétique dans l\'Ensemble N',
+            titleAr: 'مبادئ الحسابيات في مجموعة الأعداد الصحيحة الطبيعية',
+            description: 'Nombres pairs et impairs, divisibilité, nombres premiers, décomposition en facteurs premiers, PGCD et PPCM.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
             order: 1,
-            iconName: 'Shapes',
-            lessons: [
-              {
-                slug: 'theoreme-de-thales-direct-reciproque',
-                title: 'Théorème de Thalès : Calcul de Longueurs et Démonstration du Parallélisme',
-                titleAr: 'مبرهنة طاليس المباشرة والعكسية : حساب الأطوال والبرهان على التوازي',
-                levelId: 'college',
-                branchId: '3ac',
-                chapterSlug: 'theoremes-geometriques-3ac',
-                chapterTitle: 'Théorème de Thalès',
-                estimatedMinutes: 30,
-                youtubeVideoId: 'fJ9rUzIMcZQ',
-                summary: 'Le théorème de Thalès direct permet de calculer des distances dans un triangle ou une configuration papillon. La réciproque permet de démontrer le parallélisme de deux droites.',
-                objectives: [
-                  'Énoncer et vérifier les conditions d\'application de Thalès (alignement, parallélisme)',
-                  'Écrire correctement les rapports de longueurs',
-                  'Utiliser la réciproque de Thalès pour prouver que deux droites sont parallèles'
-                ],
-                keyFormulas: [
-                  {
-                    name: 'Rapports de Thalès',
-                    latex: '\\frac{AM}{AB} = \\frac{AN}{AC} = \\frac{MN}{BC}',
-                    description: 'Valable si les droites (MN) et (BC) sont strictement parallèles.'
-                  }
-                ],
-                definitions: [],
-                workedExamples: [],
-                commonMistakes: [
-                  {
-                    title: 'Oublier l\'ordre des points dans la réciproque de Thalès',
-                    mistake: 'Vérifier seulement l\'égalité des rapports sans mentionner que les points sont alignés dans le même ordre.',
-                    correction: 'Il faut impérativement écrire : « Les points A, M, B d\'une part et A, N, C d\'autre part sont alignés dans le même ordre, et AM/AB = AN/AC ».',
-                    why: 'Sans le même ordre, les droites peuvent ne pas être parallèles.'
-                  }
-                ],
-                proTipDarija: 'فالموحد الجهوي ديال التالتة إعدادي (3AC)، ضروري تكتب الجملة : « بما أن النقط مستقيمية وفي نفس الترتيب » قبل ما تطبق مبرهنة طاليس العكسية !',
-                exercises: [],
-                seoKeywords: ['thales 3ac maroc', 'exercices thales corriges', 'examen regional 3ac maths']
-              }
-            ]
+            iconName: 'Calculator',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'calcul-vectoriel-dans-le-plan',
+            title: 'Le Calcul Vectoriel dans le Plan',
+            titleAr: 'الحساب المتجهي في المستوى',
+            description: 'Vecteurs du plan, égalité de vecteurs, relation de Chasles, colinéarité et combinaisons linéaires.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 2,
+            iconName: 'Compass',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'la-projection-dans-le-plan',
+            title: 'La Projection dans le Plan',
+            titleAr: 'الإسقاط في المستوى',
+            description: 'Projection sur une droite, théorème de Thalès et applications aux mesures géométriques.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 3,
+            iconName: 'Maximize2',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'ensembles-des-nombres-et-ordre-dans-r',
+            title: 'L\'Ensemble des Nombres et l\'Ordre dans R',
+            titleAr: 'مجموعات الأعداد والترتيب في مجموعة الأعداد الحقيقية',
+            description: 'Ensembles N, Z, D, Q, R, encadrements, valeur absolue, intervalles et approximations décimales.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 4,
+            iconName: 'Layers',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'la-droite-dans-le-plan',
+            title: 'La Droite dans le Plan',
+            titleAr: 'المستقيم في المستوى',
+            description: 'Repère cartésien, équation cartésienne et réduite, pente et positions relatives.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 5,
+            iconName: 'GitCommit',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'polynomes',
+            title: 'Les Polynômes',
+            titleAr: 'الحدوديات',
+            description: 'Définition, degré, opérations, division euclidienne et factorisation.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 6,
+            iconName: 'Binary',
+            semester: 1,
+            lessons: []
+          },
+          {
+            slug: 'equations-inequations-et-systemes',
+            title: 'Équations, Inéquations et Systèmes',
+            titleAr: 'المعادلات والمتراجحات والنظمات',
+            description: 'Équations et inéquations du premier et second degré, discriminant et systèmes d\'équations.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 7,
+            iconName: 'Sigma',
+            semester: 1,
+            lessons: []
+          },
+          // Semestre 2
+          {
+            slug: 'calcul-trigonometrique',
+            title: 'Trigonométrie — Calcul Trigonométrique',
+            titleAr: 'الحساب المثلثي',
+            description: 'Cercle trigonométrique, formules cosinus, sinus, tangente et équations de base.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 8,
+            iconName: 'PieChart',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'generalites-sur-les-fonctions',
+            title: 'Généralités sur les Fonctions Numériques',
+            titleAr: 'عموميات حول الدوال العددية',
+            description: 'Domaine de définition, parité, sens de variation et fonctions usuelles de référence.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 9,
+            iconName: 'TrendingUp',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'transformations-du-plan',
+            title: 'Transformations du Plan',
+            titleAr: 'التحويلات الاعتيادية في المستوى',
+            description: 'Translations, homothéties et symétries appliquées aux schémas techniques.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 10,
+            iconName: 'Shuffle',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'produit-scalaire-dans-le-plan',
+            title: 'Le Produit Scalaire dans le Plan',
+            titleAr: 'الجداء السلمي في المستوى',
+            description: 'Définition géométrique et analytique du produit scalaire, orthogonalité et calcul de travail.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 11,
+            iconName: 'Crosshair',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'geometrie-dans-lespace',
+            title: 'Géométrie dans l\'Espace',
+            titleAr: 'الهندسة الفضائية',
+            description: 'Droites et plans de l\'espace, parallélisme, orthogonalité et projections spatiales.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 12,
+            iconName: 'Box',
+            semester: 2,
+            lessons: []
+          },
+          {
+            slug: 'statistiques',
+            title: 'Statistiques',
+            titleAr: 'الإحصاء',
+            description: 'Analyse de données expérimentales, paramètres de position et de dispersion.',
+            levelId: 'tronc-commun',
+            branchId: 'tc-technologique',
+            order: 13,
+            iconName: 'BarChart3',
+            semester: 2,
+            lessons: []
           }
         ]
       }
@@ -698,3 +1660,69 @@ export function getLessonBySlug(slug: string): Lesson | undefined {
 export function getLevelById(id: string): Level | undefined {
   return CURRICULUM_LEVELS.find((l) => l.id === id);
 }
+
+// Hydrate all chapters with real resources from the database
+const resourcesMap = chapterResourcesData as Record<string, ChapterResource[]>;
+
+for (const lvl of CURRICULUM_LEVELS) {
+  for (const br of lvl.branches) {
+    for (const ch of br.chapters) {
+      const key = `${lvl.id}/${br.id}/${ch.slug}`;
+      const mapped = resourcesMap[key];
+      if (mapped && mapped.length > 0) {
+        if (!ch.resources || ch.resources.length === 0) {
+          ch.resources = mapped;
+        } else {
+          const existingIds = new Set(ch.resources.map((r) => r.id));
+          for (const item of mapped) {
+            if (!existingIds.has(item.id)) {
+              ch.resources.push(item);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+export interface EnrichedResource extends ChapterResource {
+  levelId: LevelId;
+  levelName: string;
+  branchId: BranchId;
+  branchName: string;
+  chapterSlug: string;
+  chapterTitle: string;
+}
+
+export function getAllChapterResources(): EnrichedResource[] {
+  const list: EnrichedResource[] = [];
+  for (const lvl of CURRICULUM_LEVELS) {
+    for (const br of lvl.branches) {
+      for (const ch of br.chapters) {
+        if (ch.resources && ch.resources.length > 0) {
+          for (const r of ch.resources) {
+            list.push({
+              ...r,
+              levelId: lvl.id,
+              levelName: lvl.name,
+              branchId: br.id,
+              branchName: br.shortName,
+              chapterSlug: ch.slug,
+              chapterTitle: ch.title,
+            });
+          }
+        }
+      }
+    }
+  }
+  return list;
+}
+
+export function getAllSeriesResources(): EnrichedResource[] {
+  return getAllChapterResources().filter((r) => r.category === 'serie');
+}
+
+export function getAllCourseResources(): EnrichedResource[] {
+  return getAllChapterResources().filter((r) => r.category === 'cours' || r.category === 'resume');
+}
+

@@ -80,7 +80,7 @@ export function YouTubeFacade({
                 <Youtube className="w-3.5 h-3.5 fill-[#cc0000]" />
                 Cours Vidéo
               </span>
-              <span className="text-slate-300 font-medium">Prof. Omar Alami</span>
+              <span className="text-slate-300 font-medium">Prof. Jamaa Aknari</span>
             </div>
             <h3 className="font-bold text-base sm:text-lg line-clamp-2 text-white group-hover:text-blue-200 transition-colors leading-snug">
               {title}

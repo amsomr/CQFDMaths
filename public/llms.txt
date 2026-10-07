@@ -1,0 +1,29 @@
+# CQFDMaths — Plateforme de Mathématiques Lycée BIOF Maroc
+
+> CQFDMaths (https://cqfdmaths.ma) est la plateforme éducative marocaine de référence 100% gratuite dédiée aux mathématiques du Lycée (Option Française - BIOF), conçue et dirigée par le Professeur Jamaa Aknari (Enseignant Indépendant de Mathématiques). Slogan officiel : « Ce qu'il fallait démontrer » (وهو المطلوب إثباته).
+
+## Informations Générales & Contact
+- **Nom officiel :** CQFDMaths (« Ce qu'il fallait démontrer »)
+- **Fondateur & Enseignant :** Professeur Jamaa Aknari (الأستاذ جامع أكناري)
+- **Statut :** Enseignant Indépendant de Mathématiques (Maroc)
+- **Chaîne YouTube officielle :** https://www.youtube.com/@JamaaAknari
+- **Langues d'enseignement :** Français (BIOF), Darija marocaine (explications orales) et Arabe
+- **Modèle d'accès :** 100% gratuit, sans inscription obligatoire, sans publicité intrusive
+- **Documentation complète :** https://cqfdmaths.ma/llms-full.txt
+
+## Structure Pédagogique & Niveaux Couverts
+La plateforme est strictement dédiée à l'enseignement secondaire qualifiant (Lycée BIOF marocain). Le cycle collégial n'est pas couvert.
+
+- [Tronc Commun Scientifique & Technologique](https://cqfdmaths.ma/cours/tronc-commun/sciences): Ensemble des nombres naturels, arithmétique, calcul vectoriel, projection, ordre dans R, trigonométrie et fonctions numériques.
+- [1ère Année Baccalauréat Sciences Mathématiques](https://cqfdmaths.ma/cours/1ere-bac/sciences-maths): Logique mathématique, applications, barycentre, produit scalaire, rotation, dérivation et suites numériques.
+- [1ère Année Baccalauréat Sciences Expérimentales](https://cqfdmaths.ma/cours/1ere-bac/sciences-exp): Notions de logique, suites numériques, dérivation, géométrie analytique et trigonométrie.
+- [2ème Année Baccalauréat Sciences Mathématiques A & B](https://cqfdmaths.ma/cours/2eme-bac/sciences-maths): Continuité et limites, TVI, dérivabilité, suites, fonctions logarithmiques et exponentielles, nombres complexes, équations différentielles, calcul intégral, arithmétique et structures algébriques.
+- [2ème Année Baccalauréat Sciences Physiques & SVT](https://cqfdmaths.ma/cours/2eme-bac/sciences-pc-svt): Limites et continuité, dérivation, fonctions ln et exp, suites numériques, géométrie dans l'espace, calcul intégral et probabilités.
+
+## Pages Clés & Ressources Pédagogiques
+- [Accueil CQFDMaths](https://cqfdmaths.ma/): Présentation de la méthode de travail, sélecteur de niveau et aperçu des cours récents.
+- [Cours & Fiches de Synthèse](https://cqfdmaths.ma/cours): 82 chapitres ministériels structurés en semestres, formules fondamentales et résumés de cours.
+- [Banque d'Exercices et Problèmes](https://cqfdmaths.ma/exercices): 1 130 séries d'exercices progressifs avec solutions rédigées détaillées.
+- [Annales Examens Nationaux du Baccalauréat](https://cqfdmaths.ma/bac): 89 sessions d'examens nationaux marocains de 2008 à 2025 avec corrigés d'experts et 233 devoirs surveillés.
+- [Vidéothèque YouTube](https://cqfdmaths.ma/videos): Cours magistraux pas-à-pas sur tableau virtuel et résolutions commentées en vidéo.
+- [Profil du Professeur Jamaa Aknari](https://cqfdmaths.ma/a-propos): Parcours académique, philosophie d'enseignement et engagement pour la gratuité scolaire au Maroc.

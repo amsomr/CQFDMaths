@@ -90,7 +90,7 @@ export function VideoCard({ video, onPlay }: VideoCardProps) {
         <div className="pt-3 border-t border-[#0F172A]/10 flex items-center justify-between text-xs text-[#64748B]">
           <span className="flex items-center gap-1.5 font-medium text-[#475569]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]" />
-            <span>Prof. Omar Alami</span>
+            <span>Prof. Jamaa Aknari</span>
           </span>
           <span className="inline-flex items-center gap-1 font-bold text-[#1D4ED8] group-hover:underline">
             <span>Regarder</span>

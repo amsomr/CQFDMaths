@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     'cours maths maroc',
     'exercices corriges maths 2 bac',
     'examen national maths maroc',
-    'professeur omar alami',
+    'professeur jamaa aknari',
     'sciences maths',
     'sciences physiques biof',
     'tronc commun scientifique',
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_CONFIG.fullName,
     description: SITE_CONFIG.meta.defaultDescription,
-    creator: '@ProfOmarMaths',
+    creator: '@CQFDMaths',
   },
   robots: {
     index: true,

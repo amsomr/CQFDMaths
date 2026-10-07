@@ -1,0 +1,142 @@
+{
+  "summary": {
+    "health_score": 86,
+    "business_type": "Plateforme Éducative & Marque Personnelle (EdTech BIOF)",
+    "domain": "cqfdmaths.ma",
+    "audit_date": "2026-10-07T02:43:37.202Z",
+    "top_findings": [
+      {
+        "title": "En-têtes HTTP de sécurité non configurés dans next.config.ts",
+        "severity": "Medium",
+        "impact": "Sécurité & indicateurs de confiance Google"
+      },
+      {
+        "title": "Image OpenGraph officielle (og:image) 1200x630 non définie par défaut",
+        "severity": "High",
+        "impact": "Taux de clic (CTR) sur les partages WhatsApp & réseaux sociaux"
+      },
+      {
+        "title": "Fichier standard llms.txt manquant pour la recherche IA (GEO)",
+        "severity": "Medium",
+        "impact": "Visibilité et taux de citation sur Perplexity & ChatGPT Search"
+      },
+      {
+        "title": "Enrichissement Schema.org FAQPage sur la page d'accueil",
+        "severity": "Low",
+        "impact": "Espace occupé dans les résultats de recherche (SERP)"
+      }
+    ],
+    "quick_wins": [
+      "Ajouter une image OpenGraph (og:image) officielle 1200x630px pour les partages sociaux."
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 95,
+      "weight": "22%",
+      "what_works": [
+        "Rendu SSR/SSG fluide avec Next.js 16",
+        "Sitemap dynamique complet (~110 URLs prioritaires)",
+        "robots.txt présent avec directive sitemap",
+        "Proxy de streaming PDF avec masquage propre"
+      ],
+      "findings": []
+    },
+    {
+      "name": "Content Quality & E-E-A-T",
+      "score": 82,
+      "weight": "23%",
+      "what_works": [
+        "Alignement ministériel marocain BIOF rigoureux",
+        "Expertise démontrée par Prof. Jamaa Aknari",
+        "1 130 séries d'exercices et 89 examens nationaux interconnectés",
+        "Vidéos pédagogiques intégrées"
+      ],
+      "findings": [
+        {
+          "title": "Image OpenGraph (og:image) par défaut manquante",
+          "severity": "High",
+          "description": "Aucune image og:image déclarée pour les partages sociaux (WhatsApp, Facebook, Twitter, LinkedIn).",
+          "recommendation": "Déclarer une balise og:image de 1200x630px dans layout.tsx avec le branding CQFDMaths."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 90,
+      "weight": "10%",
+      "what_works": [
+        "WebSite Schema avec SearchAction",
+        "Course & LearningResource Schema avec VideoObject",
+        "BreadcrumbList sur toutes les leçons"
+      ],
+      "findings": []
+    },
+    {
+      "name": "Performance & CWV",
+      "score": 89,
+      "weight": "10%",
+      "what_works": [
+        "Temps de réponse serveur local < 50ms",
+        "Polices optimisées Google Fonts avec display=swap",
+        "Façade YouTube évitant le chargement prématuré des iframes lourdes"
+      ],
+      "findings": [
+        {
+          "title": "Polices sans font-display: swap",
+          "severity": "Low",
+          "description": "Risque de flash de texte invisible (FOIT) au chargement.",
+          "recommendation": "Spécifier display: \"swap\" sur toutes les polices Next.js."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO)",
+      "score": 78,
+      "weight": "10%",
+      "what_works": [
+        "Théorèmes et formules KaTeX hautement citables",
+        "Contenu textuel riche indexable par les bots IA"
+      ],
+      "findings": []
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1 : Actions Immédiates (Quick Wins)",
+        "timeframe": "24 - 48h",
+        "items": [
+          "Ajouter les en-têtes HTTP de sécurité (X-Content-Type-Options, X-Frame-Options, Referrer-Policy) dans next.config.ts",
+          "Créer et déployer public/llms.txt pour les moteurs IA (Perplexity, ChatGPT, Gemini)",
+          "Déclarer l'image og:image par défaut (1200x630) dans src/app/layout.tsx",
+          "Ajouter les directives explicites pour GPTBot et ClaudeBot dans src/app/robots.ts"
+        ]
+      },
+      {
+        "name": "Phase 2 : Optimisations On-Page & Rich Snippets",
+        "timeframe": "Semaine 1",
+        "items": [
+          "Ajouter le balisage Schema FAQPage sur les questions fréquentes de la page d'accueil",
+          "Créer les balises metadata dynamiques sur les pages de chapitres (/cours/.../[chapter])",
+          "Vérifier que les images et diagrammes portent des attributs alt descriptifs"
+        ]
+      },
+      {
+        "name": "Phase 3 : Autorité & Réseau Externe",
+        "timeframe": "Mois 1",
+        "items": [
+          "Lier le domaine officiel cqfdmaths.ma dans la description de la chaîne YouTube de Prof. Jamaa Aknari",
+          "Déployer la Search Console Google et soumettre le sitemap.xml",
+          "Configurer IndexNow pour la soumission instantanée des nouvelles leçons à Bing & Copilot"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "report": "FULL-AUDIT-REPORT.md",
+    "action_plan": "ACTION-PLAN.md"
+  }
+}

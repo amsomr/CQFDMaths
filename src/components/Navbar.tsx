@@ -37,9 +37,9 @@ export function Navbar() {
   }, []);
 
   const navLinks: { href: string; label: string; badge?: string }[] = [
-    { href: '/cours', label: 'Cours' },
-    { href: '/exercices', label: 'Exercices' },
-    { href: '/bac', label: 'Espace Bac' },
+    { href: '/cours', label: 'Cours & Fiches' },
+    { href: '/exercices', label: 'Exercices & Séries' },
+    { href: '/bac', label: 'Espace Bac', badge: 'National' },
     { href: '/videos', label: 'Vidéos' },
     { href: '/a-propos', label: "L'Enseignant" },
   ];
@@ -70,8 +70,8 @@ export function Navbar() {
                 <span className="font-black text-2xl tracking-tight text-[#0F172A] leading-tight font-sans">
                   CQFD<span className="text-[#1D4ED8]">Maths</span>
                 </span>
-                <span className="text-[12px] font-semibold text-[#64748B] tracking-wide uppercase leading-none mt-0.5">
-                  {isRtl ? 'الأستاذ عمر العلمي' : 'Prof. Omar Alami'}
+                <span className="text-[11px] font-semibold text-[#64748B] tracking-tight leading-none mt-0.5">
+                  {isRtl ? SITE_CONFIG.sloganAr : SITE_CONFIG.slogan}
                 </span>
               </div>
             </Link>

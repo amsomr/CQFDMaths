@@ -15,7 +15,7 @@ export function LevelSelector() {
 
   useEffect(() => {
     const saved = localStorage.getItem('maths_maroc_user_level') as LevelId | null;
-    if (saved && ['2eme-bac', '1ere-bac', 'tronc-commun', 'college'].includes(saved)) {
+    if (saved && ['2eme-bac', '1ere-bac', 'tronc-commun'].includes(saved)) {
       setSelectedLevelId(saved);
     }
   }, []);
@@ -30,10 +30,9 @@ export function LevelSelector() {
   };
 
   const levelTabs = [
-    { id: '2eme-bac' as LevelId, label: '2ème Bac', subtitle: 'Examen National' },
-    { id: '1ere-bac' as LevelId, label: '1ère Bac', subtitle: 'Examen Régional' },
     { id: 'tronc-commun' as LevelId, label: 'Tronc Commun', subtitle: 'Sciences BIOF' },
-    { id: 'college' as LevelId, label: 'Collège', subtitle: '3AC • 2AC • 1AC' },
+    { id: '1ere-bac' as LevelId, label: '1ère Bac', subtitle: 'SM • Sciences Exp' },
+    { id: '2eme-bac' as LevelId, label: '2ème Bac', subtitle: 'Examen National' },
   ];
 
   const currentLevelData = CURRICULUM_LEVELS.find((l) => l.id === selectedLevelId) || CURRICULUM_LEVELS[0];
@@ -44,9 +43,7 @@ export function LevelSelector() {
     ? 'limites-et-continuite'
     : selectedLevelId === '1ere-bac'
     ? 'complexe'
-    : selectedLevelId === 'tronc-commun'
-    ? 'fonction'
-    : 'geometrie';
+    : 'fonction';
 
   return (
     <section className="py-16 sm:py-24 bg-[#FAF9F5] text-[#0F172A] relative">
@@ -114,9 +111,7 @@ export function LevelSelector() {
                     ? "Prépare l'examen national avec rigueur et clarté."
                     : currentLevelData.name === '1ère Année Baccalauréat'
                     ? "Maîtrise les fondements de la 1ère Bac et réussis le Régional."
-                    : currentLevelData.name === 'Tronc Commun'
-                    ? "Réussis ta transition vers le Lycée scientifique."
-                    : "Construis des bases mathématiques solides dès le collège."}
+                    : "Réussis ta transition vers le Lycée scientifique."}
                 </h3>
 
                 <p className="text-base sm:text-lg text-[#475569] leading-relaxed max-w-xl">

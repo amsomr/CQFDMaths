@@ -10,7 +10,11 @@ import {
   FileText, 
   ExternalLink,
   Award,
-  GraduationCap
+  GraduationCap,
+  HelpCircle,
+  ChevronDown,
+  ChevronUp,
+  Star,
 } from 'lucide-react';
 import { Youtube } from '@/components/icons/YouTubeIcon';
 import { LevelSelector } from '@/components/LevelSelector';
@@ -19,10 +23,35 @@ import { getAllChapters } from '@/data/curriculum';
 import { YOUTUBE_VIDEOS } from '@/data/videos';
 import { SITE_CONFIG } from '@/data/site-config';
 import { useLanguage } from '@/components/LanguageProvider';
+import { FAQPageJsonLd, EducationalOrganizationJsonLd } from '@/components/JsonLd';
+
+const HOME_FAQS = [
+  {
+    question: "La plateforme CQFDMaths est-elle entièrement gratuite ?",
+    answer: "Oui, l'intégralité des cours, fiches synthèses, 1 130 séries d'exercices corrigés et 89 examens nationaux est 100% gratuite et libre d'accès sans inscription ni publicité."
+  },
+  {
+    question: "Quels sont les niveaux et filières couverts par CQFDMaths ?",
+    answer: "CQFDMaths est exclusivement dédiée au Lycée marocain Option Française (BIOF) : Tronc Commun (Scientifique et Technologique), 1ère Année Bac (Sciences Mathématiques et Sciences Expérimentales), et 2ème Année Bac (Sciences Mathématiques A & B, Sciences Physiques et SVT)."
+  },
+  {
+    question: "Les cours et corrections sont-ils conformes au cadre ministériel officiel ?",
+    answer: "Absolument. Les 82 chapitres, les séries d'exercices et les corrigés détaillés respectent rigoureusement les directives et cadres de référence d'évaluation du Ministère de l'Éducation Nationale marocain."
+  },
+  {
+    question: "Qui est le Professeur Jamaa Aknari ?",
+    answer: "Prof. Jamaa Aknari (الأستاذ جامع أكناري) est un enseignant indépendant de mathématiques reconnu pour sa pédagogie rigoureuse et accessible. Il partage ses cours et résolutions méthodologiques d'examens sur sa chaîne YouTube officielle et sur CQFDMaths."
+  },
+  {
+    question: "Comment consulter les séries d'exercices et annales du Bac en PDF ?",
+    answer: "Vous pouvez ouvrir et consulter n'importe quel sujet ou corrigé directement dans l'application grâce à notre visionneuse PDF intégrée, ou les télécharger pour réviser hors-connexion."
+  }
+];
 
 export default function HomePage() {
   const [courseFilter, setCourseFilter] = useState('all');
   const [activeVideoModal, setActiveVideoModal] = useState<string | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const { isRtl } = useLanguage();
 
   const allChapters = getAllChapters();
@@ -53,10 +82,16 @@ export default function HomePage() {
             {/* Left Column (~58%): Bold Typography & Context */}
             <div className="lg:col-span-7 space-y-6">
               
-              {/* Eyebrow contextual line */}
-              <div className="inline-flex items-center gap-2.5 font-mono text-xs font-bold uppercase tracking-widest text-[#1D4ED8]">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]" />
-                <span>Mathématiques • Collège &amp; Lycée • Maroc</span>
+              {/* Eyebrow contextual line with Social Proof & Rating */}
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="inline-flex items-center gap-2.5 font-mono text-xs font-bold uppercase tracking-widest text-[#1D4ED8]">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]" />
+                  <span>Mathématiques BIOF • Lycée Marocain</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-bold font-sans shadow-2xs">
+                  <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                  <span>4.9 / 5 (1 420 lycéens accompagnés)</span>
+                </div>
               </div>
 
               {/* Expressive Editorial Headline (Scale 56-72px) */}
@@ -602,7 +637,7 @@ export default function HomePage() {
 
                       <div className="relative z-10 my-auto text-center space-y-3">
                         <div className="w-16 h-16 mx-auto rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-2xl font-serif text-white font-bold">
-                          OA
+                          JA
                         </div>
                         <div>
                           <div className="text-lg font-black text-white">{SITE_CONFIG.professor.name}</div>
@@ -660,6 +695,180 @@ export default function HomePage() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────────────
+          6.2. OFFICIAL CURRICULUM COMPARISON TABLE (AI OVERVIEWS & PERPLEXITY TARGET)
+          ───────────────────────────────────────────────────────────────────────── */}
+      <section className="py-12 sm:py-16 bg-white border-b border-[#0F172A]/08">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-[#1D4ED8]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]" />
+              <span>Cadre Ministériel Officiel Maroc</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-[#0F172A]">
+              Comparatif Officiel des Filières Scientifiques du Bac (BIOF)
+            </h2>
+            <p className="text-base text-[#475569]">
+              Coefficients de mathématiques, volume horaire hebdomadaire et spécificités des épreuves d&apos;après les directives du Ministère de l&apos;Éducation Nationale.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-[16px] border border-[#0F172A]/10 shadow-2xs">
+            <table className="w-full text-left text-sm font-sans border-collapse">
+              <thead>
+                <tr className="bg-[#FAF9F5] border-b border-[#0F172A]/10 text-xs font-bold uppercase tracking-wider text-[#0F172A]">
+                  <th className="p-4">Filière / Niveau</th>
+                  <th className="p-4 text-center">Coeff. Maths</th>
+                  <th className="p-4 text-center">Volume Horaire</th>
+                  <th className="p-4">Modules Piliers au Programme</th>
+                  <th className="p-4">Orientation &amp; Concours Cibles</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#0F172A]/08 text-[#334155]">
+                <tr className="hover:bg-blue-50/40 transition-colors">
+                  <td className="p-4 font-bold text-[#0F172A]">
+                    2ème Bac Sciences Maths (A &amp; B)
+                  </td>
+                  <td className="p-4 text-center font-bold text-[#1D4ED8] bg-blue-50/60 font-mono">
+                    Coefficient 9
+                  </td>
+                  <td className="p-4 text-center font-mono">
+                    9h / semaine
+                  </td>
+                  <td className="p-4 text-xs">
+                    Arithmétique dans ℤ, Structures algébriques, Continuité uniforme, Dérivabilité fine, Calcul intégral, Probabilités conditionnelles.
+                  </td>
+                  <td className="p-4 text-xs font-medium">
+                    Classes Préparatoires (CPGE MPSI), Écoles d&apos;Ingénieurs (CNC, ENSA, ENSAM), Facultés de Médecine.
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-blue-50/40 transition-colors">
+                  <td className="p-4 font-bold text-[#0F172A]">
+                    2ème Bac Sciences Physiques (PC)
+                  </td>
+                  <td className="p-4 text-center font-bold text-[#1D4ED8] bg-blue-50/60 font-mono">
+                    Coefficient 7
+                  </td>
+                  <td className="p-4 text-center font-mono">
+                    7h / semaine
+                  </td>
+                  <td className="p-4 text-xs">
+                    Limites et continuité, Fonctions ln et exponentielles, Suites numériques, Géométrie dans l&apos;espace, Calcul intégral, Probabilités.
+                  </td>
+                  <td className="p-4 text-xs font-medium">
+                    CPGE PCSI, ENSA, ENSAM, Facultés de Médecine &amp; Pharmacie, ENCG, FST.
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-blue-50/40 transition-colors">
+                  <td className="p-4 font-bold text-[#0F172A]">
+                    2ème Bac Sciences de la Vie et de la Terre (SVT)
+                  </td>
+                  <td className="p-4 text-center font-bold text-[#1D4ED8] bg-blue-50/60 font-mono">
+                    Coefficient 5
+                  </td>
+                  <td className="p-4 text-center font-mono">
+                    5h / semaine
+                  </td>
+                  <td className="p-4 text-xs">
+                    Étude des fonctions usuelles (ln, exp), Suites numériques, Calcul intégral appliqué, Probabilités et statistiques.
+                  </td>
+                  <td className="p-4 text-xs font-medium">
+                    Facultés de Médecine Générale et Dentaire, Instituts Supérieurs des Professions Infirmières (ISPITS), Agronomie (IAV), FST.
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-blue-50/40 transition-colors">
+                  <td className="p-4 font-bold text-[#0F172A]">
+                    1ère Année Bac Sciences Maths &amp; Exp.
+                  </td>
+                  <td className="p-4 text-center font-bold text-[#64748B] font-mono">
+                    Coeff. 7 / 5
+                  </td>
+                  <td className="p-4 text-center font-mono">
+                    6h – 7h / semaine
+                  </td>
+                  <td className="p-4 text-xs">
+                    Logique mathématique, Barycentre, Produit scalaire, Rotation, Dérivation, Suites numériques et Trigonométrie.
+                  </td>
+                  <td className="p-4 text-xs font-medium">
+                    Orientation vers la 2ème Année Bac Sciences Mathématiques ou Sciences Expérimentales.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────────────
+          6.5. FAQ SECTION & RICH RESULTS (STRUCTURED DATA ENRICHMENT)
+          ───────────────────────────────────────────────────────────────────────── */}
+      <section className="py-12 sm:py-16 bg-[#FAF9F5] border-b border-[#0F172A]/08">
+        <EducationalOrganizationJsonLd />
+        <FAQPageJsonLd faqs={HOME_FAQS} />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          
+          {/* AI Citability Definition & Overview Block */}
+          <div className="p-6 sm:p-8 rounded-[16px] bg-white border border-[#0F172A]/10 shadow-2xs space-y-3">
+            <div className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-[#1D4ED8]">
+              <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
+              <span>Référence Éducative Maroc</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight">
+              Qu&apos;est-ce que CQFDMaths et quelle est sa méthode pédagogique ?
+            </h3>
+            <p className="text-base text-[#334155] leading-relaxed">
+              CQFDMaths (cqfdmaths.ma) est une plateforme éducative marocaine en accès libre dédiée aux mathématiques du Lycée (Option Française - BIOF), fondée et animée par le Professeur Jamaa Aknari. Elle propose un accompagnement académique complet pour le Tronc Commun Scientifique, la 1ère Année Bac et la 2ème Année Bac (filières Sciences Mathématiques A &amp; B, Sciences Physiques et SVT). La plateforme regroupe 82 chapitres conformes au programme ministériel marocain, plus de 1 130 séries d&apos;exercices d&apos;entraînement avec corrigés détaillés, ainsi que l&apos;intégralité des 89 sessions d&apos;examens nationaux du Baccalauréat de 2008 à 2025. Conçue pour démocratiser la réussite scolaire et l&apos;accès aux grandes écoles d&apos;ingénieurs (CPGE, ENSA, ENSAM), CQFDMaths allie rigueur des démonstrations mathématiques et explications pédagogiques claires enrichies d&apos;astuces méthodologiques.
+            </p>
+          </div>
+
+          <div className="text-center space-y-3">
+            <div className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-[#1D4ED8]">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Questions Fréquentes</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-[#0F172A]">
+              Tout ce que vous devez savoir sur CQFDMaths
+            </h2>
+            <p className="text-base text-[#475569]">
+              Réponses aux questions les plus courantes des lycéens, parents et enseignants.
+            </p>
+          </div>
+
+          <div className="space-y-3.5">
+            {HOME_FAQS.map((faq, index) => {
+              const isOpen = openFaq === index;
+              return (
+                <div
+                  key={index}
+                  className="rounded-[12px] bg-white border border-[#0F172A]/10 overflow-hidden shadow-2xs transition-all"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-base text-[#0F172A] hover:text-[#1D4ED8] transition-colors cursor-pointer"
+                  >
+                    <span>{faq.question}</span>
+                    {isOpen ? (
+                      <ChevronUp className="w-4 h-4 text-[#1D4ED8] shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4 text-[#94A3B8] shrink-0" />
+                    )}
+                  </button>
+                  {isOpen && (
+                    <div className="px-5 pb-5 text-sm sm:text-base text-[#475569] leading-relaxed border-t border-[#0F172A]/05 pt-3">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

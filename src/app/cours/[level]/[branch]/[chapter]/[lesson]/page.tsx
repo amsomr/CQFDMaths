@@ -362,7 +362,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
             </div>
             <div className="space-y-2">
               <h3 className="text-sm font-bold text-[#92400E] flex items-center gap-2">
-                <span>نصيحة الأستاذ عمر العلمي</span>
+                <span>نصيحة الأستاذ جامع أكناري</span>
                 <span className="text-xs font-normal text-[#B45309]">(Conseil d&apos;Examen)</span>
               </h3>
               <p className="text-sm sm:text-base leading-relaxed text-[#78350F] font-arabic" dir="rtl">
@@ -444,7 +444,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
               Vous préparez vos examens ?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-lg leading-relaxed">
-              Abonnez-vous à la chaîne officielle de Prof. Omar Alami pour ne manquer aucun direct de révision et recevoir les corrigés des annales nationales.
+              Abonnez-vous à la chaîne officielle de Prof. Jamaa Aknari pour ne manquer aucun direct de révision et recevoir les corrigés des annales nationales.
             </p>
           </div>
           <a

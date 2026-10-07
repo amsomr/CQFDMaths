@@ -29,14 +29,14 @@ export function Footer() {
                 <span className="font-black text-xl tracking-tight text-[#0F172A] font-sans">
                   CQFD<span className="text-[#1D4ED8]">Maths</span>
                 </span>
-                <span className="text-[11px] font-bold text-[#64748B] tracking-wider uppercase">
-                  {SITE_CONFIG.professor.name}
+                <span className="text-[11px] font-semibold text-[#64748B] tracking-tight">
+                  {SITE_CONFIG.slogan}
                 </span>
               </div>
             </Link>
             
             <p className="text-sm text-[#475569] leading-relaxed max-w-xs font-medium">
-              Des maths claires, rigoureuses et accessibles à tous les élèves du Maroc.
+              Plateforme du {SITE_CONFIG.professor.name} &mdash; Des mathématiques claires, rigoureuses et accessibles à tous les élèves du Maroc.
             </p>
 
             {/* Social channels */}
@@ -108,8 +108,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/cours/college" className="hover:text-[#1D4ED8] transition-colors">
-                  Cycle Collégial (1AC, 2AC, 3AC)
+                <Link href="/cours/2eme-bac/sciences-maths" className="hover:text-[#1D4ED8] transition-colors">
+                  Sciences Mathématiques A &amp; B (BIOF)
                 </Link>
               </li>
               <li>

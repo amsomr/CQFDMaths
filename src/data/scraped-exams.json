@@ -1,0 +1,4757 @@
+{
+  "exams": [
+    {
+      "id": "bac-sciences-maths-2025-normale",
+      "year": 2025,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2025 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=145782",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2025-rattrapage",
+      "year": 2025,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2025 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=145784",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2025-normale",
+      "year": 2025,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2025 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=145826",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2025-rattrapage",
+      "year": 2025,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2025 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=145831",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2025-normale",
+      "year": 2025,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2025 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=145827",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2025-rattrapage",
+      "year": 2025,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2025 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=145832",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2024-normale",
+      "year": 2024,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2024 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=145738",
+      "correctionPdfUrl": "/api/pdf?id=145736",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2024-rattrapage",
+      "year": 2024,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2024 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=145740",
+      "correctionPdfUrl": "/api/pdf?id=145742",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2024-normale",
+      "year": 2024,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2024 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=144505",
+      "correctionPdfUrl": "/api/pdf?id=144510",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2024-rattrapage",
+      "year": 2024,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2024 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=145811",
+      "correctionPdfUrl": "/api/pdf?id=145816",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2024-normale",
+      "year": 2024,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2024 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=144506",
+      "correctionPdfUrl": "/api/pdf?id=144511",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2024-rattrapage",
+      "year": 2024,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2024 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=145812",
+      "correctionPdfUrl": "/api/pdf?id=145817",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2023-normale",
+      "year": 2023,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2023 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=142489",
+      "correctionPdfUrl": "/api/pdf?id=142491",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2023-rattrapage",
+      "year": 2023,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2023 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=142493",
+      "correctionPdfUrl": "/api/pdf?id=142495",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2023-normale",
+      "year": 2023,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2023 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=137482",
+      "correctionPdfUrl": "/api/pdf?id=137472",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2023-rattrapage",
+      "year": 2023,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2023 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=142250",
+      "correctionPdfUrl": "/api/pdf?id=142255",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2023-normale",
+      "year": 2023,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2023 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=137483",
+      "correctionPdfUrl": "/api/pdf?id=137473",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2023-rattrapage",
+      "year": 2023,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2023 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=142251",
+      "correctionPdfUrl": "/api/pdf?id=142256",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2022-normale",
+      "year": 2022,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2022 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=136603",
+      "correctionPdfUrl": "/api/pdf?id=136840",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2022-rattrapage",
+      "year": 2022,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2022 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=136605",
+      "correctionPdfUrl": "/api/pdf?id=136842",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2022-normale",
+      "year": 2022,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2022 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136586",
+      "correctionPdfUrl": "/api/pdf?id=136803",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2022-rattrapage",
+      "year": 2022,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2022 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136591",
+      "correctionPdfUrl": "/api/pdf?id=136808",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2022-normale",
+      "year": 2022,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2022 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136587",
+      "correctionPdfUrl": "/api/pdf?id=136802",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2022-rattrapage",
+      "year": 2022,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2022 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136592",
+      "correctionPdfUrl": "/api/pdf?id=136807",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2021-normale",
+      "year": 2021,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2021 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=127192",
+      "correctionPdfUrl": "/api/pdf?id=136836",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2021-rattrapage",
+      "year": 2021,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2021 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=127194",
+      "correctionPdfUrl": "/api/pdf?id=136838",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2021-normale",
+      "year": 2021,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2021 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=127180",
+      "correctionPdfUrl": "/api/pdf?id=136793",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2021-rattrapage",
+      "year": 2021,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2021 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=127185",
+      "correctionPdfUrl": "/api/pdf?id=136798",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2021-normale",
+      "year": 2021,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2021 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=127181",
+      "correctionPdfUrl": "/api/pdf?id=136792",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2021-rattrapage",
+      "year": 2021,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2021 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=127186",
+      "correctionPdfUrl": "/api/pdf?id=136797",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2020-normale",
+      "year": 2020,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2020 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=109634",
+      "correctionPdfUrl": "/api/pdf?id=109636",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2020-rattrapage",
+      "year": 2020,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2020 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=109638",
+      "correctionPdfUrl": "/api/pdf?id=109640",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2020-normale",
+      "year": 2020,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2020 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=109797",
+      "correctionPdfUrl": "/api/pdf?id=109803",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2020-rattrapage",
+      "year": 2020,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2020 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=109808",
+      "correctionPdfUrl": "/api/pdf?id=109814",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2020-normale",
+      "year": 2020,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2020 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=109799",
+      "correctionPdfUrl": "/api/pdf?id=109804",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2020-rattrapage",
+      "year": 2020,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2020 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=109809",
+      "correctionPdfUrl": "/api/pdf?id=109815",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2019-normale",
+      "year": 2019,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2019 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=68480",
+      "correctionPdfUrl": "/api/pdf?id=106424",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2019-rattrapage",
+      "year": 2019,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2019 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=94395",
+      "correctionPdfUrl": "/api/pdf?id=109642",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2019-normale",
+      "year": 2019,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2019 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=68527",
+      "correctionPdfUrl": "/api/pdf?id=100965",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2019-rattrapage",
+      "year": 2019,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2019 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=106247",
+      "correctionPdfUrl": "/api/pdf?id=106252",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2019-normale",
+      "year": 2019,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2019 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=68529",
+      "correctionPdfUrl": "/api/pdf?id=100966",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2019-rattrapage",
+      "year": 2019,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2019 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=106248",
+      "correctionPdfUrl": "/api/pdf?id=106253",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2018-normale",
+      "year": 2018,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2018 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=65507",
+      "correctionPdfUrl": "/api/pdf?id=65509",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2018-rattrapage",
+      "year": 2018,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2018 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=65511",
+      "correctionPdfUrl": "/api/pdf?id=106222",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2018-normale",
+      "year": 2018,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2018 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94699",
+      "correctionPdfUrl": "/api/pdf?id=94704",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2018-rattrapage",
+      "year": 2018,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2018 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94709",
+      "correctionPdfUrl": "/api/pdf?id=94714",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2018-normale",
+      "year": 2018,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2018 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94700",
+      "correctionPdfUrl": "/api/pdf?id=94705",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2018-rattrapage",
+      "year": 2018,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2018 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94710",
+      "correctionPdfUrl": "/api/pdf?id=94715",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2017-normale",
+      "year": 2017,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2017 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57969",
+      "correctionPdfUrl": "/api/pdf?id=57971",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2017-rattrapage",
+      "year": 2017,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2017 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=106218",
+      "correctionPdfUrl": "/api/pdf?id=106220",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2017-normale",
+      "year": 2017,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2017 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94525",
+      "correctionPdfUrl": "/api/pdf?id=94530",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2017-rattrapage",
+      "year": 2017,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2017 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94535",
+      "correctionPdfUrl": "/api/pdf?id=94540",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2017-normale",
+      "year": 2017,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2017 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94526",
+      "correctionPdfUrl": "/api/pdf?id=94531",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2017-rattrapage",
+      "year": 2017,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2017 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94536",
+      "correctionPdfUrl": "/api/pdf?id=94541",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2016-normale",
+      "year": 2016,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2016 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57958",
+      "correctionPdfUrl": "/api/pdf?id=57960",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2016-rattrapage",
+      "year": 2016,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2016 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57965",
+      "correctionPdfUrl": "/api/pdf?id=57967",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2016-normale",
+      "year": 2016,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2016 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94485",
+      "correctionPdfUrl": "/api/pdf?id=94490",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2016-rattrapage",
+      "year": 2016,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2016 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94502",
+      "correctionPdfUrl": "/api/pdf?id=94520",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2016-normale",
+      "year": 2016,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2016 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94486",
+      "correctionPdfUrl": "/api/pdf?id=94491",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2016-rattrapage",
+      "year": 2016,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2016 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=94507",
+      "correctionPdfUrl": "/api/pdf?id=94521",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2015-normale",
+      "year": 2015,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2015 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57950",
+      "correctionPdfUrl": "/api/pdf?id=57952",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2015-rattrapage",
+      "year": 2015,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2015 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57954",
+      "correctionPdfUrl": "/api/pdf?id=57956",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2015-normale",
+      "year": 2015,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2015 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136578",
+      "correctionPdfUrl": "/api/pdf?id=136566",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2015-normale",
+      "year": 2015,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2015 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136580",
+      "correctionPdfUrl": "/api/pdf?id=136569",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2014-normale",
+      "year": 2014,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2014 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57948",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2014-normale",
+      "year": 2014,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2014 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136551",
+      "correctionPdfUrl": "/api/pdf?id=137467",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2014-rattrapage",
+      "year": 2014,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2014 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136561",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2014-normale",
+      "year": 2014,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2014 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136554",
+      "correctionPdfUrl": "/api/pdf?id=137468",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2014-rattrapage",
+      "year": 2014,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2014 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136562",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2013-normale",
+      "year": 2013,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2013 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57940",
+      "correctionPdfUrl": "/api/pdf?id=57942",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2013-rattrapage",
+      "year": 2013,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2013 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57944",
+      "correctionPdfUrl": "/api/pdf?id=57946",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2013-normale",
+      "year": 2013,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2013 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136545",
+      "correctionPdfUrl": "/api/pdf?id=137173",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2013-normale",
+      "year": 2013,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2013 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136546",
+      "correctionPdfUrl": "/api/pdf?id=137174",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2012-normale",
+      "year": 2012,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2012 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57932",
+      "correctionPdfUrl": "/api/pdf?id=57934",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2012-rattrapage",
+      "year": 2012,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2012 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57936",
+      "correctionPdfUrl": "/api/pdf?id=57938",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2012-normale",
+      "year": 2012,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2012 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136538",
+      "correctionPdfUrl": "/api/pdf?id=137431",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2012-normale",
+      "year": 2012,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2012 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136539",
+      "correctionPdfUrl": "/api/pdf?id=137434",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2011-normale",
+      "year": 2011,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2011 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57924",
+      "correctionPdfUrl": "/api/pdf?id=57926",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2011-rattrapage",
+      "year": 2011,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2011 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57928",
+      "correctionPdfUrl": "/api/pdf?id=57930",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2011-normale",
+      "year": 2011,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2011 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=106884",
+      "correctionPdfUrl": "/api/pdf?id=106917",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2011-rattrapage",
+      "year": 2011,
+      "session": "Rattrapage",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2011 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=106828",
+      "correctionPdfUrl": "/api/pdf?id=106834",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2011-normale",
+      "year": 2011,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2011 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=106886",
+      "correctionPdfUrl": "/api/pdf?id=106918",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2011-rattrapage",
+      "year": 2011,
+      "session": "Rattrapage",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2011 — Session Rattrapage",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=106829",
+      "correctionPdfUrl": "/api/pdf?id=106837",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-maths-2010-normale",
+      "year": 2010,
+      "session": "Normale",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2010 — Session Normale",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57916",
+      "correctionPdfUrl": "/api/pdf?id=57918",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-maths-2010-rattrapage",
+      "year": 2010,
+      "session": "Rattrapage",
+      "branchId": "sciences-maths",
+      "branchName": "Sciences Mathématiques (A & B)",
+      "title": "Examen National Mathématiques 2010 — Session Rattrapage",
+      "durationHours": 4,
+      "coefficient": 9,
+      "subjectPdfUrl": "/api/pdf?id=57920",
+      "correctionPdfUrl": "/api/pdf?id=57922",
+      "keyTopics": [
+        "Structures algébriques (Groupes & Anneaux)",
+        "Arithmétique dans Z",
+        "Nombres complexes & Géométrie",
+        "Suites numériques",
+        "Fonctions exponentielles & Logarithmes",
+        "Calcul intégral"
+      ],
+      "chapterSlugs": [
+        "structures-algebriques",
+        "arithmetique-dans-z",
+        "nombres-complexes-partie-1",
+        "suites-numeriques",
+        "fonctions-exponentielles",
+        "calcul-integral"
+      ],
+      "difficulty": "Exigeante"
+    },
+    {
+      "id": "bac-sciences-physiques-2010-normale",
+      "year": 2010,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2010 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136529",
+      "correctionPdfUrl": "/api/pdf?id=137477",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2010-normale",
+      "year": 2010,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2010 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136531",
+      "correctionPdfUrl": "/api/pdf?id=137478",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-sciences-physiques-2009-normale",
+      "year": 2009,
+      "session": "Normale",
+      "branchId": "sciences-physiques",
+      "branchName": "Sciences Physiques (PC)",
+      "title": "Examen National Mathématiques 2009 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136523",
+      "keyTopics": [
+        "Nombres complexes",
+        "Géométrie dans l'espace",
+        "Calcul des probabilités",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles et ln"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "geometrie-dans-l-espace",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonction-exponentielle-et-ln"
+      ],
+      "difficulty": "Normale"
+    },
+    {
+      "id": "bac-svt-2009-normale",
+      "year": 2009,
+      "session": "Normale",
+      "branchId": "svt",
+      "branchName": "Sciences de la Vie et de la Terre (SVT)",
+      "title": "Examen National Mathématiques 2009 — Session Normale",
+      "durationHours": 3,
+      "coefficient": 7,
+      "subjectPdfUrl": "/api/pdf?id=136524",
+      "keyTopics": [
+        "Nombres complexes",
+        "Probabilités & Tirages",
+        "Suites numériques récurrentes",
+        "Fonctions exponentielles & Logarithmes"
+      ],
+      "chapterSlugs": [
+        "nombres-complexes",
+        "calcul-des-probabilites",
+        "suites-numeriques",
+        "fonctions-exponentielles"
+      ],
+      "difficulty": "Normale"
+    }
+  ],
+  "examensBlancs": [
+    {
+      "id": "simili-sciences-physiques-100930",
+      "title": "Examen Simili 1 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100930",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-100935",
+      "title": "Examen Simili 2 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100935",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-100940",
+      "title": "Examen Simili 3 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100940",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-100945",
+      "title": "Examen Simili 4 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100945",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-100950",
+      "title": "Examen Simili 5 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100950",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-100955",
+      "title": "Examen Simili 6 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100955",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-100960",
+      "title": "Examen Simili 7 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100960",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-117626",
+      "title": "Examen Simili 2021 1 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=117626",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-117636",
+      "title": "Examen Simili 2021 2 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=117636",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-117646",
+      "title": "Examen Simili 2021 3 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=117646",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-136515",
+      "title": "Examen Simili 2023 1 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=136515",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-136520",
+      "title": "Examen Simili 2023 1 - Maths 2 SPC-SVT (Corrigé)",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=136520",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-137432",
+      "title": "Examen Simili 2023 2 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=137432",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-137446",
+      "title": "Examen Simili 2023 2 - Maths 2 SPC-SVT (Corrigé)",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=137446",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-137439",
+      "title": "Examen Simili 2023 3 - Maths 2 SPC-SVT",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=137439",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-sciences-physiques-137451",
+      "title": "Examen Simili 2023 3 - Maths 2 SPC-SVT (Corrigé)",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=137451",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-100931",
+      "title": "Examen Simili 1 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100931",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-100936",
+      "title": "Examen Simili 2 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100936",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-100941",
+      "title": "Examen Simili 3 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100941",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-100946",
+      "title": "Examen Simili 4 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100946",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-100951",
+      "title": "Examen Simili 5 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100951",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-100956",
+      "title": "Examen Simili 6 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100956",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-100961",
+      "title": "Examen Simili 7 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=100961",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-117627",
+      "title": "Examen Simili 2021 1 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=117627",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-117637",
+      "title": "Examen Simili 2021 2 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=117637",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-117647",
+      "title": "Examen Simili 2021 3 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=117647",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-136516",
+      "title": "Examen Simili 2023 1 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=136516",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-136521",
+      "title": "Examen Simili 2023 1 - Maths 2 SPC-SVT (Corrigé)",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=136521",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-137433",
+      "title": "Examen Simili 2023 2 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=137433",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-137447",
+      "title": "Examen Simili 2023 2 - Maths 2 SPC-SVT (Corrigé)",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=137447",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-137441",
+      "title": "Examen Simili 2023 3 - Maths 2 SPC-SVT",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=137441",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "simili-svt-137452",
+      "title": "Examen Simili 2023 3 - Maths 2 SPC-SVT (Corrigé)",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "fileUrl": "/api/pdf?id=137452",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    }
+  ],
+  "devoirs": [
+    {
+      "id": "devoir-sciences-maths-58415",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58415",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58417",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58417",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58423",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58423",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78287",
+      "title": "Devoir 1 Modèle 4 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78287",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78289",
+      "title": "Devoir 1 Modèle 5 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78289",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78291",
+      "title": "Devoir 1 Modèle 6 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78291",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78293",
+      "title": "Devoir 1 Modèle 7 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78293",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78295",
+      "title": "Devoir 1 Modèle 8 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78295",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-99826",
+      "title": "Devoir 1 Modèle 9 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99826",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58419",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58419",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58425",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58425",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58427",
+      "title": "Devoir 2 Modèle 3 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58427",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78297",
+      "title": "Devoir 2 Modèle 4 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78297",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78299",
+      "title": "Devoir 2 Modèle 5 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78299",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-99828",
+      "title": "Devoir 2 Modèle 6 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99828",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58421",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58421",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58429",
+      "title": "Devoir 3 Modèle 2 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58429",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58431",
+      "title": "Devoir 3 Modèle 3 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58431",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78301",
+      "title": "Devoir 3 Modèle 4 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78301",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-99830",
+      "title": "Devoir 3 Modèle 5 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99830",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-99832",
+      "title": "Devoir 4 Modèle 1 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99832",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-99836",
+      "title": "Devoir 5 Modèle 1 - Mathématiques 2 Bac SM Semestre 1",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99836",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58433",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 2 Bac SM Semestre 2",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58433",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58435",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 2 Bac SM Semestre 2",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58435",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-99808",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 2 Bac SM Semestre 2",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=99808",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-99834",
+      "title": "Devoir 1 Modèle 4 - Mathématiques 2 Bac SM Semestre 2",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=99834",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58437",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 2 Bac SM Semestre 2",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58437",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78303",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 2 Bac SM Semestre 2",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78303",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-58439",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 2 Bac SM Semestre 2",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58439",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-78305",
+      "title": "Devoir 3 Modèle 2 - Mathématiques 2 Bac SM Semestre 2",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78305",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-maths-99810",
+      "title": "Devoir 3 Modèle 3 - Mathématiques 2 Bac SM Semestre 2",
+      "branchId": "sciences-maths",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=99810",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58441",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58441",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58446",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58446",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58461",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58461",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-109303",
+      "title": "Devoir 1 Modèle 4 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=109303",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-125042",
+      "title": "Devoir 1 Modèle 5 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=125042",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58451",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58451",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58466",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58466",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58471",
+      "title": "Devoir 2 Modèle 3 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58471",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-121062",
+      "title": "Devoir 2 Modèle 4 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=121062",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-125844",
+      "title": "Devoir 2 Modèle 5 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=125844",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58456",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58456",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58476",
+      "title": "Devoir 3 Modèle 2 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58476",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58481",
+      "title": "Devoir 3 Modèle 3 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58481",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-106833",
+      "title": "Devoir 3 Modèle 4 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=106833",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-106848",
+      "title": "Devoir 3 Modèle 5 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=106848",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58486",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58486",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58501",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58501",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-126036",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=126036",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58491",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58491",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58506",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58506",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-physiques-58496",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "sciences-physiques",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58496",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58442",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58442",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58447",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58447",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58462",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58462",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-109304",
+      "title": "Devoir 1 Modèle 4 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=109304",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-125043",
+      "title": "Devoir 1 Modèle 5 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=125043",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58452",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58452",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58467",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58467",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58472",
+      "title": "Devoir 2 Modèle 3 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58472",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-121063",
+      "title": "Devoir 2 Modèle 4 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=121063",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-125845",
+      "title": "Devoir 2 Modèle 5 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=125845",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58457",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58457",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58477",
+      "title": "Devoir 3 Modèle 2 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58477",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58482",
+      "title": "Devoir 3 Modèle 3 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58482",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-106835",
+      "title": "Devoir 3 Modèle 4 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=106835",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-106849",
+      "title": "Devoir 3 Modèle 5 - Mathématiques 2 Bac SPC Semestre 1",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=106849",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58487",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58487",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58502",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58502",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-126037",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=126037",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58492",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58492",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58507",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58507",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-svt-58497",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 2 Bac SPC Semestre 2",
+      "branchId": "svt",
+      "levelId": "2eme-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58497",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59102",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59102",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59103",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59103",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59104",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59104",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78356",
+      "title": "Devoir 1 Modèle 4 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78356",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78357",
+      "title": "Devoir 1 Modèle 5 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78357",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78358",
+      "title": "Devoir 1 Modèle 6 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78358",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78361",
+      "title": "Devoir 1 Modèle 7 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78361",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59105",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59105",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59106",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59106",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59107",
+      "title": "Devoir 2 Modèle 3 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59107",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78359",
+      "title": "Devoir 2 Modèle 4 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78359",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78360",
+      "title": "Devoir 2 Modèle 5 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78360",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78362",
+      "title": "Devoir 2 Modèle 6 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78362",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59108",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59108",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59109",
+      "title": "Devoir 3 Modèle 2 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59109",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59110",
+      "title": "Devoir 3 Modèle 3 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59110",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78367",
+      "title": "Devoir 3 Modèle 4 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78367",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78364",
+      "title": "Devoir 3 Modèle 5 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78364",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78366",
+      "title": "Devoir 4 Modèle 1 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78366",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78365",
+      "title": "Devoir 4 Modèle 2 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78365",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78363",
+      "title": "Devoir 4 Modèle 3 - Mathématiques 1 Bac SM Semestre 1",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78363",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59111",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59111",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59112",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59112",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78368",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78368",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78369",
+      "title": "Devoir 1 Modèle 4 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78369",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78370",
+      "title": "Devoir 1 Modèle 5 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78370",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78371",
+      "title": "Devoir 1 Modèle 6 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78371",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59113",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59113",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59114",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59114",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78373",
+      "title": "Devoir 2 Modèle 3 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78373",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78374",
+      "title": "Devoir 2 Modèle 4 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78374",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59115",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59115",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-59116",
+      "title": "Devoir 3 Modèle 2 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59116",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78375",
+      "title": "Devoir 3 Modèle 3 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78375",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78376",
+      "title": "Devoir 3 Modèle 4 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78376",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-1ere-sciences-maths-78372",
+      "title": "Devoir 3 Modèle 5 - Mathématiques 1 Bac SM Semestre 2",
+      "branchId": "1ere-sciences-maths",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78372",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-99007",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99007",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-78393",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78393",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-78402",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78402",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-78381",
+      "title": "Devoir 1 Modèle 4 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78381",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-78384",
+      "title": "Devoir 1 Modèle 5 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78384",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58245",
+      "title": "Devoir 1 Modèle 6 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58245",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58233",
+      "title": "Devoir 1 Modèle 7 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58233",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58242",
+      "title": "Devoir 1 Modèle 8 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58242",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-99010",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99010",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-78387",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78387",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-78399",
+      "title": "Devoir 2 Modèle 3 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78399",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58236",
+      "title": "Devoir 2 Modèle 4 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58236",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58248",
+      "title": "Devoir 2 Modèle 5 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58248",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58251",
+      "title": "Devoir 2 Modèle 6 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58251",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-98962",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=98962",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-98965",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 1er BAC Sciences Exp Semestre 1 (Corrigé)",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=98965",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-99013",
+      "title": "Devoir 3 Modèle 2 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99013",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58257",
+      "title": "Devoir 3 Modèle 3 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58257",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58239",
+      "title": "Devoir 3 Modèle 4 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58239",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58254",
+      "title": "Devoir 3 Modèle 5 - Mathématiques 1er BAC Sciences Exp Semestre 1",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58254",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-78390",
+      "title": "Devoir 1 Modèle 1 - Mathématiques 1er BAC Sciences Exp Semestre 2",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78390",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58266",
+      "title": "Devoir 1 Modèle 2 - Mathématiques 1er BAC Sciences Exp Semestre 2",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58266",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58260",
+      "title": "Devoir 1 Modèle 3 - Mathématiques 1er BAC Sciences Exp Semestre 2",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58260",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-78396",
+      "title": "Devoir 2 Modèle 1 - Mathématiques 1er BAC Sciences Exp Semestre 2",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78396",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58263",
+      "title": "Devoir 2 Modèle 2 - Mathématiques 1er BAC Sciences Exp Semestre 2",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58263",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-sciences-exp-58269",
+      "title": "Devoir 3 Modèle 1 - Mathématiques 1er BAC Sciences Exp Semestre 2",
+      "branchId": "sciences-exp",
+      "levelId": "1ere-bac",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58269",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58145",
+      "title": "Devoir 1 (Arithmétiques)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58145",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58146",
+      "title": "Devoir 2 (Arithmétiques et vecteurs)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58146",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58147",
+      "title": "Devoir 3 (Calcul dans R et ordre dans R)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58147",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58148",
+      "title": "Corrigé devoir 3",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58148",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58149",
+      "title": "Devoir 4 (Calcul dans R et ordre dans R)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58149",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58150",
+      "title": "Devoir 5 (Ordre dans R et équations)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58150",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58151",
+      "title": "Devoir 6 (Ordre dans R et équations)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58151",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58152",
+      "title": "Devoir 7 (Ordre dans R)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58152",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58153",
+      "title": "Devoir 8 (Vecteurs et équations, inéquations et systèmes)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58153",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58154",
+      "title": "Devoir 9 (Vecteurs et ordre et polynômes)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58154",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58155",
+      "title": "Corrigé devoir 9",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58155",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58156",
+      "title": "Devoir 10 (Vecteurs et ordre et polynômes)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58156",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58157",
+      "title": "Devoir 11 (Vecteurs et ordre et polynômes)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58157",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58158",
+      "title": "Devoir 12 (Vecteurs et arithmétique)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58158",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58159",
+      "title": "Devoir 13 (Equations, inéquations et systèmes et droites)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58159",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58160",
+      "title": "Devoir 14 (Equations, inéquations et systèmes et droites)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58160",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58161",
+      "title": "Devoir 15 (Equations, inéquations et systèmes et droites)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58161",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58162",
+      "title": "Devoir 16 (Equations, inéquations et systèmes et projection dans le plan)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58162",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58163",
+      "title": "Corrigé devoir 16",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58163",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58164",
+      "title": "Devoir 17 (Equations, inéquations et systèmes et projection dans le plan)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58164",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58892",
+      "title": "Devoir 1 Modèle 1 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58892",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58893",
+      "title": "Devoir 1 Modèle 2 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58893",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58894",
+      "title": "Devoir 1 Modèle 3 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58894",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-78421",
+      "title": "Devoir 1 Modèle 4 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78421",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-78423",
+      "title": "Devoir 1 Modèle 5 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78423",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58895",
+      "title": "Devoir 2 Modèle 1 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58895",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58896",
+      "title": "Devoir 2 Modèle 2 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58896",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58897",
+      "title": "Devoir 2 Modèle 3 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58897",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-78425",
+      "title": "Devoir 2 Modèle 4 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78425",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-78427",
+      "title": "Devoir 2 Modèle 5 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78427",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-78429",
+      "title": "Devoir 2 Modèle 6 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78429",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58898",
+      "title": "Devoir 3 Modèle 1 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58898",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58899",
+      "title": "Devoir 3 Modèle 2 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58899",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58900",
+      "title": "Devoir 3 Modèle 3 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58900",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-78431",
+      "title": "Devoir 3 Modèle 4 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78431",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-99378",
+      "title": "Devoir 3 Modèle 5 - Maths TC Semestre 1",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99378",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58165",
+      "title": "Devoir 1 (Produit scalaire et calcul trigonométriqu)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58165",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58166",
+      "title": "Devoir 2 (Produit scalaire et calcul trigonométriqu)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58166",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58167",
+      "title": "Devoir 3 (Produit scalaire et calcul trigonométriqu)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58167",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58168",
+      "title": "Devoir 4 (Généralités sur les fonctions)",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58168",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58901",
+      "title": "Devoir 1 Modèle 1 - Maths TC Semestre 2",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58901",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58902",
+      "title": "Devoir 1 Modèle 2 - Maths TC Semestre 2",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58902",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-78433",
+      "title": "Devoir 1 Modèle 3 - Maths TC Semestre 2",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78433",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-78435",
+      "title": "Devoir 1 Modèle 4 - Maths TC Semestre 2",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78435",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58903",
+      "title": "Devoir 2 Modèle 1 - Maths TC Semestre 2",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58903",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58904",
+      "title": "Devoir 2 Modèle 2 - Maths TC Semestre 2",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58904",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-78437",
+      "title": "Devoir 2 Modèle 3 - Maths TC Semestre 2",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78437",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58905",
+      "title": "Devoir 3 Modèle 1 - Maths TC Semestre 2",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58905",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-sciences-58906",
+      "title": "Devoir 3 Modèle 2 - Maths TC Semestre 2",
+      "branchId": "tc-sciences",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=58906",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-58997",
+      "title": "Devoir 1 (Arithmétiques)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58997",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-58998",
+      "title": "Devoir 2 (Arithmétiques et vecteurs)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58998",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-58999",
+      "title": "Devoir 3 (Calcul dans R et ordre dans R)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=58999",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59000",
+      "title": "Corrigé devoir 3",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59000",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59001",
+      "title": "Devoir 4 (Calcul dans R et ordre dans R)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59001",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59002",
+      "title": "Devoir 5 (Ordre dans R et équations)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59002",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59003",
+      "title": "Devoir 6 (Ordre dans R et équations)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59003",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59004",
+      "title": "Devoir 7 (Ordre dans R)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59004",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59005",
+      "title": "Devoir 8 (Vecteurs et équations, inéquations et systèmes)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59005",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59006",
+      "title": "Devoir 9 (Vecteurs et ordre et polynômes)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59006",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59007",
+      "title": "Corrigé devoir 9",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59007",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59008",
+      "title": "Devoir 10 (Vecteurs et ordre et polynômes)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59008",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59009",
+      "title": "Devoir 11 (Vecteurs et ordre et polynômes)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59009",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59010",
+      "title": "Devoir 12 (Vecteurs et arithmétique)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59010",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59011",
+      "title": "Devoir 13 (Equations, inéquations et systèmes et droites)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59011",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59012",
+      "title": "Devoir 14 (Equations, inéquations et systèmes et droites)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59012",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59013",
+      "title": "Devoir 15 (Equations, inéquations et systèmes et droites)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59013",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59014",
+      "title": "Devoir 16 (Equations, inéquations et systèmes et projection dans le plan)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59014",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59015",
+      "title": "Corrigé devoir 16",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59015",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59016",
+      "title": "Devoir 17 (Equations, inéquations et systèmes et projection dans le plan)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59016",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59017",
+      "title": "Devoir 1 Modèle 1 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59017",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59018",
+      "title": "Devoir 1 Modèle 2 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59018",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59019",
+      "title": "Devoir 1 Modèle 3 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59019",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-78422",
+      "title": "Devoir 1 Modèle 4 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78422",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-78424",
+      "title": "Devoir 1 Modèle 5 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78424",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59020",
+      "title": "Devoir 2 Modèle 1 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59020",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59021",
+      "title": "Devoir 2 Modèle 2 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59021",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59022",
+      "title": "Devoir 2 Modèle 3 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59022",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-78426",
+      "title": "Devoir 2 Modèle 4 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78426",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-78428",
+      "title": "Devoir 2 Modèle 5 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78428",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-78430",
+      "title": "Devoir 2 Modèle 6 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78430",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59023",
+      "title": "Devoir 3 Modèle 1 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59023",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59024",
+      "title": "Devoir 3 Modèle 2 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59024",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59025",
+      "title": "Devoir 3 Modèle 3 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=59025",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-78432",
+      "title": "Devoir 3 Modèle 4 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=78432",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-99379",
+      "title": "Devoir 3 Modèle 5 - Maths TC Semestre 1",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 1,
+      "fileUrl": "/api/pdf?id=99379",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59087",
+      "title": "Devoir 1 (Produit scalaire et calcul trigonométriqu)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59087",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59088",
+      "title": "Devoir 2 (Produit scalaire et calcul trigonométriqu)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59088",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59089",
+      "title": "Devoir 3 (Produit scalaire et calcul trigonométriqu)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59089",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59090",
+      "title": "Devoir 4 (Généralités sur les fonctions)",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59090",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59091",
+      "title": "Devoir 1 Modèle 1 - Maths TC Semestre 2",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59091",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59092",
+      "title": "Devoir 1 Modèle 2 - Maths TC Semestre 2",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59092",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-78434",
+      "title": "Devoir 1 Modèle 3 - Maths TC Semestre 2",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78434",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-78436",
+      "title": "Devoir 1 Modèle 4 - Maths TC Semestre 2",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78436",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59093",
+      "title": "Devoir 2 Modèle 1 - Maths TC Semestre 2",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59093",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59094",
+      "title": "Devoir 2 Modèle 2 - Maths TC Semestre 2",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59094",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-78438",
+      "title": "Devoir 2 Modèle 3 - Maths TC Semestre 2",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=78438",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59095",
+      "title": "Devoir 3 Modèle 1 - Maths TC Semestre 2",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59095",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    },
+    {
+      "id": "devoir-tc-technologique-59096",
+      "title": "Devoir 3 Modèle 2 - Maths TC Semestre 2",
+      "branchId": "tc-technologique",
+      "levelId": "tronc-commun",
+      "semester": 2,
+      "fileUrl": "/api/pdf?id=59096",
+      "source": "CQFDMaths — Prof. Jamaa Aknari"
+    }
+  ]
+}

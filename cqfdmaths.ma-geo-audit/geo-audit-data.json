@@ -1,0 +1,65 @@
+{
+  "target": {
+    "siteName": "CQFDMaths",
+    "domain": "cqfdmaths.ma",
+    "localUrl": "http://localhost:3000",
+    "businessType": "Publisher / Educational Portal (EdTech)",
+    "auditDate": "2026-10-07",
+    "pagesCrawled": 12,
+    "totalSitemapUrls": 106
+  },
+  "scores": {
+    "overall": 96.4,
+    "rating": "Top-tier Excellence (Site de référence pour les moteurs génératifs et agents IA)",
+    "breakdown": {
+      "aiCitability": {
+        "score": 96,
+        "weight": 0.25,
+        "weighted": 24.0,
+        "status": "Excellence"
+      },
+      "brandAuthority": {
+        "score": 93,
+        "weight": 0.20,
+        "weighted": 18.6,
+        "status": "Excellence"
+      },
+      "contentEEAT": {
+        "score": 97,
+        "weight": 0.20,
+        "weighted": 19.4,
+        "status": "Excellence"
+      },
+      "technicalGEO": {
+        "score": 100,
+        "weight": 0.15,
+        "weighted": 15.0,
+        "status": "Parfait"
+      },
+      "schemaStructuredData": {
+        "score": 98,
+        "weight": 0.10,
+        "weighted": 9.8,
+        "status": "Excellence"
+      },
+      "platformOptimization": {
+        "score": 96,
+        "weight": 0.10,
+        "weighted": 9.6,
+        "status": "Excellence"
+      }
+    }
+  },
+  "featuresDeployed": {
+    "rfc8288LinkHeaders": true,
+    "aggregateRatingSchema": {
+      "ratingValue": 4.9,
+      "reviewCount": 1420
+    },
+    "proprietaryMethodology": "La Méthode CQFD en 4 Étapes (C-Comprendre, Q-Qualifier, F-Formaliser, D-Démontrer)",
+    "academicCitationBibTeX": true,
+    "officialBranchesComparisonTable": true,
+    "crawlersAllowedCount": 12,
+    "llmsTxtComplete": true
+  }
+}

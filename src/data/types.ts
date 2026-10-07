@@ -1,4 +1,4 @@
-export type LevelId = '2eme-bac' | '1ere-bac' | 'tronc-commun' | 'college';
+export type LevelId = '2eme-bac' | '1ere-bac' | 'tronc-commun';
 
 export type BranchId = 
   // 2ème Bac
@@ -11,11 +11,8 @@ export type BranchId =
   | '1ere-sciences-maths'
   // Tronc Commun
   | 'tc-sciences'
-  | 'tc-lettres'
-  // Collège
-  | '3ac'
-  | '2ac'
-  | '1ac';
+  | 'tc-technologique'
+  | 'tc-lettres';
 
 export type Difficulty = 'facile' | 'moyen' | 'difficile' | 'type-examen';
 
@@ -93,6 +90,20 @@ export interface Lesson {
   seoKeywords: string[];
 }
 
+export type ResourceCategory = 'cours' | 'resume' | 'serie' | 'corrige' | 'devoir' | 'examen';
+
+export interface ChapterResource {
+  id: string;
+  title: string;
+  category: ResourceCategory;
+  fileUrl: string;
+  solutionUrl?: string;
+  pagesCount?: number;
+  source?: string;
+  difficulty?: Difficulty;
+  semester?: 1 | 2;
+}
+
 export interface Chapter {
   slug: string;
   title: string;
@@ -102,7 +113,9 @@ export interface Chapter {
   branchId: BranchId;
   order: number;
   iconName: string;
+  semester?: 1 | 2;
   lessons: Lesson[];
+  resources?: ChapterResource[];
 }
 
 export interface Branch {
@@ -120,7 +133,7 @@ export interface Level {
   name: string;
   nameAr: string;
   badge: string;
-  cycle: 'Lycée' | 'Collège';
+  cycle: 'Lycée';
   description: string;
   branches: Branch[];
 }
@@ -135,11 +148,31 @@ export interface BacExam {
   durationHours: number;
   coefficient: number;
   subjectPdfUrl: string;
-  correctionPdfUrl: string;
+  correctionPdfUrl?: string;
   youtubeVideoId?: string;
-  totalExercises: number;
+  totalExercises?: number;
   keyTopics: string[];
+  chapterSlugs?: string[];
   difficulty: 'Normale' | 'Exigeante' | 'Très difficile';
+}
+
+export interface DevoirSurveille {
+  id: string;
+  title: string;
+  branchId: BranchId;
+  levelId: LevelId;
+  semester: 1 | 2;
+  fileUrl: string;
+  source?: string;
+}
+
+export interface SimiliExam {
+  id: string;
+  title: string;
+  branchId: BranchId;
+  levelId: LevelId;
+  fileUrl: string;
+  source?: string;
 }
 
 export interface YouTubeVideo {

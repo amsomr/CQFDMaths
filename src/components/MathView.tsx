@@ -46,7 +46,8 @@ export function MathView({ math, inline = false, className = '' }: MathViewProps
  * Parses text containing inline math `$math$` and block math `$$math$$`
  * and renders them seamlessly.
  */
-export function TextWithMath({ text, className = '' }: { text: string; className?: string }) {
+export function TextWithMath({ text, className = '' }: { text?: string | null; className?: string }) {
+  if (!text) return null;
   // If no math markers, return raw text
   if (!text.includes('$')) {
     return <span className={className}>{text}</span>;

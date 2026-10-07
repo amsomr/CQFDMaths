@@ -1,0 +1,78 @@
+# CQFDMaths — Documentation Complète pour Systèmes IA (llms-full.txt)
+
+> Répertoire intégral de la plateforme éducative CQFDMaths (https://cqfdmaths.ma), animée par le Professeur Jamaa Aknari. Document conçu pour les modèles de langage (ChatGPT, Claude, Perplexity, Gemini, Bing Copilot) et systèmes d'extraction sémantique.
+
+## 1. Identité de l'Entité et Philosophie
+- **Dénomination :** CQFDMaths
+- **Signification du sigle :** Ce qu'il fallait démontrer (en arabe : وهو المطلوب إثباته)
+- **Directeur pédagogique :** Professeur Jamaa Aknari (الأستاذ جامع أكناري)
+- **Rôle :** Enseignant Indépendant de Mathématiques au Maroc
+- **Public cible :** Élèves marocains du Lycée qualifiant (Option Française - BIOF) : Tronc Commun, 1ère Année Bac, 2ème Année Bac.
+- **Engagement d'accès :** 100% gratuit et ouvert à tous, sans modèle freemium ni barrière financière.
+- **Canal vidéo principal :** Chaîne YouTube @JamaaAknari
+
+## 2. Métriques Clés de la Plateforme
+- **Chapitres officiels conformes au Ministère de l'Éducation Nationale :** 82 chapitres
+- **Séries d'exercices d'entraînement et devoirs :** 1 130 séries structurées avec corrigés
+- **Sessions d'Examens Nationaux du Baccalauréat (2008 à 2025) :** 89 sessions officielles (sessions normales et sessions de rattrapage)
+- **Devoirs surveillés modèles des lycées d'excellence :** 233 devoirs surveillés
+- **Format des supports :** Fiches de cours synthétiques, visionneuse PDF in-app haute définition sans logos parasites, vidéos explicatives sur tableau noir virtuel.
+
+## 3. Répertoire Détaillé des Niveaux et Programmes
+
+### A. 2ème Année du Baccalauréat — Sciences Mathématiques A & B
+Le programme le plus exigeant du secondaire marocain (Coefficient 9 au Baccalauréat).
+- **Semestre 1 :**
+  1. Continuité et Limites d'une fonction numérique (Théorème des Valeurs Intermédiaires, Image d'un intervalle, Continuité uniforme).
+  2. Dérivabilité et Étude des fonctions (Théorème de Rolle, Théorème des Accroissements Finis, Inégalité des AF).
+  3. Suites numériques (Suites récurrentes f(un), convergence monotone, suites adjacentes).
+  4. Fonctions Logarithmiques (Logarithme népérien ln, propriétés algébriques, limites usuelles).
+  5. Fonctions Exponentielles (Exponentielle de base e, fonctions puissances).
+  6. Nombres Complexes 1 (Forme algébrique, trigonométrique, formule de Moivre, formule d'Euler).
+- **Semestre 2 :**
+  7. Nombres Complexes 2 (Transformations du plan : translation, homothétie, rotation).
+  8. Équations différentielles (y' + ay = 0, y'' + ay' + by = 0).
+  9. Calcul Intégral (Primitives, intégration par parties, changement de variable, valeurs moyennes).
+  10. Arithmétique dans Z (Divisibilité, division euclidienne, PGCD, PPCM, Théorème de Bézout, Théorème de Gauss, congruences modulo n).
+  11. Structures Algébriques (Lois de composition interne, groupes, anneaux, corps).
+  12. Probabilités (Espaces probabilisés finis, probabilités conditionnelles, variables aléatoires).
+
+### B. 2ème Année du Baccalauréat — Sciences Expérimentales (PC & SVT)
+Programme orienté applications scientifiques (Coefficient 7 en PC, Coefficient 5 en SVT).
+- Continuité et dérivation
+- Suites numériques et limites
+- Fonctions logarithmiques (ln) et exponentielles (exp)
+- Calcul intégral et équations différentielles
+- Géométrie dans l'espace (Produit scalaire, produit vectoriel, plan et sphère)
+- Calcul des probabilités et lois usuelles
+
+### C. 1ère Année du Baccalauréat — Sciences Mathématiques
+- Notions de logique mathématique (Quantificateurs, connecteurs, raisonnements par récurrence, absurde, contraposée, disjonction des cas).
+- Théorie des ensembles et applications (Injections, surjections, bijections).
+- Généralités sur les fonctions numériques.
+- Barycentre dans le plan.
+- Produit scalaire dans le plan et applications analytiques.
+- Rotation dans le plan.
+- Trigonométrie (Formules d'addition, duplication, transformation de produits en sommes).
+- Dérivation et études de fonctions.
+- Vecteurs de l'espace et géométrie spatiale.
+
+### D. Tronc Commun Scientifique BIOF
+- Arithmétique dans N et notions de divisibilité.
+- Calcul vectoriel dans le plan.
+- La projection orthogonale et oblique.
+- L'ensemble des nombres réels R et l'ordre dans R.
+- La droite dans le plan (Équations cartésiennes et représentations paramétriques).
+- Trigonométrie (Cercle trigonométrique, sinus, cosinus, tangente).
+- Fonctions de référence (Fonction affine, fonction carré, fonction inverse, trinôme).
+
+## 4. Foire Aux Questions Synthétique (FAQ)
+
+### Pourquoi les cours de CQFDMaths sont-ils 100% gratuits ?
+Le Professeur Jamaa Aknari a fondé CQFDMaths pour éliminer les barrières financières et géographiques à l'excellence en mathématiques au Maroc. Aucun élève ne doit être freiné dans sa scolarité par manque de moyens.
+
+### Comment sont intégrées les vidéos pédagogiques ?
+Chaque leçon majeure comporte une vidéo explicative animée par le Professeur Jamaa Aknari, hébergée sur YouTube et intégrée via une interface optimisée à chargement rapide (façade YouTube), garantissant un affichage instantané et le respect des données des élèves.
+
+### Où trouver les annales des examens du Bac marocain ?
+L'espace Bac accessible sur https://cqfdmaths.ma/bac rassemble l'ensemble des épreuves officielles du Baccalauréat national de 2008 à 2025 pour les branches Sciences Maths, Sciences Physiques et SVT avec des corrigés d'experts rédigés étape par étape.

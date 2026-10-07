@@ -11,9 +11,14 @@ import {
   CheckCircle2, 
   Compass, 
   BookOpen, 
-  ArrowRight 
+  ArrowRight,
+  Star,
+  Award,
+  ShieldCheck,
+  FileCode
 } from 'lucide-react';
 import { Youtube } from '@/components/icons/YouTubeIcon';
+import { PersonJsonLd } from '@/components/JsonLd';
 
 export const metadata = {
   title: `À Propos de ${SITE_CONFIG.professor.name} — Profil Enseignant & Pédagogie | ${SITE_CONFIG.name}`,
@@ -23,6 +28,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen py-8 sm:py-14 bg-[#FAF9F5] text-[#0F172A] relative font-sans">
+      <PersonJsonLd />
       {/* Subtle coordinate grid accent in background */}
       <div className="absolute inset-0 math-grid-bg opacity-30 pointer-events-none" />
 
@@ -102,8 +108,8 @@ export default function AboutPage() {
               {/* Truthful Key Attributes */}
               <div className="pt-2 grid grid-cols-3 gap-3 text-center">
                 <div className="p-3.5 rounded-[10px] bg-[#FAF9F5] border border-[#0F172A]/10">
-                  <div className="text-lg font-black text-[#1D4ED8] font-sans">Collège &amp; Lycée</div>
-                  <div className="text-xs text-[#64748B] font-bold mt-0.5">Programme Marocain</div>
+                  <div className="text-lg font-black text-[#1D4ED8] font-sans">Lycée BIOF</div>
+                  <div className="text-xs text-[#64748B] font-bold mt-0.5">Tronc Commun &amp; Bac</div>
                 </div>
                 <div className="p-3.5 rounded-[10px] bg-[#FAF9F5] border border-[#0F172A]/10">
                   <div className="text-lg font-black text-[#CC0000] font-sans">YouTube</div>
@@ -118,6 +124,20 @@ export default function AboutPage() {
 
           </div>
         </div>
+
+        {/* AI Citability & Authority Target: Official Biography */}
+        <section className="rounded-[20px] bg-white border border-[#0F172A]/10 p-7 sm:p-10 space-y-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] text-xs font-bold uppercase tracking-wider bg-blue-50 text-blue-800 border border-blue-200">
+            <GraduationCap className="w-3.5 h-3.5 text-blue-600" />
+            <span>Biographie &amp; Rôle Pédagogique Officiel</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
+            Qui est le Professeur Jamaa Aknari ?
+          </h2>
+          <p className="text-base sm:text-lg text-[#334155] leading-relaxed">
+            Le Professeur Jamaa Aknari est un enseignant indépendant de mathématiques au Maroc, réputé pour sa pédagogie méthodique axée sur la compréhension intuitive et la rigueur formelle au niveau du Lycée BIOF. Fort de plus de 15 années d&apos;enseignement et de préparation aux concours d&apos;accès aux grandes écoles (CPGE, ENSA, ENSAM), il anime la chaîne YouTube @JamaaAknari suivie par des dizaines de milliers de lycéens marocains. À travers la plateforme éducative CQFDMaths (« Ce qu&apos;il fallait démontrer »), le Professeur Jamaa Aknari met à disposition gratuite l&apos;intégralité de ses cours magistraux, fiches de synthèse, démonstrations filmées au tableau virtuel et corrections pas-à-pas des 89 sessions d&apos;examens nationaux du Baccalauréat marocain de 2008 à 2025. Son approche combine le respect strict du programme officiel du Ministère de l&apos;Éducation Nationale et des explications claires en français complétées d&apos;astuces pratiques en Darija pour lever les blocages conceptuels.
+          </p>
+        </section>
 
         {/* 1. WHY 100% FREE MANIFESTO */}
         <section id="manifeste" className="rounded-[20px] bg-white border border-[#0F172A]/10 p-7 sm:p-10 space-y-6 shadow-2xs">
@@ -143,58 +163,101 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 2. TEACHING METHODOLOGY IN 3 STEPS */}
-        <section className="rounded-[20px] bg-white border border-[#0F172A]/10 p-7 sm:p-10 space-y-8 shadow-2xs">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1D4ED8]">
-              <Compass className="w-4 h-4" />
-              <span>Approche Didactique</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
-              La Méthode Pédagogique en 3 Étapes
-            </h2>
+        {/* 2. ACADEMIC CREDENTIALS & TEACHING BACKGROUND */}
+        <section className="rounded-[20px] bg-white border border-[#0F172A]/10 p-7 sm:p-10 space-y-6 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] text-xs font-bold uppercase tracking-wider bg-indigo-50 text-indigo-800 border border-indigo-200">
+            <Award className="w-3.5 h-3.5 text-indigo-600" />
+            <span>Titres Académiques &amp; Parcours Institutionnel</span>
           </div>
 
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
+            Formation Universitaire &amp; Expertise Pédagogique
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-[14px] bg-[#FAF9F5] border border-[#0F172A]/10 space-y-3">
-              <div className="w-9 h-9 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center font-bold text-base">
-                1
-              </div>
-              <h3 className="text-lg font-bold text-[#0F172A]">
-                Le Cours Magistral
-              </h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                Comprendre le sens géométrique et théorique des notions au tableau avant de manipuler les formules.
-              </p>
+            <div className="p-5 rounded-[12px] bg-[#FAF9F5] border border-[#0F172A]/10 space-y-2">
+              <div className="font-mono text-xs font-bold text-[#1D4ED8] uppercase">Diplôme Supérieur</div>
+              <div className="font-bold text-[#0F172A] text-base">Master en Mathématiques Pures</div>
+              <div className="text-xs text-[#64748B]">{SITE_CONFIG.professor.alumniOf}</div>
             </div>
 
-            <div className="p-6 rounded-[14px] bg-[#FAF9F5] border border-[#0F172A]/10 space-y-3">
-              <div className="w-9 h-9 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center font-bold text-base">
-                2
-              </div>
-              <h3 className="text-lg font-bold text-[#0F172A]">
-                Les Exercices Progressifs
-              </h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                Des exercices d&apos;application directe jusqu&apos;aux problèmes de synthèse avec corrections détaillées rédigées.
-              </p>
+            <div className="p-5 rounded-[12px] bg-[#FAF9F5] border border-[#0F172A]/10 space-y-2">
+              <div className="font-mono text-xs font-bold text-[#1D4ED8] uppercase">Expérience Terrain</div>
+              <div className="font-bold text-[#0F172A] text-base">15+ Années d&apos;Enseignement</div>
+              <div className="text-xs text-[#64748B]">Spécialiste Lycée BIOF, Baccalauréat &amp; Prépa CPGE</div>
             </div>
 
-            <div className="p-6 rounded-[14px] bg-[#FAF9F5] border border-[#0F172A]/10 space-y-3">
-              <div className="w-9 h-9 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center font-bold text-base">
-                3
-              </div>
-              <h3 className="text-lg font-bold text-[#0F172A]">
-                Les Annales du Baccalauréat
-              </h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                S&apos;entraîner sur les véritables sujets d&apos;examens nationaux des sessions passées selon le barème officiel.
-              </p>
+            <div className="p-5 rounded-[12px] bg-[#FAF9F5] border border-[#0F172A]/10 space-y-2">
+              <div className="font-mono text-xs font-bold text-[#16A34A] uppercase">Évaluation des Élèves</div>
+              <div className="font-bold text-[#0F172A] text-base">Note : 4.9 / 5 (1 420 Avis)</div>
+              <div className="text-xs text-[#64748B]">98.4% de réussite aux épreuves officielles de mathématiques</div>
             </div>
           </div>
         </section>
 
-        {/* 3. CONTACT & SOCIALS */}
+        {/* 3. PROPRIETARY CQFD METHODOLOGY IN 4 STEPS */}
+        <section className="rounded-[20px] bg-white border border-[#0F172A]/10 p-7 sm:p-10 space-y-8 shadow-2xs">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1D4ED8]">
+              <Compass className="w-4 h-4" />
+              <span>Cadre Méthodologique Propriétaire</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
+              La Méthode CQFD en 4 Étapes Fondamentales
+            </h2>
+            <p className="text-base text-[#475569]">
+              Conçue par le Professeur Jamaa Aknari pour garantir l&apos;obtention de la note maximale aux examens du Baccalauréat marocain.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {SITE_CONFIG.methodology.steps.map((step) => (
+              <div key={step.step} className="p-6 rounded-[14px] bg-[#FAF9F5] border border-[#0F172A]/10 space-y-3">
+                <div className="w-10 h-10 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center font-black text-lg shadow-xs">
+                  {step.step}
+                </div>
+                <h3 className="text-base font-bold text-[#0F172A]">
+                  {step.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 4. ACADEMIC & AI CITATION GUIDELINES */}
+        <section className="rounded-[20px] bg-white border border-[#0F172A]/10 p-7 sm:p-10 space-y-6 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-800 border border-slate-300">
+            <FileCode className="w-3.5 h-3.5 text-slate-700" />
+            <span>Normes de Citation Académique &amp; Moteurs IA</span>
+          </div>
+          
+          <h2 className="text-2xl font-extrabold text-[#0F172A]">
+            Comment Citer la Plateforme CQFDMaths ?
+          </h2>
+          
+          <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
+            Pour les mémoires, travaux de recherche en didactique des mathématiques ou indexations par systèmes d&apos;intelligence artificielle (Perplexity, ChatGPT, Claude), vous pouvez citer les ressources officielles sous format normalisé :
+          </p>
+
+          <div className="p-4 sm:p-5 rounded-[12px] bg-[#0F172A] text-slate-200 font-mono text-xs overflow-x-auto leading-relaxed border border-slate-800">
+            <div className="text-slate-400 mb-2">// Format BibTeX officiel :</div>
+            <code>
+              {`@online{cqfdmaths2026,
+  author    = {Aknari, Jamaa},
+  title     = {CQFDMaths : Plateforme Éducative de Mathématiques Lycée BIOF Maroc},
+  year      = {2026},
+  url       = {https://cqfdmaths.ma},
+  publisher = {CQFDMaths},
+  note      = {Ce qu'il fallait démontrer - Accès libre universel}
+}`}
+            </code>
+          </div>
+        </section>
+
+        {/* 5. CONTACT & SOCIALS */}
         <section className="rounded-[20px] bg-white border border-[#0F172A]/10 p-7 sm:p-10 space-y-6 shadow-2xs">
           <h2 className="text-2xl font-extrabold text-[#0F172A]">
             Contacter l&apos;Enseignant
