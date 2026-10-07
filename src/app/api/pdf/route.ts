@@ -36,6 +36,13 @@ export async function GET(req: NextRequest) {
     return new NextResponse('Identifiant élément invalide', { status: 400 });
   }
 
+  // Fast path: if R2 CDN is configured, redirect directly to pre-cleaned document
+  const r2PublicUrl = process.env.R2_PUBLIC_URL;
+  if (r2PublicUrl && elementId && !targetUrl) {
+    const cleanR2Url = `${r2PublicUrl.replace(/\/$/, '')}/pdfs/${elementId}.pdf`;
+    return NextResponse.redirect(cleanR2Url, 307);
+  }
+
   let finalPdfUrl: string | null = null;
 
   // Validate targetUrl against allowed domains and HTTPS protocol

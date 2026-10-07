@@ -43,4 +43,7 @@ next-env.d.ts
 # scratch and test artifacts
 scratch/
 public/test/
+data/clean-pdfs/
+scripts/r2-sync-manifest.json
+
 
